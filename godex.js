@@ -4539,8 +4539,12 @@ var godex = {
     get: get,
     gym: gymtool,
     appraise: appraise,
+
     aZ: [ "A","B","C","D","E","F","G","H","I","J","K",
-        "L","M","N","O","P","R","S","T","V","W","Z" ]
+        "L","M","N","O","P","R","S","T","V","W","Z" ],
+        
+    dustLevels: [ 200, 400, 600, 800, 1000, 1300, 1600, 1900, 2200, 2500,
+      3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000 ]
   };
 
   // Export to node or the browser, whichever is being used!
