@@ -47,6 +47,16 @@ Add script before your other scripts in your HTML. Exports as `dex`.
 
 ---
 
+### Static
+
+##### `dex.aZ`  
+Array of the alphabet containing the first letter of each pokemon.
+
+##### `dex.dustLevels`
+All the unique levels of dust requirement.
+
+---
+
 ### Methods
 _Variables passed in [] are optional._
 
