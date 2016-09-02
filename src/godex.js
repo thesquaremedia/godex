@@ -28,57 +28,71 @@ var godex = {
       return Math.round(num * 100) / 100;
     };
 
-  // Add extra data to a pokemon
-  var buildPokemon = function(pokemon) {
-    pokemon.count = 1; // for gyms
-    pokemon.offense = {};
-    pokemon.defense = {};
+  var build = function(thing, data) {
 
-    var toLoop = {
-      // this is just me being lazy
-      // and coding an array to loop through
-      // rather than sort through all of
-      // these with individual loops, add them
-      // all to an object and then just loop that
-      "halfTo": "offense",
-      "halfFrom": "defense",
-      "twiceTo": "offense",
-      "twiceFrom": "defense"
-    };
+    if (thing == "pokemon") {
+      data.count = 1;
+      data.offense = {};
+      data.defense = {};
+      data.moves = {
+        quick: {},
+        charge: {}
+      };
+      var pokeLoop = {
+        // this is just me being lazy
+        // and coding an array to loop through
+        // rather than sort through all of
+        // these with individual loops, add them
+        // all to an object and then just loop that
+        "halfTo": "offense",
+        "halfFrom": "defense",
+        "twiceTo": "offense",
+        "twiceFrom": "defense"
+      };
 
-    // for each type the pokemon is
-    for (var _type in pokemon.type) {
-      var x, type = godex.types[pokemon.type[_type]];
+      // for each type the pokemon is
+      for (var _type in data.type) {
+        var x, type = godex.types[data.type[_type]];
 
-      // now we loop through that loop up there
-      for (x in toLoop) {
-        for (var i = 0;i < type[x].length;i++) {
-          var key = toLoop[x],
-            target = type[x][i],
-            score = pokemon[key][target];
-          if (x.indexOf("half") > -1) {
-            // if a score isn't assigned, we assign it the score
-            if (!score) pokemon[key][target] = 0.8;
-            else pokemon[key][target] = rnd(pokemon[key][target] * 0.8);
-            // but if a score is assigned, multiply it.
-          } else {
-            if (!score) pokemon[key][target] = 1.25;
-            else pokemon[key][target] = rnd(pokemon[key][target] * 1.25);
+        // now we loop through that loop up there
+        for (x in pokeLoop) {
+          for (var i = 0;i < type[x].length;i++) {
+            var key = pokeLoop[x],
+              target = type[x][i],
+              score = data[key][target];
+            if (x.indexOf("half") > -1) {
+              // if a score isn't assigned, we assign it the score
+              if (!score) data[key][target] = 0.8;
+              else data[key][target] = rnd(data[key][target] * 0.8);
+              // but if a score is assigned, multiply it.
+            } else {
+              if (!score) data[key][target] = 1.25;
+              else data[key][target] = rnd(data[key][target] * 1.25);
+            }
           }
         }
       }
+
+      // Let's build the moves!
+      for (var _qm in data.quickMoves) {
+        var qm = data.quickMoves[_qm];
+        data.moves.quick[qm] = dex.get("move", qm);
+      }
+
+      for (var _cm in data.chargeMoves) {
+        var cm = data.chargeMoves[_cm];
+        data.moves.charge[cm] = dex.get("move", cm);
+      }
+
+      // Figure out best move!
     }
 
-    return pokemon;
-  };
-
-  // Add extra data to a move
-  var buildMove = function(move) {
-    move.offenseDPS = rnd(move.attack / move.cooldown);
-    if (!move.charges) {
-      move.defenseDPS = rnd(move.attack / (move.cooldown + 2));
+    if (thing == "move" || thing == "moves") {
+      data.offenseDPS = rnd(data.attack / data.cooldown);
+      data.defenseDPS = rnd(data.attack / (data.cooldown + 2));
     }
-    return move;
+
+    return data;
   };
 
   // Fetch data
@@ -159,8 +173,7 @@ var godex = {
 
     if (result) {
       // do some building
-      if (location.indexOf("pokemon") > -1) result = buildPokemon(result);
-      if (location.indexOf("move") > -1) result = buildMove(result);
+      result = build(location, result);
     } else {
       result = { method: "get", err: "Couldn't find: " + target };
     }
@@ -189,7 +202,7 @@ var godex = {
 
     aZ: [ "A","B","C","D","E","F","G","H","I","J","K",
         "L","M","N","O","P","R","S","T","V","W","Z" ],
-        
+
     dustLevels: [ 200, 400, 600, 800, 1000, 1300, 1600, 1900, 2200, 2500,
       3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000 ]
   };
