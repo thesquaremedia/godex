@@ -28,7 +28,7 @@ var godex = {
       return Math.round(num * 100) / 100;
     };
 
-  var build = function(thing, data) {
+  var build = function(thing, data, modifier) {
 
     if (thing == "pokemon") {
       data.count = 1;
@@ -76,12 +76,12 @@ var godex = {
       // Let's build the moves!
       for (var _qm in data.quickMoves) {
         var qm = data.quickMoves[_qm];
-        data.moves.quick[qm] = dex.get("move", qm);
+        data.moves.quick[qm] = dex.get("move", qm, data.type);
       }
 
       for (var _cm in data.chargeMoves) {
         var cm = data.chargeMoves[_cm];
-        data.moves.charge[cm] = dex.get("move", cm);
+        data.moves.charge[cm] = dex.get("move", cm, data.type);
       }
 
       // Figure out best move!
@@ -90,6 +90,14 @@ var godex = {
     if (thing == "move" || thing == "moves") {
       data.offenseDPS = rnd(data.attack / data.cooldown);
       data.defenseDPS = rnd(data.attack / (data.cooldown + 2));
+      if (modifier) {
+        // check for STAB
+        if (modifier.indexOf(data.type)) {
+          // Apply Stab!
+          data.offenseADPS = data.offenseDPS * 1.25;
+          data.defenseADPS = data.defenseDPS * 1.25;
+        }
+      }
     }
 
     return data;
@@ -101,8 +109,8 @@ var godex = {
     if (!args.length) return { method: "get", err: "No arguments passed." };
 
     var result = false, search, subtype = false,
-      target = args.length == 2 ? args[1] : args[0],
-      location = args.length == 2 ? args[0].toLowerCase() : "pokemon";
+      target = args.length > 1 ? args[1] : args[0], modifier = args[2],
+      location = args.length > 1 ? args[0].toLowerCase() : "pokemon";
 
     // Subproperty Location?
     if (location.indexOf(".") > -1) {
@@ -173,7 +181,7 @@ var godex = {
 
     if (result) {
       // do some building
-      result = build(location, result);
+      result = build(location, result, modifier);
     } else {
       result = { method: "get", err: "Couldn't find: " + target };
     }
