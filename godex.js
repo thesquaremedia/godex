@@ -4478,8 +4478,8 @@ var godex = {
         // check for STAB
         if (modifier.indexOf(data.type) > -1) {
           // Apply Stab!
-          data.offenseADPS = data.offenseDPS * 1.25;
-          data.defenseADPS = data.defenseDPS * 1.25;
+          data.offenseADPS = rnd(data.offenseDPS * 1.25);
+          data.defenseADPS = rnd(data.defenseDPS * 1.25);
         }
       }
     }
