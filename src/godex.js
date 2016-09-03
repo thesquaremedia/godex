@@ -85,6 +85,37 @@ var godex = {
       }
 
       // Figure out best move!
+      var best = 0;
+      for (var _mq in data.moves.quick) {
+        var mq = data.moves.quick[_mq];
+        if (mq.offenseADPS) {
+          if (mq.offenseADPS > best) {
+            best = mq.offenseADPS;
+            data.moves.bestQuick = _mq;
+          }
+        } else {
+          if (mq.offenseDPS > best) {
+            best = mq.offenseDPS;
+            data.moves.bestQuick = _mq;
+          }
+        }
+      }
+
+      best = 0;
+      for (var _mc in data.moves.charge) {
+        var mc = data.moves.charge[_mc];
+        if (mc.offenseADPS) {
+          if (mc.offenseADPS > best) {
+            best = mc.offenseADPS;
+            data.moves.bestCharge = _mc;
+          }
+        } else {
+          if (mc.offenseDPS > best) {
+            best = mc.offenseDPS;
+            data.moves.bestCharge = _mc;
+          }
+        }
+      }
     }
 
     if (thing == "move" || thing == "moves") {

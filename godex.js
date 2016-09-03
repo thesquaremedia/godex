@@ -4381,7 +4381,7 @@ var godex = {
       return Math.round(num * 100) / 100;
     };
 
-  var build = function(thing, data) {
+  var build = function(thing, data, modifier) {
 
     if (thing == "pokemon") {
       data.count = 1;
@@ -4429,23 +4429,61 @@ var godex = {
       // Let's build the moves!
       for (var _qm in data.quickMoves) {
         var qm = data.quickMoves[_qm];
-        data.moves.quick[qm] = dex.get("move", qm);
+        data.moves.quick[qm] = dex.get("move", qm, data.type);
       }
 
       for (var _cm in data.chargeMoves) {
         var cm = data.chargeMoves[_cm];
-        data.moves.charge[cm] = dex.get("move", cm);
+        data.moves.charge[cm] = dex.get("move", cm, data.type);
       }
 
       // Figure out best move!
+      var best = 0;
+      for (var _mq in data.moves.quick) {
+        var mq = data.moves.quick[_mq];
+        if (mq.offenseADPS) {
+          if (mq.offenseADPS > best) {
+            best = mq.offenseADPS;
+            data.moves.bestQuick = _mq;
+          }
+        } else {
+          if (mq.offenseDPS > best) {
+            best = mq.offenseDPS;
+            data.moves.bestQuick = _mq;
+          }
+        }
+      }
+
+      best = 0;
+      for (var _mc in data.moves.charge) {
+        var mc = data.moves.charge[_mc];
+        if (mc.offenseADPS) {
+          if (mc.offenseADPS > best) {
+            best = mc.offenseADPS;
+            data.moves.bestCharge = _mc;
+          }
+        } else {
+          if (mc.offenseDPS > best) {
+            best = mc.offenseDPS;
+            data.moves.bestCharge = _mc;
+          }
+        }
+      }
     }
 
     if (thing == "move" || thing == "moves") {
       data.offenseDPS = rnd(data.attack / data.cooldown);
       data.defenseDPS = rnd(data.attack / (data.cooldown + 2));
+      if (modifier) {
+        // check for STAB
+        if (modifier.indexOf(data.type)) {
+          // Apply Stab!
+          data.offenseADPS = data.offenseDPS * 1.25;
+          data.defenseADPS = data.defenseDPS * 1.25;
+        }
+      }
     }
 
-    console.log(thing);
     return data;
   };
 
@@ -4455,8 +4493,8 @@ var godex = {
     if (!args.length) return { method: "get", err: "No arguments passed." };
 
     var result = false, search, subtype = false,
-      target = args.length == 2 ? args[1] : args[0],
-      location = args.length == 2 ? args[0].toLowerCase() : "pokemon";
+      target = args.length > 1 ? args[1] : args[0], modifier = args[2],
+      location = args.length > 1 ? args[0].toLowerCase() : "pokemon";
 
     // Subproperty Location?
     if (location.indexOf(".") > -1) {
@@ -4527,7 +4565,7 @@ var godex = {
 
     if (result) {
       // do some building
-      result = build(location, result);
+      result = build(location, result, modifier);
     } else {
       result = { method: "get", err: "Couldn't find: " + target };
     }
