@@ -77,6 +77,13 @@ var godex = {
           }
         }
 
+        // Calculate this Pokemon's Max CP
+        var maxAtk = data.stats.attack + 15;
+        var maxDef = Math.pow(data.stats.defense + 15, 0.5);
+        var maxSta = Math.pow(data.stats.stamina + 15, 0.5);
+        var maxMod = Math.pow(godex.levels["40"].cpm, 2);
+        data.maxCP = Math.floor(maxAtk * (maxDef * maxSta * maxMod) / 10);
+
         // Let's build out the evolves!
         data.evolves = {};
         var m1, m2, m3, e1 = [], e2 = [], e3 = [];

@@ -10,7 +10,6 @@ var pokemon = {
     candy: 25,
     name: "Bulbasaur",
     cpm: [1.53, 1.58],
-    maxCP: 1071.64,
     stats: {
       stamina: 90,
       attack: 126,
@@ -27,7 +26,6 @@ var pokemon = {
     candy: 100,
     name: "Ivysaur",
     cpm: [1.2, 1.6],
-    maxCP: 1632.19,
     stats: {
       stamina: 120,
       attack: 156,
@@ -44,7 +42,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Venusaur",
-    maxCP: 2580.49,
     stats: {
       stamina: 160,
       attack: 198,
@@ -61,7 +58,6 @@ var pokemon = {
     candy: 25,
     name: "Charmander",
     cpm: [1.64, 1.7],
-    maxCP: 955.25,
     stats: {
       stamina: 78,
       attack: 128,
@@ -78,7 +74,6 @@ var pokemon = {
     candy: 100,
     name: "Charmeleon",
     cpm: [1.71, 1.79],
-    maxCP: 1557.48,
     stats: {
       stamina: 116,
       attack: 160,
@@ -95,7 +90,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Charizard",
-    maxCP: 2602.2,
     stats: {
       stamina: 156,
       attack: 212,
@@ -112,7 +106,6 @@ var pokemon = {
     candy: 25,
     name: "Squirtle",
     cpm: [1.58, 2.1],
-    maxCP: 1008.68,
     stats: {
       stamina: 88,
       attack: 112,
@@ -129,7 +122,6 @@ var pokemon = {
     candy: 100,
     name: "Wartortle",
     cpm: [1.4, 1.68],
-    maxCP: 1582.79,
     stats: {
       stamina: 118,
       attack: 144,
@@ -146,7 +138,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Blastoise",
-    maxCP: 2542.01,
     stats: {
       stamina: 158,
       attack: 186,
@@ -163,7 +154,6 @@ var pokemon = {
     candy: 12,
     name: "Caterpie",
     cpm: [1.04, 1.08],
-    maxCP: 443.52,
     stats: {
       stamina: 90,
       attack: 62,
@@ -180,7 +170,6 @@ var pokemon = {
     candy: 50,
     name: "Metapod",
     cpm: [3.05, 3.79],
-    maxCP: 477.92,
     stats: {
       stamina: 100,
       attack: 56,
@@ -197,7 +186,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Butterfree",
-    maxCP: 1454.94,
     stats: {
       stamina: 120,
       attack: 144,
@@ -214,7 +202,6 @@ var pokemon = {
     candy: 12,
     name: "Weedle",
     cpm: [1.06, 1.13],
-    maxCP: 449.09,
     stats: {
       stamina: 80,
       attack: 68,
@@ -231,7 +218,6 @@ var pokemon = {
     candy: 50,
     name: "Kakuna",
     cpm: [3.01, 3.42],
-    maxCP: 485.35,
     stats: {
       stamina: 90,
       attack: 62,
@@ -248,7 +234,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Beedrill",
-    maxCP: 1439.96,
     stats: {
       stamina: 130,
       attack: 144,
@@ -265,7 +250,6 @@ var pokemon = {
     candy: 12,
     name: "Pidgey",
     cpm: [1.71, 1.95],
-    maxCP: 679.93,
     stats: {
       stamina: 80,
       attack: 94,
@@ -282,7 +266,6 @@ var pokemon = {
     candy: 50,
     name: "Pidgeotto",
     cpm: [1.73, 1.8],
-    maxCP: 1223.98,
     stats: {
       stamina: 126,
       attack: 126,
@@ -299,7 +282,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Pidgeot",
-    maxCP: 2091.39,
     stats: {
       stamina: 166,
       attack: 170,
@@ -316,7 +298,6 @@ var pokemon = {
     candy: 25,
     name: "Rattata",
     cpm: [2.55, 2.73],
-    maxCP: 581.65,
     stats: {
       stamina: 60,
       attack: 92,
@@ -332,7 +313,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Raticate",
-    maxCP: 1444.13,
     stats: {
       stamina: 110,
       attack: 146,
@@ -349,7 +329,6 @@ var pokemon = {
     candy: 50,
     name: "Spearow",
     cpm: [2.58, 2.81],
-    maxCP: 686.87,
     stats: {
       stamina: 80,
       attack: 102,
@@ -365,7 +344,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Fearow",
-    maxCP: 1746.35,
     stats: {
       stamina: 130,
       attack: 168,
@@ -382,7 +360,6 @@ var pokemon = {
     candy: 50,
     name: "Ekans",
     cpm: [2.21, 2.27],
-    maxCP: 824.14,
     stats: {
       stamina: 70,
       attack: 112,
@@ -398,7 +375,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Arbok",
-    maxCP: 1767.13,
     stats: {
       stamina: 120,
       attack: 166,
@@ -415,7 +391,6 @@ var pokemon = {
     candy: 50,
     name: "Pikachu",
     cpm: [2.33, 2.38],
-    maxCP: 887.69,
     stats: {
       stamina: 70,
       attack: 124,
@@ -431,7 +406,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Raichu",
-    maxCP: 2028.3,
     stats: {
       stamina: 120,
       attack: 200,
@@ -448,7 +422,6 @@ var pokemon = {
     candy: 50,
     name: "Sandshrew",
     cpm: [2.3, 2.76],
-    maxCP: 798.76,
     stats: {
       stamina: 100,
       attack: 90,
@@ -464,7 +437,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Sandslash",
-    maxCP: 1810.22,
     stats: {
       stamina: 150,
       attack: 150,
@@ -481,7 +453,6 @@ var pokemon = {
     candy: 25,
     name: "Nidoran ♀",
     cpm: [1.62, 1.66],
-    maxCP: 843.14,
     stats: {
       stamina: 110,
       attack: 100,
@@ -498,7 +469,6 @@ var pokemon = {
     candy: 100,
     name: "Nidorina",
     cpm: [1.83, 2.48],
-    maxCP: 1404.61,
     stats: {
       stamina: 140,
       attack: 132,
@@ -515,7 +485,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Nidoqueen",
-    maxCP: 2485.03,
     stats: {
       stamina: 180,
       attack: 184,
@@ -532,7 +501,6 @@ var pokemon = {
     candy: 25,
     name: "Nidoran ♂",
     cpm: [1.64, 1.7],
-    maxCP: 876.01,
     stats: {
       stamina: 92,
       attack: 110,
@@ -549,7 +517,6 @@ var pokemon = {
     candy: 100,
     name: "Nidorino",
     cpm: [1.64, 1.86],
-    maxCP: 1372.5,
     stats: {
       stamina: 122,
       attack: 142,
@@ -566,7 +533,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Nidoking",
-    maxCP: 2475.14,
     stats: {
       stamina: 162,
       attack: 204,
@@ -583,7 +549,6 @@ var pokemon = {
     candy: 50,
     name: "Clefairy",
     cpm: [2.03, 2.14],
-    maxCP: 1200.96,
     stats: {
       stamina: 140,
       attack: 116,
@@ -599,7 +564,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Clefable",
-    maxCP: 2397.71,
     stats: {
       stamina: 190,
       attack: 178,
@@ -616,7 +580,6 @@ var pokemon = {
     candy: 50,
     name: "Vulpix",
     cpm: [2.74, 2.81],
-    maxCP: 831.41,
     stats: {
       stamina: 76,
       attack: 106,
@@ -632,7 +595,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Ninetales",
-    maxCP: 2188.28,
     stats: {
       stamina: 146,
       attack: 176,
@@ -649,7 +611,6 @@ var pokemon = {
     candy: 50,
     name: "Jigglypuff",
     cpm: [2.41, 2.47],
-    maxCP: 917.64,
     stats: {
       stamina: 230,
       attack: 98,
@@ -665,7 +626,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Wigglytuff",
-    maxCP: 2177.2,
     stats: {
       stamina: 280,
       attack: 168,
@@ -682,7 +642,6 @@ var pokemon = {
     candy: 50,
     name: "Zubat",
     cpm: [2.6, 3.67],
-    maxCP: 642.51,
     stats: {
       stamina: 80,
       attack: 88,
@@ -698,7 +657,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Golbat",
-    maxCP: 1921.35,
     stats: {
       stamina: 150,
       attack: 164,
@@ -715,7 +673,6 @@ var pokemon = {
     candy: 25,
     name: "Oddish",
     cpm: [1.48, 1.51],
-    maxCP: 1148.28,
     stats: {
       stamina: 90,
       attack: 134,
@@ -732,7 +689,6 @@ var pokemon = {
     candy: 100,
     name: "Gloom",
     cpm: [1.48, 1.53],
-    maxCP: 1689.46,
     stats: {
       stamina: 120,
       attack: 162,
@@ -749,7 +705,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Vileplume",
-    maxCP: 2492.66,
     stats: {
       stamina: 150,
       attack: 202,
@@ -766,7 +721,6 @@ var pokemon = {
     candy: 50,
     name: "Paras",
     cpm: [1.92, 2.02],
-    maxCP: 916.6,
     stats: {
       stamina: 70,
       attack: 122,
@@ -782,7 +736,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Parasect",
-    maxCP: 1747.07,
     stats: {
       stamina: 120,
       attack: 162,
@@ -799,7 +752,6 @@ var pokemon = {
     candy: 50,
     name: "Venonat",
     cpm: [1.86, 1.9],
-    maxCP: 1029.39,
     stats: {
       stamina: 120,
       attack: 108,
@@ -815,7 +767,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Venomoth",
-    maxCP: 1890.32,
     stats: {
       stamina: 140,
       attack: 172,
@@ -832,7 +783,6 @@ var pokemon = {
     candy: 50,
     name: "Diglett",
     cpm: [2.68, 2.77],
-    maxCP: 456.76,
     stats: {
       stamina: 20,
       attack: 108,
@@ -848,7 +798,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Dugtrio",
-    maxCP: 1168.55,
     stats: {
       stamina: 70,
       attack: 148,
@@ -865,7 +814,6 @@ var pokemon = {
     candy: 50,
     name: "Meowth",
     cpm: [1.98, 2.24],
-    maxCP: 756.32,
     stats: {
       stamina: 80,
       attack: 104,
@@ -881,7 +829,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Persian",
-    maxCP: 1631.84,
     stats: {
       stamina: 130,
       attack: 156,
@@ -898,7 +845,6 @@ var pokemon = {
     candy: 50,
     name: "Psyduck",
     cpm: [2.22, 2.29],
-    maxCP: 1109.56,
     stats: {
       stamina: 100,
       attack: 132,
@@ -914,7 +860,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Golduck",
-    maxCP: 2386.52,
     stats: {
       stamina: 160,
       attack: 194,
@@ -931,7 +876,6 @@ var pokemon = {
     candy: 50,
     name: "Mankey",
     cpm: [2.18, 2.28],
-    maxCP: 878.67,
     stats: {
       stamina: 80,
       attack: 122,
@@ -947,7 +891,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Primeape",
-    maxCP: 1864.52,
     stats: {
       stamina: 130,
       attack: 178,
@@ -964,7 +907,6 @@ var pokemon = {
     candy: 50,
     name: "Growlithe",
     cpm: [2.31, 2.36],
-    maxCP: 1335.03,
     stats: {
       stamina: 110,
       attack: 156,
@@ -980,7 +922,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Arcanine",
-    maxCP: 2983.9,
     stats: {
       stamina: 180,
       attack: 230,
@@ -997,7 +938,6 @@ var pokemon = {
     candy: 25,
     name: "Poliwag",
     cpm: [1.72, 1.77],
-    maxCP: 795.96,
     stats: {
       stamina: 80,
       attack: 108,
@@ -1014,7 +954,6 @@ var pokemon = {
     candy: 100,
     name: "Poliwhirl",
     cpm: [1.9, 1.96],
-    maxCP: 1340.43,
     stats: {
       stamina: 130,
       attack: 132,
@@ -1031,7 +970,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Poliwrath",
-    maxCP: 2505.33,
     stats: {
       stamina: 180,
       attack: 180,
@@ -1047,7 +985,6 @@ var pokemon = {
     egg: 5,
     candy: 25,
     name: "Abra",
-    maxCP: 600.44,
     stats: {
       stamina: 50,
       attack: 110,
@@ -1065,7 +1002,6 @@ var pokemon = {
     candy: 100,
     name: "Kadabra",
     cpm: [1.4, 1.65],
-    maxCP: 1131.96,
     stats: {
       stamina: 80,
       attack: 150,
@@ -1082,7 +1018,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Alakazam",
-    maxCP: 1813.82,
     stats: {
       stamina: 110,
       attack: 186,
@@ -1099,7 +1034,6 @@ var pokemon = {
     candy: 25,
     name: "Machop",
     cpm: [1.62, 1.67],
-    maxCP: 1089.59,
     stats: {
       stamina: 140,
       attack: 118,
@@ -1116,7 +1050,6 @@ var pokemon = {
     candy: 100,
     name: "Machoke",
     cpm: [1.48, 1.7],
-    maxCP: 1760.71,
     stats: {
       stamina: 160,
       attack: 154,
@@ -1133,7 +1066,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Machamp",
-    maxCP: 2594.17,
     stats: {
       stamina: 180,
       attack: 198,
@@ -1150,7 +1082,6 @@ var pokemon = {
     candy: 25,
     name: "Bellsprout",
     cpm: [1.54, 1.6],
-    maxCP: 1117.43,
     stats: {
       stamina: 100,
       attack: 158,
@@ -1167,7 +1098,6 @@ var pokemon = {
     candy: 100,
     name: "Weepinbell",
     cpm: [1.47, 1.59],
-    maxCP: 1723.76,
     stats: {
       stamina: 130,
       attack: 190,
@@ -1184,7 +1114,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Victreebel",
-    maxCP: 2530.52,
     stats: {
       stamina: 160,
       attack: 222,
@@ -1201,7 +1130,6 @@ var pokemon = {
     candy: 50,
     name: "Tentacool",
     cpm: [2.47, 2.6],
-    maxCP: 905.15,
     stats: {
       stamina: 80,
       attack: 106,
@@ -1217,7 +1145,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Tentacruel",
-    maxCP: 2220/32,
     stats: {
       stamina: 160,
       attack: 170,
@@ -1234,7 +1161,6 @@ var pokemon = {
     candy: 25,
     name: "Geodude",
     cpm: [1.7, 1.76],
-    maxCP: 849.49,
     stats: {
       stamina: 80,
       attack: 106,
@@ -1251,7 +1177,6 @@ var pokemon = {
     candy: 100,
     name: "Graveler",
     cpm: [1.62, 1.72],
-    maxCP: 1433.63,
     stats: {
       stamina: 110,
       attack: 142,
@@ -1268,7 +1193,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Golem",
-    maxCP: 2303.17,
     stats: {
       stamina: 160,
       attack: 176,
@@ -1285,7 +1209,6 @@ var pokemon = {
     candy: 50,
     name: "Ponyta",
     cpm: [1.46, 1.5],
-    maxCP: 1516.11,
     stats: {
       stamina: 100,
       attack: 168,
@@ -1301,7 +1224,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Rapidash",
-    maxCP: 2199.34,
     stats: {
       stamina: 130,
       attack: 200,
@@ -1318,7 +1240,6 @@ var pokemon = {
     candy: 50,
     name: "Slowpoke",
     cpm: [2.19, 2.21],
-    maxCP: 1218.9,
     stats: {
       stamina: 180,
       attack: 110,
@@ -1334,7 +1255,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Slowbro",
-    maxCP: 2597.19,
     stats: {
       stamina: 190,
       attack: 184,
@@ -1351,7 +1271,6 @@ var pokemon = {
     candy: 0,
     name: "Magnemite",
     cpm: [2.16, 2.18],
-    maxCP: 890.68,
     stats: {
       stamina: 50,
       attack: 128,
@@ -1367,7 +1286,6 @@ var pokemon = {
     egg: 5,
     candy: 50,
     name: "Magneton",
-    maxCP: 1879.95,
     stats: {
       stamina: 100,
       attack: 186,
@@ -1383,7 +1301,6 @@ var pokemon = {
     egg: 5,
     candy: 0,
     name: "Farfetch'd",
-    maxCP: 1263.89,
     stats: {
       stamina: 104,
       attack: 138,
@@ -1399,7 +1316,6 @@ var pokemon = {
     candy: 50,
     name: "Doduo",
     cpm: [2.19, 2.3],
-    maxCP: 855.41,
     stats: {
       stamina: 70,
       attack: 126,
@@ -1415,7 +1331,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Dodrio",
-    maxCP: 1836.37,
     stats: {
       stamina: 120,
       attack: 182,
@@ -1432,7 +1347,6 @@ var pokemon = {
     candy: 50,
     name: "Seel",
     cpm: [1.04, 1.96],
-    maxCP: 1107.03,
     stats: {
       stamina: 130,
       attack: 104,
@@ -1448,7 +1362,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Dewgong",
-    maxCP: 2145.77,
     stats: {
       stamina: 180,
       attack: 156,
@@ -1465,7 +1378,6 @@ var pokemon = {
     candy: 50,
     name: "Grimer",
     cpm: [2.01, 2.44],
-    maxCP: 1284.02,
     stats: {
       stamina: 160,
       attack: 124,
@@ -1481,7 +1393,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Muk",
-    maxCP: 2602.9,
     stats: {
       stamina: 210,
       attack: 180,
@@ -1498,7 +1409,6 @@ var pokemon = {
     candy: 50,
     name: "Shellder",
     cpm: [2.62, 2.65],
-    maxCP: 822.91,
     stats: {
       stamina: 60,
       attack: 120,
@@ -1514,7 +1424,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Cloyster",
-    maxCP: 2052.85,
     stats: {
       stamina: 100,
       attack: 196,
@@ -1531,7 +1440,6 @@ var pokemon = {
     candy: 25,
     name: "Gastly",
     cpm: [1.75, 1.83],
-    maxCP: 804.41,
     stats: {
       stamina: 60,
       attack: 136,
@@ -1548,7 +1456,6 @@ var pokemon = {
     candy: 100,
     name: "Haunter",
     cpm: [1.56, 1.58],
-    maxCP: 1380.21,
     stats: {
       stamina: 90,
       attack: 172,
@@ -1565,7 +1472,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Gengar",
-    maxCP: 2078.23,
     stats: {
       stamina: 120,
       attack: 204,
@@ -1581,7 +1487,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Onix",
-    maxCP: 857.2,
     stats: {
       stamina: 70,
       attack: 90,
@@ -1597,7 +1502,6 @@ var pokemon = {
     candy: 50,
     name: "Drowzee",
     cpm: [2.06, 2.09],
-    maxCP: 1075.14,
     stats: {
       stamina: 120,
       attack: 104,
@@ -1613,7 +1517,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Hypno",
-    maxCP: 2184.16,
     stats: {
       stamina: 170,
       attack: 162,
@@ -1630,7 +1533,6 @@ var pokemon = {
     candy: 50,
     name: "Krabby",
     cpm: [2.32, 2.4],
-    maxCP: 792.21,
     stats: {
       stamina: 60,
       attack: 116,
@@ -1646,7 +1548,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Kingler",
-    maxCP: 1823.15,
     stats: {
       stamina: 110,
       attack: 178,
@@ -1663,7 +1564,6 @@ var pokemon = {
     candy: 50,
     name: "Voltorb",
     cpm: [2.01, 2.01],
-    maxCP: 839.73,
     stats: {
       stamina: 80,
       attack: 102,
@@ -1679,7 +1579,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Electrode",
-    maxCP: 1646.14,
     stats: {
       stamina: 120,
       attack: 150,
@@ -1696,7 +1595,6 @@ var pokemon = {
     candy: 50,
     name: "Exeggcute",
     cpm: [2.7, 3.18],
-    maxCP: 1099.81,
     stats: {
       stamina: 120,
       attack: 110,
@@ -1712,7 +1610,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Exeggutor",
-    maxCP: 2955.18,
     stats: {
       stamina: 190,
       attack: 232,
@@ -1729,7 +1626,6 @@ var pokemon = {
     candy: 50,
     name: "Cubone",
     cpm: [1.65, 1.67],
-    maxCP: 1006.61,
     stats: {
       stamina: 100,
       attack: 102,
@@ -1745,7 +1641,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Marowak",
-    maxCP: 1656.96,
     stats: {
       stamina: 120,
       attack: 140,
@@ -1761,7 +1656,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Hitmonlee",
-    maxCP: 1492,
     stats: {
       stamina: 100,
       attack: 148,
@@ -1776,7 +1670,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Hitmonchan",
-    maxCP: 1516.51,
     stats: {
       stamina: 100,
       attack: 138,
@@ -1791,7 +1684,6 @@ var pokemon = {
     egg: 5,
     candy: 0,
     name: "Lickitung",
-    maxCP: 1626.82,
     stats: {
       stamina: 180,
       attack: 126,
@@ -1807,7 +1699,6 @@ var pokemon = {
     candy: 50,
     name: "Koffing",
     cpm: [1.95, 2.03],
-    maxCP: 1151.79,
     stats: {
       stamina: 80,
       attack: 136,
@@ -1823,7 +1714,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Weezing",
-    maxCP: 2250.15,
     stats: {
       stamina: 130,
       attack: 190,
@@ -1840,7 +1730,6 @@ var pokemon = {
     candy: 50,
     name: "Rhyhorn",
     cpm: [1.9, 1.91],
-    maxCP: 1182.08,
     stats: {
       stamina: 160,
       attack: 110,
@@ -1856,7 +1745,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Rhydon",
-    maxCP: 2243.22,
     stats: {
       stamina: 210,
       attack: 166,
@@ -1872,7 +1760,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Chansey",
-    maxCP: 675.12,
     stats: {
       stamina: 500,
       attack: 40,
@@ -1887,7 +1774,6 @@ var pokemon = {
     egg: 5,
     candy: 0,
     name: "Tangela",
-    maxCP: 1739.17,
     stats: {
       stamina: 130,
       attack: 164,
@@ -1902,7 +1788,6 @@ var pokemon = {
     egg: 5,
     candy: 0,
     name: "Kangaskhan",
-    maxCP: 2043.4,
     stats: {
       stamina: 210,
       attack: 142,
@@ -1918,7 +1803,6 @@ var pokemon = {
     candy: 50,
     name: "Horsea",
     cpm: [2.19, 2.23],
-    maxCP: 794.67,
     stats: {
       stamina: 60,
       attack: 122,
@@ -1934,7 +1818,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Seadra",
-    maxCP: 1713.22,
     stats: {
       stamina: 110,
       attack: 176,
@@ -1951,7 +1834,6 @@ var pokemon = {
     candy: 50,
     name: "Goldeen",
     cpm: [2.14, 2.24],
-    maxCP: 965.14,
     stats: {
       stamina: 90,
       attack: 112,
@@ -1967,7 +1849,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Seaking",
-    maxCP: 2043.92,
     stats: {
       stamina: 160,
       attack: 172,
@@ -1984,7 +1865,6 @@ var pokemon = {
     candy: 50,
     name: "Staryu",
     cpm: [2.34, 2.41],
-    maxCP: 937.89,
     stats: {
       stamina: 60,
       attack: 130,
@@ -2002,7 +1882,6 @@ var pokemon = {
     name: "Starmie",
     quickMoves: ["quick-attack", "water-gun"],
     chargeMoves: ["hydro-pump", "power-gem", "psybeam"],
-    maxCP: 2182.14,
     stats: {
       stamina: 120,
       attack: 194,
@@ -2016,7 +1895,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Mr. Mime",
-    maxCP: 1494.42,
     stats: {
       stamina: 80,
       attack: 154,
@@ -2031,7 +1909,6 @@ var pokemon = {
     egg: 01,
     candy: 0,
     name: "Scyther",
-    maxCP: 2073.96,
     stats: {
       stamina: 140,
       attack: 176,
@@ -2046,7 +1923,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Jynx",
-    maxCP: 1716.73,
     stats: {
       stamina: 130,
       attack: 172,
@@ -2061,7 +1937,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Electabuzz",
-    maxCP: 2119.17,
     stats: {
       stamina: 130,
       attack: 198,
@@ -2076,7 +1951,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Magmar",
-    maxCP: 2265.3,
     stats: {
       stamina: 130,
       attack: 214,
@@ -2091,7 +1965,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Pinsir",
-    maxCP: 2121.87,
     stats: {
       stamina: 130,
       attack: 184,
@@ -2106,7 +1979,6 @@ var pokemon = {
     egg: 5,
     candy: 0,
     name: "Tauros",
-    maxCP: 1844.76,
     stats: {
       stamina: 150,
       attack: 148,
@@ -2122,7 +1994,6 @@ var pokemon = {
     candy: 400,
     name: "Magikarp",
     cpm: [10.1, 11.8],
-    maxCP: 262.7,
     stats: {
       stamina: 40,
       attack: 42,
@@ -2138,7 +2009,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Gyarados",
-    maxCP: 2688.89,
     stats: {
       stamina: 190,
       attack: 192,
@@ -2154,7 +2024,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Lapras",
-    maxCP: 2980.73,
     stats: {
       stamina: 260,
       attack: 186,
@@ -2169,7 +2038,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Ditto",
-    maxCP: 919.62,
     stats: {
       stamina: 96,
       attack: 110,
@@ -2185,7 +2053,6 @@ var pokemon = {
     candy: 25,
     name: "Eevee",
     cpm: [2.02, 2.64],
-    maxCP: 1077.2,
     stats: {
       stamina: 110,
       attack: 114,
@@ -2202,7 +2069,6 @@ var pokemon = {
     candy: 0,
     name: "Vaporeon",
     cpm: [2.63, 2.73],
-    maxCP: 2816.25,
     stats: {
       stamina: 260,
       attack: 186,
@@ -2219,7 +2085,6 @@ var pokemon = {
     candy: 0,
     name: "Jolteon",
     cpm: [2, 2.1],
-    maxCP: 2140.27,
     stats: {
       stamina: 130,
       attack: 192,
@@ -2236,7 +2101,6 @@ var pokemon = {
     candy: 0,
     name: "Flareon",
     cpm: [2.48, 2.48],
-    maxCP: 2643.43,
     stats: {
       stamina: 130,
       attack: 238,
@@ -2254,7 +2118,6 @@ var pokemon = {
     name: "Porygon",
     quickMoves: ["quick-attack", "tackle"],
     chargeMoves: ["discharge", "signal-beam", "psybeam"],
-    maxCP: 1691.56,
     stats: {
       stamina: 130,
       attack: 156,
@@ -2268,7 +2131,6 @@ var pokemon = {
     candy: 50,
     name: "Omanyte",
     cpm: [1.99, 2.12],
-    maxCP: 1119.77,
     stats: {
       stamina: 70,
       attack: 132,
@@ -2284,7 +2146,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Omastar",
-    maxCP: 2233.65,
     stats: {
       stamina: 140,
       attack: 180,
@@ -2301,7 +2162,6 @@ var pokemon = {
     candy: 50,
     name: "Kabuto",
     cpm: [1.97, 2.37],
-    maxCP: 1104.72,
     stats: {
       stamina: 60,
       attack: 148,
@@ -2317,7 +2177,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Kabutops",
-    maxCP: 2130.01,
     stats: {
       stamina: 120,
       attack: 190,
@@ -2333,7 +2192,6 @@ var pokemon = {
     egg: 10,
     candy: 0,
     name: "Aerodactyl",
-    maxCP: 2165.49,
     stats: {
       stamina: 160,
       attack: 182,
@@ -2350,7 +2208,6 @@ var pokemon = {
     name: "Snorlax",
     quickMoves: ["lick", "zen-headbutt"],
     chargeMoves: ["body-slam", "earthquake", "hyper-beam"],
-    maxCP: 3112.85,
     stats: {
       stamina: 320,
       attack: 180,
@@ -2363,7 +2220,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Articuno",
-    maxCP: 2978.16,
     stats: {
       stamina: 180,
       attack: 198,
@@ -2378,7 +2234,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Zapdos",
-    maxCP: 3114.38,
     stats: {
       stamina: 180,
       attack: 232,
@@ -2393,7 +2248,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Moltres",
-    maxCP: 3240.47,
     stats: {
       stamina: 180,
       attack: 242,
@@ -2409,7 +2263,6 @@ var pokemon = {
     candy: 25,
     name: "Dratini",
     cpm: [1.79, 1.85],
-    maxCP: 983.47,
     stats: {
       stamina: 82,
       attack: 128,
@@ -2426,7 +2279,6 @@ var pokemon = {
     candy: 100,
     name: "Dragonair",
     cpm: [2.03, 2.08],
-    maxCP: 1747.73,
     stats: {
       stamina: 122,
       attack: 170,
@@ -2443,7 +2295,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Dragonite",
-    maxCP: 3500.06,
     stats: {
       stamina: 182,
       attack: 250,
@@ -2459,7 +2310,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Mewtwo",
-    maxCP: 4144.75,
     stats: {
       stamina: 212,
       attack: 284,
@@ -2474,7 +2324,6 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Mew",
-    maxCP: 3299.17,
     stats: {
       stamina: 200,
       attack: 220,
