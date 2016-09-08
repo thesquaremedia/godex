@@ -215,6 +215,7 @@ var godex = {
     } else {
       if (location == "type") location = "types";
       if (location == "move") location = "moves";
+      if (location == "level") location = "levels";
       search = godex[location];
     }
 
