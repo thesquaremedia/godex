@@ -4384,88 +4384,152 @@ var godex = {
   var build = function(thing, data, modifier) {
 
     if (thing == "pokemon") {
-      data.count = 1;
-      data.offense = {};
-      data.defense = {};
-      data.moves = {
-        quick: {},
-        charge: {}
-      };
-      var pokeLoop = {
-        // this is just me being lazy
-        // and coding an array to loop through
-        // rather than sort through all of
-        // these with individual loops, add them
-        // all to an object and then just loop that
-        "halfTo": "offense",
-        "halfFrom": "defense",
-        "twiceTo": "offense",
-        "twiceFrom": "defense"
-      };
+      // Don't build out data for self-referenced things
+      // this is to save time, so when we get a pokemon here,
+      // we don't build it, just get the data.
+      if (!modifier) {
+        data.count = 1;
+        data.offense = {};
+        data.defense = {};
+        data.moves = {
+          quick: {},
+          charge: {}
+        };
+        var pokeLoop = {
+          // this is just me being lazy
+          // and coding an array to loop through
+          // rather than sort through all of
+          // these with individual loops, add them
+          // all to an object and then just loop that
+          "halfTo": "offense",
+          "halfFrom": "defense",
+          "twiceTo": "offense",
+          "twiceFrom": "defense"
+        };
 
-      // for each type the pokemon is
-      for (var _type in data.type) {
-        var x, type = godex.types[data.type[_type]];
+        // for each type the pokemon is
+        for (var _type in data.type) {
+          var x, type = godex.types[data.type[_type]];
 
-        // now we loop through that loop up there
-        for (x in pokeLoop) {
-          for (var i = 0;i < type[x].length;i++) {
-            var key = pokeLoop[x],
-              target = type[x][i],
-              score = data[key][target];
-            if (x.indexOf("half") > -1) {
-              // if a score isn't assigned, we assign it the score
-              if (!score) data[key][target] = 0.8;
-              else data[key][target] = rnd(data[key][target] * 0.8);
-              // but if a score is assigned, multiply it.
-            } else {
-              if (!score) data[key][target] = 1.25;
-              else data[key][target] = rnd(data[key][target] * 1.25);
+          // now we loop through that loop up there
+          for (x in pokeLoop) {
+            for (var i = 0;i < type[x].length;i++) {
+              var key = pokeLoop[x],
+                target = type[x][i],
+                score = data[key][target];
+              if (x.indexOf("half") > -1) {
+                // if a score isn't assigned, we assign it the score
+                if (!score) data[key][target] = 0.8;
+                else data[key][target] = rnd(data[key][target] * 0.8);
+                // but if a score is assigned, multiply it.
+              } else {
+                if (!score) data[key][target] = 1.25;
+                else data[key][target] = rnd(data[key][target] * 1.25);
+              }
             }
           }
         }
-      }
 
-      // Let's build the moves!
-      for (var _qm in data.quickMoves) {
-        var qm = data.quickMoves[_qm];
-        data.moves.quick[qm] = dex.get("move", qm, data.type);
-      }
+        // Let's build out the evolves!
+        data.evolves = {};
+        var m1, m2, m3, e1 = [], e2 = [], e3 = [];
 
-      for (var _cm in data.chargeMoves) {
-        var cm = data.chargeMoves[_cm];
-        data.moves.charge[cm] = dex.get("move", cm, data.type);
-      }
-
-      // Figure out best move!
-      var best = 0;
-      for (var _mq in data.moves.quick) {
-        var mq = data.moves.quick[_mq];
-        if (mq.offenseADPS) {
-          if (mq.offenseADPS > best) {
-            best = mq.offenseADPS;
-            data.moves.bestQuick = _mq;
-          }
+        // Does this pokemon evolve from something?
+        if (data.evolveFrom) {
+          m1 = dex.get("pokemon", data.evolveFrom, 1);
+        } else if (data.evolveTo) {
+          data.evolves.current = 1;
+          m1 = { evolveTo: data.evolveTo, current: true };
         } else {
-          if (mq.offenseDPS > best) {
-            best = mq.offenseDPS;
-            data.moves.bestQuick = _mq;
+          data.evolves.current = 1;
+          m1 = { current: true, only: true };
+        }
+        if (m1) e1.push(m1);
+
+        // Make sure THAT pokemon doesn't evolve from something...
+        if (m1.evolveFrom) {
+          m2 = e1;
+          m1 = dex.get("pokemon", e1.evolveFrom, 1);
+        }
+
+        // If we have stage 1, check for stage 2
+        if (m1 && !m2 && m1.evolveTo) {
+          if (Array.isArray(m1.evolveTo)) {
+            for (var to in m1.evolveTo) {
+              m2 = dex.get("pokemon", m1.evolveTo[to], 1);
+              if (m2.name == data.name ) {
+                data.evolves.current = 2;
+                e2.push({ current: true, evolveTo: m2.evolveTo });
+              } else {
+                e2.push(m2);
+              }
+            }
+          } else {
+            m2 = dex.get("pokemon", m1.evolveTo, 1);
+            if (m2.name == data.name) {
+              data.evolves.current = 2;
+              e2.push({ current: true, evolveTo: m2.evolveTo });
+            } else {
+              e2.push(m2);
+            }
           }
         }
-      }
 
-      best = 0;
-      for (var _mc in data.moves.charge) {
-        var mc = data.moves.charge[_mc];
-        if (mc.offenseADPS) {
-          if (mc.offenseADPS > best) {
-            best = mc.offenseADPS;
-            data.moves.bestCharge = _mc;
+        // If we have stage 2, check for stage 3
+        if (m1 && m2 && m2.evolveTo) {
+          m3 = dex.get("pokemon", m2.evolveTo, 1);
+          if (m3.name == data.name) {
+            m3 = { current: true };
+            data.evolves.current = 3;
           }
-        } else {
-          if (mc.offenseDPS > best) {
-            best = mc.offenseDPS;
-            data.moves.bestCharge = _mc;
+        }
+        if (m3) e3.push(m3);
+
+        if (e1.length) data.evolves.stageOne = e1;
+        if (e2.length) data.evolves.stageTwo = e2;
+        if (e3.length) data.evolves.stageThree = e3;
+
+        // Let's build the moves!
+        for (var _qm in data.quickMoves) {
+          var qm = data.quickMoves[_qm];
+          data.moves.quick[qm] = dex.get("move", qm, data.type);
+        }
+
+        for (var _cm in data.chargeMoves) {
+          var cm = data.chargeMoves[_cm];
+          data.moves.charge[cm] = dex.get("move", cm, data.type);
+        }
+
+        // Figure out best move!
+        var best = 0;
+        for (var _mq in data.moves.quick) {
+          var mq = data.moves.quick[_mq];
+          if (mq.offenseADPS) {
+            if (mq.offenseADPS > best) {
+              best = mq.offenseADPS;
+              data.moves.bestQuick = _mq;
+            }
+          } else {
+            if (mq.offenseDPS > best) {
+              best = mq.offenseDPS;
+              data.moves.bestQuick = _mq;
+            }
+          }
+        }
+
+        best = 0;
+        for (var _mc in data.moves.charge) {
+          var mc = data.moves.charge[_mc];
+          if (mc.offenseADPS) {
+            if (mc.offenseADPS > best) {
+              best = mc.offenseADPS;
+              data.moves.bestCharge = _mc;
+            }
+          } else {
+            if (mc.offenseDPS > best) {
+              best = mc.offenseDPS;
+              data.moves.bestCharge = _mc;
+            }
           }
         }
       }
