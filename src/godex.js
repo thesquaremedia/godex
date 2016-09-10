@@ -161,12 +161,13 @@ var godex = {
           if (mq.offenseADPS) {
             if (mq.offenseADPS > best) {
               best = mq.offenseADPS;
-              data.moves.bestQuick = _mq;
+              // set moves as the best move, until set by user
+              data.quickMove = data.moves.bestQuick = _mq;
             }
           } else {
             if (mq.offenseDPS > best) {
               best = mq.offenseDPS;
-              data.moves.bestQuick = _mq;
+              data.quickMove = data.moves.bestQuick = _mq;
             }
           }
         }
@@ -177,7 +178,7 @@ var godex = {
           if (mc.offenseADPS) {
             if (mc.offenseADPS > best) {
               best = mc.offenseADPS;
-              data.moves.bestCharge = _mc;
+              data.chargeMove = data.moves.bestCharge = _mc;
             }
           } else {
             if (mc.offenseDPS > best) {
@@ -196,6 +197,7 @@ var godex = {
         // check for STAB
         if (modifier.indexOf(data.type) > -1) {
           // Apply Stab!
+          data.aAttack = rnd(data.attack * 1.25);
           data.offenseADPS = rnd(data.offenseDPS * 1.25);
           data.defenseADPS = rnd(data.defenseDPS * 1.25);
         }

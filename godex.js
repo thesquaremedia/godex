@@ -335,287 +335,328 @@ var moves = {
     moveType: "quick",
     type: "poison",
     attack: 10,
-    cooldown: 1.05
+    cooldown: 1.05,
+    energy: 10
   },
   "bite": {
     name: "Bite",
     moveType: "quick",
     type: "dark",
     attack: 6,
-    cooldown: 0.5
+    cooldown: 0.5,
+    energy: 7
   },
   "bubble": {
     name: "Bubble",
     moveType: "quick",
     type: "water",
     attack: 25,
-    cooldown: 2.3
+    cooldown: 2.3,
+    energy: 25
   },
   "bug-bite": {
     name: "Bug Bite",
     moveType: "quick",
     type: "bug",
     attack: 5,
-    cooldown: 0.45
+    cooldown: 0.45,
+    energy: 7
   },
   "bullet-punch": {
     name: "Bullet Punch",
     moveType: "quick",
     type: "steel",
     attack: 10,
-    cooldown: 1.2
+    cooldown: 1.2,
+    energy: 10
   },
   "confusion": {
     name: "Confusion",
     moveType: "quick",
     type: "psychic",
     attack: 15,
-    cooldown: 1.51
+    cooldown: 1.51,
+    energy: 14
   },
   "cut": {
     name: "Cut",
     moveType: "quick",
     type: "normal",
     attack: 12,
-    cooldown: 1.13
+    cooldown: 1.13,
+    energy: 10
   },
   "dragon-breath": {
     name: "Dragon Breath",
     moveType: "quick",
     type: "dragon",
     attack: 6,
-    cooldown: 0.5
+    cooldown: 0.5,
+    energy: 7
   },
   "ember": {
     name: "Ember",
     moveType: "quick",
     type: "fire",
     attack: 10,
-    cooldown: 1.05
+    cooldown: 1.05,
+    energy: 10
   },
   "feint-attack": {
     name: "Feint Attack",
     moveType: "quick",
     type: "dark",
     attack: 12,
-    cooldown: 1.04
+    cooldown: 1.04,
+    energy: 10
   },
   "fire-fang": {
     name: "Fire Fang",
     moveType: "quick",
     type: "fire",
     attack: 10,
-    cooldown: 0.84
+    cooldown: 0.84,
+    energy: 8
   },
   "frost-breath": {
     name: "Frost Breath",
     moveType: "quick",
     type: "ice",
     attack: 9,
-    cooldown: 0.8
+    cooldown: 0.8,
+    energy: 7
   },
   "fury-cutter": {
     name: "Fury Cutter",
     moveType: "quick",
     type: "bug",
     attack: 3,
-    cooldown: 0.4
+    cooldown: 0.4,
+    energy: 6
   },
   "ice-shard": {
     name: "Ice Shard",
     moveType: "quick",
     type: "ice",
     attack: 15,
-    cooldown: 1.4
+    cooldown: 1.4,
+    energy: 12
   },
   "karate-chop": {
     name: "Karate Chop",
     moveType: "quick",
     type: "fighting",
     attack: 6,
-    cooldown: 0.8
+    cooldown: 0.8,
+    energy: 8
   },
   "lick": {
     name: "Lick",
     moveType: "quick",
     type: "ghost",
     attack: 5,
-    cooldown: 0.5
+    cooldown: 0.5,
+    energy: 6
   },
   "low-kick": {
     name: "Low Kick",
     moveType: "quick",
     type: "fighting",
     attack: 5,
-    cooldown: 0.6
+    cooldown: 0.6,
+    energy: 7
   },
   "metal-claw": {
     name: "Metal Claw",
     moveType: "quick",
     type: "steel",
     attack: 8,
-    cooldown: 0.63
+    cooldown: 0.63,
+    energy: 7
   },
   "mud-shot": {
     name: "Mud Shot",
     moveType: "quick",
     type: "ground",
     attack: 6,
-    cooldown: 0.55
+    cooldown: 0.55,
+    energy: 7
   },
   "mud-slap": {
     name: "Mud Slap",
     moveType: "quick",
     type: "ground",
     attack: 15,
-    cooldown: 1.35
+    cooldown: 1.35,
+    energy: 12
   },
   "peck": {
     name: "Peck",
     moveType: "quick",
     type: "flying",
     attack: 10,
-    cooldown: 1.15
+    cooldown: 1.15,
+    energy: 10
   },
   "poison-jab": {
     name: "Poison Jab",
     moveType: "quick",
     type: "poison",
     attack: 12,
-    cooldown: 1.05
+    cooldown: 1.05,
+    energy: 10
   },
   "poison-sting": {
     name: "Poison Sting",
     moveType: "quick",
     type: "poison",
     attack: 6,
-    cooldown: 0.58
+    cooldown: 0.58,
+    energy: 8
   },
   "pound": {
     name: "Pound",
     moveType: "quick",
     type: "normal",
     attack: 7,
-    cooldown: 0.54
+    cooldown: 0.54,
+    energy: 7
   },
   "psycho-cut": {
     name: "Psycho Cut",
     moveType: "quick",
     type: "psychic",
     attack: 7,
-    cooldown: 0.57
+    cooldown: 0.57,
+    energy: 7
   },
   "quick-attack": {
     name: "Quick Attack",
     moveType: "quick",
     type: "normal",
     attack: 10,
-    cooldown: 1.33
+    cooldown: 1.33,
+    energy: 12
   },
   "razor-leaf": {
     name: "Razor Leaf",
     moveType: "quick",
     type: "grass",
     attack: 15,
-    cooldown: 1.45
+    cooldown: 1.45,
+    energy: 12
   },
   "rock-smash": {
     name: "Rock Smash",
     moveType: "quick",
     type: "fighting",
     attack: 15,
-    cooldown: 1.41
+    cooldown: 1.41,
+    energy: 12
   },
   "rock-throw": {
     name: "Rock Throw",
     moveType: "quick",
     type: "rock",
     attack: 12,
-    cooldown: 1.36
+    cooldown: 1.36,
+    energy: 15
   },
   "scratch": {
     name: "Scratch",
     moveType: "quick",
     type: "normal",
     attack: 6,
-    cooldown: 0.5
+    cooldown: 0.5,
+    energy: 7
   },
   "shadow-claw": {
     name: "Shadow Claw",
     moveType: "quick",
     type: "ghost",
     attack: 11,
-    cooldown: 0.95
+    cooldown: 0.95,
+    energy: 8
   },
   "spark": {
     name: "Spark",
     moveType: "quick",
     type: "electric",
     attack: 7,
-    cooldown: 0.7
+    cooldown: 0.7,
+    energy: 8
   },
   "splash": {
     name: "Splash",
     moveType: "quick",
     type: "water",
     attack: 0,
-    cooldown: 1.23
+    cooldown: 1.23,
+    energy: 10
   },
   "steel-wing": {
     name: "Steel Wing",
     moveType: "quick",
     type: "steel",
     attack: 15,
-    cooldown: 1.33
+    cooldown: 1.33,
+    energy: 12
   },
   "sucker-punch": {
     name: "Sucker Punch",
     moveType: "quick",
     type: "dark",
     attack: 7,
-    cooldown: 0.7
+    cooldown: 0.7,
+    energy: 9
   },
   "tackle": {
     name: "Tackle",
     moveType: "quick",
     type: "normal",
     attack: 12,
-    cooldown: 1.1
+    cooldown: 1.1,
+    energy: 10
   },
   "thunder-shock": {
     name: "Thunder Shock",
     moveType: "quick",
     type: "electric",
     attack: 5,
-    cooldown: 0.6
+    cooldown: 0.6,
+    energy: 8
   },
   "vine-whip": {
     name: "Vine Whip",
     moveType: "quick",
     type: "grass",
     attack: 7,
-    cooldown: 0.65
+    cooldown: 0.65,
+    energy: 7
   },
   "water-gun": {
     name: "Water Gun",
     moveType: "quick",
     type: "water",
     attack: 6,
-    cooldown: 0.5
+    cooldown: 0.5,
+    energy: 7
   },
   "wing-attack": {
     name: "Wing Attack",
     moveType: "quick",
     type: "flying",
     attack: 9,
-    cooldown: 0.75
+    cooldown: 0.75,
+    energy: 7
   },
   "zen-headbutt": {
     name: "Zen Headbutt",
     moveType: "quick",
     type: "psychic",
     attack: 12,
-    cooldown: 1.05
+    cooldown: 1.05,
+    energy: 9
   },
   // charge moves
   "aerial-ace": {
@@ -4363,12 +4404,13 @@ var godex = {
           if (mq.offenseADPS) {
             if (mq.offenseADPS > best) {
               best = mq.offenseADPS;
-              data.moves.bestQuick = _mq;
+              // set moves as the best move, until set by user
+              data.quickMove = data.moves.bestQuick = _mq;
             }
           } else {
             if (mq.offenseDPS > best) {
               best = mq.offenseDPS;
-              data.moves.bestQuick = _mq;
+              data.quickMove = data.moves.bestQuick = _mq;
             }
           }
         }
@@ -4379,7 +4421,7 @@ var godex = {
           if (mc.offenseADPS) {
             if (mc.offenseADPS > best) {
               best = mc.offenseADPS;
-              data.moves.bestCharge = _mc;
+              data.chargeMove = data.moves.bestCharge = _mc;
             }
           } else {
             if (mc.offenseDPS > best) {
