@@ -10,7 +10,8 @@ var godex = {
   levels: levels,
   moves: moves,
   appraise: appraise,
-  gymtool: gymtool
+  gymtool: gymtool,
+  duelrank: duelrank
 };
 
 // Build and Return Library
@@ -186,6 +187,9 @@ var godex = {
             }
           }
         }
+
+        // Rank Potential Movesets
+        data.dueling = godex.duelrank(data);
       }
     }
 

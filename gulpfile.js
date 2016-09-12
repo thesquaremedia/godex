@@ -15,6 +15,7 @@ gulp.task('default', function() {
       data,
       './src/gymtool.js',
       './src/appraise.js',
+      './src/duelrank.js',
       './src/godex.js'
     ])
     // concat them into godex.js
