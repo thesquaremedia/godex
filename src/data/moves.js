@@ -965,7 +965,7 @@ var movesData = {
   "seed-bomb": {
     name: "Seed Bomb",
     moveType: "charge",
-    type: "bug",
+    type: "grass",
     charges: 3,
     cooldown: 2.4,
     dodge: 0.5,

@@ -1086,7 +1086,7 @@ var pokemonData = {
     },
     type: ["grass", "poison"],
     quickMoves: ["acid", "vine-whip"],
-    chargeMoves: ["power-whip", "sludge-bomb", "seed-bomb"],
+    chargeMoves: ["power-whip", "sludge-bomb", "wrap"],
     evolveTo: "weepinbell"
   },
   "weepinbell": {
