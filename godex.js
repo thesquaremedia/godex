@@ -1286,7 +1286,7 @@ var movesData = {
   "seed-bomb": {
     name: "Seed Bomb",
     moveType: "charge",
-    type: "bug",
+    type: "grass",
     charges: 3,
     cooldown: 2.4,
     dodge: 0.5,
@@ -2573,7 +2573,7 @@ var pokemonData = {
     },
     type: ["grass", "poison"],
     quickMoves: ["acid", "vine-whip"],
-    chargeMoves: ["power-whip", "sludge-bomb", "seed-bomb"],
+    chargeMoves: ["power-whip", "sludge-bomb", "wrap"],
     evolveTo: "weepinbell"
   },
   "weepinbell": {
