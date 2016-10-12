@@ -1,9 +1,6 @@
-/*
-  levels.js
-  godex - list of pokemon types
-*/
+/** levels.js | list of level data **/
 
-var levels = {
+var levelsData = {
   "1": {
     cpm: 0.094,
     dust: 200

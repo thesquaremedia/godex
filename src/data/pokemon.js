@@ -1,9 +1,6 @@
-/*
-  pokemon.js
-  godex - list of pokemon
-*/
+/** pokemon.js | list of pokemon data **/
 
-var pokemon = {
+var pokemonData = {
   "bulbasaur": {
     id: 1,
     egg: 2,
@@ -337,7 +334,7 @@ var pokemon = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
     chargeMoves: ["aerial-ace", "drill-peck", "twister"],
-    evolveTo: "Fearow"
+    evolveTo: "fearow"
   },
   "fearow": {
     id: 22,
@@ -430,7 +427,7 @@ var pokemon = {
     type: ["ground"],
     quickMoves: ["mud-shot", "scratch"],
     chargeMoves: ["dig", "rock-slide", "rock-tomb"],
-    evolveTo: "Sandslash"
+    evolveTo: "sandslash"
   },
   "sandslash": {
     id: 28,
@@ -665,7 +662,7 @@ var pokemon = {
     type: ["poison", "flying"],
     quickMoves: ["bite", "wing-attack"],
     chargeMoves: ["air-cutter", "ominous-wind", "poison-fang"],
-    evolveFrom: "Zubat"
+    evolveFrom: "zubat"
   },
   "oddish": {
     id: 43,
@@ -712,7 +709,7 @@ var pokemon = {
     },
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
-    chargeMoves: ["moonblast", "sludge-bomb", "solar-beam"],
+    chargeMoves: ["moonblast", "petal-blizzard", "solar-beam"],
     evolveFrom: "gloom"
   },
   "paras": {
@@ -1871,7 +1868,7 @@ var pokemon = {
       defense: 128
     },
     type: ["water"],
-    quickMoves: ["quick-attack", "water-gun"],
+    quickMoves: ["tackle", "quick-attack", "water-gun"],
     chargeMoves: ["bubble-beam", "power-gem", "swift"],
     evolveTo: "starmie"
   },
@@ -1880,7 +1877,7 @@ var pokemon = {
     egg: 0,
     candy: 0,
     name: "Starmie",
-    quickMoves: ["quick-attack", "water-gun"],
+    quickMoves: ["tackle", "quick-attack", "water-gun"],
     chargeMoves: ["hydro-pump", "power-gem", "psybeam"],
     stats: {
       stamina: 120,

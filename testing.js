@@ -3,14 +3,14 @@
   run this file to make sure it all works, I guess.
 */
 
-var dex = require('./godex'),
+var Go = require('./godex'),
   details = false; // change to true to print data
 
 // Some Helper Functions
 
 function note(message, data) {
-  if (data && details) console.log("GoDEX:", message, data);
-  else console.log("GoDEX:", message);
+  if (data && details) console.log("[GO]Dex:", message, data);
+  else console.log("[GO]Dex:", message);
 }
 
 function space(num) {
@@ -32,48 +32,45 @@ space(1);
 note("------------TESTING DATA------------");
 space(1);
 
-var pokemon = dex.get("pokemon", "list");
+var pokemon = Go("pokemon", "list").data;
 note("# OF POKEMON: " + pokemon.length, pokemon);
 
-var types = dex.get("types", "list");
+var types = Go("types", "list").data;
 note("# OF POKEMON TYPES: " + types.length, types);
 
-var moves = dex.get("moves", "list");
+var moves = Go("moves", "list").data;
 note("# OF POKEMON MOVES: " + moves.length, moves);
-
+//
 space(2);
 note("---------VERIFYING: METHODS---------");
 space(1);
 
 var i, methodData;
 
-note("VERIFYING: dex.get()");
+note("VERIFYING: Go(pokemon)");
 for (i in pokemon) {
-  methodData = dex.get(i);
+  methodData = Go(pokemon[i].key);
 }
-methodData = dex.get('Bulbasaur');
-note("METHOD: dex.get('Bulbasaur'): " + check(methodData), methodData);
+methodData = Go('Bulbasaur');
+note("METHOD: Go('Bulbasaur'): " + check(methodData), methodData);
 
-methodData = dex.get(1);
-note("METHOD: dex.get(1): " + check(methodData), methodData);
+methodData = Go(1);
+note("METHOD: Go(1): " + check(methodData), methodData);
 
-methodData = dex.get('Bulbasaur');
-note("METHOD: dex.get('Bulbasaur'): " + check(methodData), methodData);
+methodData = Go('type', 'bug');
+note("METHOD: Go('type', 'bug'): " + check(methodData), methodData);
 
-methodData = dex.get('type', 'bug');
-note("METHOD: dex.get('type', 'bug'): " + check(methodData), methodData);
+methodData = Go('move', 'Twister');
+note("METHOD: Go('move', 'Twister'): " + check(methodData), methodData);
 
-methodData = dex.get('move', 'Twister');
-note("METHOD: dex.get('move', 'Twister'): " + check(methodData), methodData);
-
-methodData = dex.get('pokemon.type', 'bug');
-note("METHOD: dex.get('pokemon.type', 'bug'): " + check(methodData), methodData);
+methodData = Go('pokemon.type', 'bug');
+note("METHOD: Go('pokemon.type', 'bug'): " + check(methodData), methodData);
 
 space(1);
 
-note("VERIFYING: dex.appraise()");
-methodData = dex.appraise({
-  pokemon: 'Aerodactyl',
+note("VERIFYING: Pokemon.appraise()");
+methodData = Go('Aerodactyl');
+var appraisal = methodData.appraise({
   cp: 1495,
   hp: 113,
   dust: 3500,
@@ -82,43 +79,24 @@ methodData = dex.appraise({
   strongDef: true,
   strongHP: false
 });
-note("METHOD: dex.appraise(): " + check(methodData), methodData);
+note("METHOD: Pokemon.appraise(): " + check(appraisal), appraisal);
 
 space(2);
 note("---------VERIFYING: POKEMON---------");
 space(1);
-
+//
 var vPoke = 0, uPoke = 0, // counting
   ePoke = {}; // error collection
 
 for (var _p in pokemon) {
   var isGood = true,
     key = pokemon[_p].key,
-    poke = dex.get(key);
+    poke = Go(key);
 
   if (!poke) {
     if (!ePoke[key]) ePoke[key] = [];
     ePoke[key].push(key + " CRITICAL ERROR, NO DATA FOUND.");
     isGood = false;
-  } else {
-    // test types
-    for (var _t in poke.types) {
-      var type = dex.get("type", poke.types[_t]);
-      if (!type) {
-        if (!ePoke[key]) ePoke[key] = [];
-        ePoke[key].push(poke.name + " Type Error: " + poke.types[_t]);
-        isGood = false;
-      }
-    }
-    // test moves
-    for (var _q in poke.moves) {
-      var quick = dex.get("move", poke.moves[_q]);
-      if (!quick) {
-        if (!ePoke[key]) ePoke[key] = [];
-        ePoke[key].push(poke.name + " Move Error: " + poke.moves[_q]);
-        isGood = false;
-      }
-    }
   }
 
   if (!isGood) {

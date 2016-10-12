@@ -6,17 +6,20 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   minify = require('gulp-minify'),
   // directory shortcuts
-  data = './src/data/*.js';
+  data = './src/data/',
+  tool = './src/tools/',
+  core = './src/core/';
 
 gulp.task('default', function() {
   gulp
     // fetch the data, scripts
     .src([
-      data,
-      './src/gymtool.js',
-      './src/appraise.js',
-      './src/duelrank.js',
-      './src/godex.js'
+      data + "*.js",
+      tool + "*.js",
+      core + "Pokemon.js",
+      core + "Gym.js",
+      './src/Dex.js',
+      './src/Go.js'
     ])
     // concat them into godex.js
     .pipe(concat('godex.js'))

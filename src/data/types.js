@@ -1,9 +1,6 @@
-/*
-  types.js
-  godex - list of pokemon types
-*/
+/** types.js | list of pokemon type data **/
 
-var types = {
+var typesData = {
   "bug": {
     name: "Bug",
     twiceTo: ["psychic", "grass", "dark"],

@@ -1,17 +1,12 @@
-/*
-  gymtool.js
-  Allow for a collection of pokemon to review
-*/
+/** gymtool.js | Allow for a collection of pokemon to review */
 
-var gymtool = function() {
+var Gym = function() {
   this.list = {};
   this.count = 0;
 };
 
 
-
-// Prototype for above collection
-gymtool.prototype = {
+Gym.prototype = {
   // Add a pokemon to gym
   add: function(search) {
     var existing = this.list[key(search)];

@@ -1,10 +1,7 @@
-/*
-  moves-charge.js
-  godex - list of pokemon moves
-  data garnered from pokemongo.gamepress.gg
-*/
+/** moves.js | list of move data **/
+/* data garnered from pokemongo.gamepress.gg */
 
-var moves = {
+var movesData = {
   // quick moves
   "acid": {
     name: "Acid",
