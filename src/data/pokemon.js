@@ -1196,7 +1196,7 @@ var pokemonData = {
       defense: 198
     },
     type: ["rock", "ground"],
-    quickMoves: ["mud-shot", "rock-throw"],
+    quickMoves: ["mud-slap", "rock-throw"],
     chargeMoves: ["ancient-power", "earthquake", "stone-edge"],
     evolveFrom: "graveler"
   },
