@@ -4145,61 +4145,61 @@ var Pokemon = function(data) {
   // helper function to round numbers nicely
   var rnd = function(n) { return Math.round(n * 100) / 100; };
 
+  // calculate attack/dps for moves
+  var bestQuick = 0, bestCharge = 0; // best moves by DPS
+
+  var move = function(move, self) {
+    var stabBonus = 1, avgDefense = 0, avg = 0, atkdef, attack;
+
+    // get average defense
+    for (var poke in pokemonData) {
+      avg += 1; avgDefense += pokemonData[poke].stats.defense;
+    }
+    avgDefense = Math.floor(avgDefense / avg);
+    // vs score
+    atkdef = self.stats.attack / avgDefense;
+
+    // damage
+    damage = Math.floor(0.5 * atkdef * move.attack) + 1;
+
+    // check for STAB
+    if (self.type.indexOf(move.type) > -1) stab = 1.25;
+
+    // build move
+    move.stab = (stab == 1.25);
+    move.damage = rnd(damage * stab);
+    move.dps = rnd(move.damage / move.cooldown);
+    move.dpsGym = rnd(move.damage / (move.cooldown + 2));
+    // get best by DPS
+    if (move.moveType == "quick") {
+      if (move.dps > bestQuick) {
+        bestQuick = move.dps;
+        self._.quickMove = move.key;
+      }
+    } else {
+      if (move.dps > bestCharge) {
+        bestCharge = move.dps;
+        self._.chargeMove = move.key;
+      }
+    }
+    return move;
+  };
+
   // let's build out the moveset
   var _qm, qm, _cm, cm;
   for (_qm in this.quickMoves) {
     if (!this.quickMoves[_qm].key) {
       qm = movesData[this.quickMoves[_qm]];
       qm.key = this.quickMoves[_qm];
-      qm.dps = rnd(qm.attack / qm.cooldown);
-      qm.dpsGym = rnd(qm.attack / (qm.cooldown + 2));
-      this.quickMoves[_qm] = qm;
+      this.quickMoves[_qm] = move(qm, this);
+      if (qm.name == "Ember") {}
     }
   }
   for (_cm in this.chargeMoves) {
     if (!this.chargeMoves[_cm].key) {
       cm = movesData[this.chargeMoves[_cm]];
       cm.key = this.chargeMoves[_cm];
-      cm.dps = rnd(cm.attack / cm.cooldown);
-      cm.dpsGym = rnd(cm.attack / (cm.cooldown + 2));
-      this.chargeMoves[_cm] = cm;
-    }
-  }
-
-  // add STAB bonuses to movesets!
-  for (_qm in this.quickMoves) {
-    qm = this.quickMoves[_qm];
-    if (this.type.indexOf(qm.type) > -1) {
-      qm.stab = true;
-      qm.dps = rnd(qm.dps * 1.25);
-      qm.dpsGym = rnd(qm.dpsGym * 1.25);
-      qm.attack = rnd(qm.attack * 1.25);
-    }
-  }
-  for (_cm in this.chargeMoves) {
-    cm = this.chargeMoves[_cm];
-    if (this.type.indexOf(cm.type) > -1) {
-      cm.stab = true;
-      cm.dps = rnd(cm.dps * 1.25);
-      cm.dpsGym = rnd(cm.dpsGym * 1.25);
-      cm.attack = rnd(cm.attack * 1.25);
-    }
-  }
-
-  // identify best moves by DPS
-  var bQuick = 0, bCharge = 0;
-  for (_qm in this.quickMoves) {
-    qm = this.quickMoves[_qm];
-    if (qm.dps > bQuick) {
-      bQuick = qm.dps;
-      this._.quickMove = qm.key;
-    }
-  }
-  for (_cm in this.chargeMoves) {
-    cm = this.chargeMoves[_cm];
-    if (cm.dps > bCharge) {
-      bCharge = cm.dps;
-      this._.chargeMove = cm.key;
+      this.chargeMoves[_cm] = move(cm, this);
     }
   }
 
