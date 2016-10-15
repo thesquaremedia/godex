@@ -15,7 +15,9 @@ var Pokemon = function(data) {
   var bestQuick = 0, bestCharge = 0; // best moves by DPS
 
   var move = function(move, self) {
-    var stabBonus = 1, avgDefense = 0, avg = 0, atkdef, attack;
+    var result = {}, stabBonus = 1, avgDefense = 0, avg = 0, atkdef, attack;
+
+    for (var thing in move) result[thing] = move[thing];
 
     // get average defense
     for (var poke in pokemonData) {
@@ -32,23 +34,23 @@ var Pokemon = function(data) {
     if (self.type.indexOf(move.type) > -1) stab = 1.25;
 
     // build move
-    move.stab = (stabBonus == 1.25);
-    move.damage = rnd(damage * stabBonus);
-    move.dps = rnd(move.damage / move.cooldown);
-    move.dpsGym = rnd(move.damage / (move.cooldown + 2));
+    result.stab = (stabBonus == 1.25);
+    result.damage = rnd(damage * stabBonus);
+    result.dps = rnd(result.damage / result.cooldown);
+    result.dpsGym = rnd(result.damage / (result.cooldown + 2));
     // get best by DPS
-    if (move.moveType == "quick") {
-      if (move.dps > bestQuick) {
-        bestQuick = move.dps;
-        self._.quickMove = move.key;
+    if (result.moveType == "quick") {
+      if (result.dps > bestQuick) {
+        bestQuick = result.dps;
+        self._.quickMove = result.key;
       }
     } else {
-      if (move.dps > bestCharge) {
-        bestCharge = move.dps;
-        self._.chargeMove = move.key;
+      if (result.dps > bestCharge) {
+        bestCharge = result.dps;
+        self._.chargeMove = result.key;
       }
     }
-    return move;
+    return result;
   };
 
   // let's build out the moveset
