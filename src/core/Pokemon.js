@@ -32,8 +32,8 @@ var Pokemon = function(data) {
     if (self.type.indexOf(move.type) > -1) stab = 1.25;
 
     // build move
-    move.stab = (stab == 1.25);
-    move.damage = rnd(damage * stab);
+    move.stab = (stabBonus == 1.25);
+    move.damage = rnd(damage * stabBonus);
     move.dps = rnd(move.damage / move.cooldown);
     move.dpsGym = rnd(move.damage / (move.cooldown + 2));
     // get best by DPS
