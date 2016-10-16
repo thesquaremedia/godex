@@ -12,8 +12,6 @@ var Pokemon = function(data) {
   var rnd = function(n) { return Math.round(n * 100) / 100; };
 
   // calculate attack/dps for moves
-  var bestQuick = 0, bestCharge = 0; // best moves by DPS
-
   var move = function(move, self) {
     var result = {}, stabBonus = 1, avgDefense = 0, avg = 0, atkdef, attack;
 
@@ -24,50 +22,51 @@ var Pokemon = function(data) {
       avg += 1; avgDefense += pokemonData[poke].stats.defense;
     }
     avgDefense = Math.floor(avgDefense / avg);
-    // vs score
-    atkdef = self.stats.attack / avgDefense;
 
-    // damage
+    atkdef = self.stats.attack / avgDefense; // vs
     damage = Math.floor(0.5 * atkdef * move.attack) + 1;
-
-    // check for STAB
-    if (self.type.indexOf(move.type) > -1) stab = 1.25;
+    if (self.type.indexOf(move.type) > -1) stab = 1.25; // stab?
 
     // build move
     result.stab = (stabBonus == 1.25);
     result.damage = rnd(damage * stabBonus);
     result.dps = rnd(result.damage / result.cooldown);
     result.dpsGym = rnd(result.damage / (result.cooldown + 2));
-    // get best by DPS
-    if (result.moveType == "quick") {
-      if (result.dps > bestQuick) {
-        bestQuick = result.dps;
-        self._.quickMove = result.key;
-      }
-    } else {
-      if (result.dps > bestCharge) {
-        bestCharge = result.dps;
-        self._.chargeMove = result.key;
-      }
-    }
     return result;
   };
 
   // let's build out the moveset
-  var _qm, qm, _cm, cm;
+  var tmp, _qm, qm, _cm, cm;
+  var bestQuick = 0, bestCharge = 0;
+  
   for (_qm in this.quickMoves) {
     if (!this.quickMoves[_qm].key) {
-      qm = movesData[this.quickMoves[_qm]];
+      tmp = movesData[this.quickMoves[_qm]];
+
+      qm = move(tmp, this);
       qm.key = this.quickMoves[_qm];
-      this.quickMoves[_qm] = move(qm, this);
-      if (qm.name == "Ember") {}
+
+      if (qm.dps > bestQuick) {
+        bestQuick = qm.dps;
+        this._.quickMove = qm.key;
+      }
+
+      this.quickMoves[_qm] = qm;
     }
   }
   for (_cm in this.chargeMoves) {
     if (!this.chargeMoves[_cm].key) {
-      cm = movesData[this.chargeMoves[_cm]];
+      tmp = movesData[this.chargeMoves[_cm]];
+
+      cm = move(tmp, this);
       cm.key = this.chargeMoves[_cm];
-      this.chargeMoves[_cm] = move(cm, this);
+
+      if (cm.dps > bestCharge) {
+        bestCharge = cm.dps;
+        this._.chargeMove = cm.key;
+      }
+
+      this.chargeMoves[_cm] = cm;
     }
   }
 
