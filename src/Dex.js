@@ -1,129 +1,104 @@
 /** Dex.js | Data & Tools wrapper **/
 
 var Dex = function(opts) {
-  // function to find what we're looking for!
-  var find = function(opts) {
-    // clean a string into a key
-    var key = function(s) {
-      if (typeof s !== "string") return s;
-      return s.replace(".","").replace(" ","-").replace("'","")
-        .replace("♀","f").replace("♂","m").toLowerCase();
-    };
-
-    var data, result, search, subtype, target, location;
-    if (!opts.length) return { err: "Nothing to find!" };
-
-    target = opts[opts.length - 1];
+  if (opts.length) {
+    var get, location, subtype, data;
+    // what are we looking for, and where are we looking?
+    get = opts[opts.length - 1];
     location = opts.length < 2 ? "pokemon" : opts[0].toLowerCase();
 
-    // check for subproperty
+    // is the location a subproperty?
     if (location.indexOf(".") > -1) {
       subtype = location.split(".")[1];
       location = location.split(".")[0];
     }
 
-    // define data for location
+    // define data based on location
     if (location.indexOf("type") > -1) data = typesData;
     if (location.indexOf("move") > -1) data = movesData;
     if (location.indexOf("level") > -1) data = levelsData;
     if (location.indexOf("pokemon") > -1) data = pokemonData;
-
-    if (!data) return { err: "Couldn't find: " + location };
+    if (!data) return (this.err = "Couldn't find: " + location);
 
     // was there a subtype?
     if (subtype) {
-      result = [];
+      this.data = [];
       for (var subtypes in data) {
-        // get all data with that subtype
-        var fetch = data[subtypes], _data = fetch[subtype];
-        fetch.key = subtypes; // save this for later
-        if (!_data) {
-          // couldn't find anything!
-          return { err: "Couldn't find subtype: " + subtype };
-        } else if (Array.isArray(_data)) {
-          // if an array, does it contain the target?
-          if (_data.indexOf(target) > -1) result.push(fetch);
-        } else if (isNaN(_data)) {
-          // if a string, does it by chance match?
-          if (key(_data) == key(target)) result.push(fetch);
-        } else {
-          // else..is...is IT the target?
-          if (_data == target) result.push(fetch);
-        }
+        var fetch = data[subtypes], got = fetch[subtype];
+        fetch.key = subtypes; // objects, amirite
+
+        if (!got) return (this.err = "Couldn't find subtype: " + subtype);
+        else if (isArr(got) && got.indexOf(get > -1)) this.data.push(fetch);
+        else if (isNaN(got) && key(got) == key(get)) this.data.push(fetch);
+        else if (got == get) this.data.push(fetch);
       }
-      // and we're done (if it was a subtype)
-      return result;
+      return;
     }
 
-    if (target == "all") return data; // if we want it all, return it all
-    if (target == "list") {
-      // alternatively, we could create a list
-      result = [];
+    // if we want it all, give it all
+    if (get == "all") return (this.data = data);
+    if (get == "list") {
+      // alternatively, make a brief list
+      this.data = [];
       for (var d in data) {
-        if (data[d].name) {
-          // if it's got a name, just a a list of names
-          // and maybe ID's
-          result.push({ key: d, name: data[d].name,
-            id: data[d].id ? data[d].id : 0 });
-        } else {
-          // just return data if no names?
-          result.push({ key: d, data: data[d] });
-        }
+        var item = data[d],
+          name = item.name, id = item.id ? item.id : 0;
+        if (!name) this.data.push({ key: d, data: item });
+        else this.data.push({ key: d, name: name, id: id });
       }
-      // done if it's a list!
-      return result;
+      return;
     }
 
-    if (data[key(target)]) {
-      // maybe it could be this easy!
-      result = data[key(target)];
-    } else {
-      // or I guess we'll look deeper.
-      for (search in data) {
-        // is it a name?
-        if (data[search].name == target) {
-          result = data[search];
-          target = search;
-        }
-        // or an ID?
-        if (data[search].id == parseInt(target)) {
-          result = data[search];
-          target = search;
-        }
+    // All right,
+    // let's find something
+    var result;
+    if (data[key(get)]) result = data[key(get)];
+    else {
+      for (var search in data) {
+        if (data[search].name == get) result = data[search]; // is it a name?
+        if (data[search].id == parseInt(get)) result = data[search]; // or id?
+        if (result) get = search;
       }
     }
 
-    // well, we've looked everywhere.
-    // did we find it?
-    if (!result) {
-      // well, darn.
-      result = { err: "Couldn't find: " + target };
-    } else {
-      // tell the people where we found it.
+    // did we find anything?
+    if (!result) return (this.err = "Couldn't find: " + get);
+    else {
+      // tell the people where we found it
       result.is = location;
-      result.key = key(target);
+      result.key = key(get);
     }
-    return result;
-  };
-
-  if (opts.length) {
-    this.data = find(opts);
-    if (this.data) {
-      if (this.data.err) this.err = this.data.err;
-    }
+    this.data = result;
+  } else {
+    this.err = "Nothing to find!";
   }
 };
 
+// One-Time Generators
+var alphabet = [];
+for (var poke in pokemonData) {
+  // get first letter of possible
+  // pokemon names (for filters)
+  var letter = poke.charAt(0);
+  if (alphabet.indexOf(letter) < 0) alphabet.push(letter);
+}
+
+var dustOptions = [];
+for (var level in levelsData) {
+  // get all the unique dust options
+  // for filters as well.
+  var option = levelsData[level].dust;
+  if (dustOptions.indexOf(option) < 0) dustOptions.push(option);
+}
+
+
 Dex.prototype = {
-  version: "2.0.0",
+  version: "2.2.0",
 
   // tools
   Gym: function() { return new Gym(); },
 
   // static data
-  _aZ: [ "a","b","c","d","e","f","g","h","i","j","k",
-      "l","m","n","o","p","r","s","t","v","w","z" ],
-
-  _dustLevels: [ 200, 400, 600, 800, 1000, 1300, 1600, 1900, 2200, 2500,
-    3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000 ]
+  _aZ: alphabet.sort(),
+  _dustLevels: dustOptions
 };

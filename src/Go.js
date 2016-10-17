@@ -1,17 +1,11 @@
 /** Go.js | The interface **/
 
 var Go = function() {
-  var args = arguments;
-  var dex = new Dex(args);
+  var dex = new Dex(arguments);
   if (dex.data && !dex.data.err) {
-    // oh, we found something,
-    // is it a pokemon maybe?
-    if (dex.data.is == "pokemon") {
-      // woo, return a pokemon!
-      return new Pokemon(dex.data);
-    }
+    if (dex.data.is == "move") return new Move(dex.data.key);
+    if (dex.data.is == "pokemon") return new Pokemon(dex.data);
   }
-  // well, return what we got!
   return dex;
 };
 
