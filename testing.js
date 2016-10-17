@@ -6,115 +6,78 @@
 var Go = require('./godex'),
   details = false; // change to true to print data
 
-// Some Helper Functions
+// Helper Functions
+var space = function(num) { for (var i = 0;i < num;i++) console.log(""); };
+var note = function(msg, data) { var pre = "GoDEX >>";
+  return (details && data) ? console.log(pre,msg,data) : console.log(pre,msg);
+};
+var chk = function(x) {
+  if (Array.isArray(x)) return (x.length > 0) ? "SUCCESS" : "ERROR";
+  else return x ? "SUCCESS" : "ERROR";
+};
 
-function note(message, data) {
-  if (data && details) console.log("[GO]Dex:", message, data);
-  else console.log("[GO]Dex:", message);
-}
+// -------- TESTING BABY -------- //
+var h1 = "** ";
 
-function space(num) {
-  for (var x = 0; x < num;x++) {
-    console.log(""); // for pretty printing in console.
-  }
-}
-
-function check(thing) {
-  if (Array.isArray(thing)) {
-    return (thing.length > 0) ? "SUCCESS" : "ERROR!";
-  } else {
-    return thing ? "SUCCESS" : "ERROR!";
-  }
-}
-
-// AND NOW WE TEST
 space(1);
-note("------------TESTING DATA------------");
+note(h1 + "TESTING DATA");
 space(1);
 
 var pokemon = Go("pokemon", "list").data;
-note("# OF POKEMON: " + pokemon.length, pokemon);
+note("# of Pokemon: " + pokemon.length, pokemon);
 
 var types = Go("types", "list").data;
-note("# OF POKEMON TYPES: " + types.length, types);
+note("# of Types:" + types.length, types);
 
 var moves = Go("moves", "list").data;
-note("# OF POKEMON MOVES: " + moves.length, moves);
-//
+note("# of Moves: " + moves.length, moves);
+
 space(2);
-note("---------VERIFYING: METHODS---------");
+note(h1 + "VERIFYING METHODS");
 space(1);
 
 var i, methodData;
 
 note("VERIFYING: Go(pokemon)");
-for (i in pokemon) {
-  methodData = Go(pokemon[i].key);
-}
-methodData = Go('Bulbasaur');
-note("METHOD: Go('Bulbasaur'): " + check(methodData), methodData);
-
-methodData = Go(1);
-note("METHOD: Go(1): " + check(methodData), methodData);
-
-methodData = Go('type', 'bug');
-note("METHOD: Go('type', 'bug'): " + check(methodData), methodData);
-
-methodData = Go('move', 'Twister');
-note("METHOD: Go('move', 'Twister'): " + check(methodData), methodData);
-
-methodData = Go('pokemon.type', 'bug');
-note("METHOD: Go('pokemon.type', 'bug'): " + check(methodData), methodData);
-
+for (i in pokemon) methodData = Go(pokemon[i].key);
+note("METHOD: Go('Mewtwo'): " + chk(methodData), methodData);
+methodData = Go(151);
+note("METHOD: GO(151): " + chk(methodData), methodData);
 space(1);
 
-note("VERIFYING: Pokemon.appraise()");
-methodData = Go('Aerodactyl');
-var appraisal = methodData.appraise({
-  cp: 1495,
-  hp: 113,
-  dust: 3500,
-  powered: true,
-  strongAtk: false,
-  strongDef: true,
-  strongHP: false
-});
-note("METHOD: Pokemon.appraise(): " + check(appraisal), appraisal);
-
-space(2);
-note("---------VERIFYING: POKEMON---------");
+note("VERIFYING: Go(location, thing)");
+methodData = Go('type', 'psychic');
+note("METHOD: GO('type', 'psychic'): " + chk(methodData), methodData);
+methodData = Go('move', 'twister');
+note("METHOD: GO('move', 'twister'): " + chk(methodData), methodData);
+methodData = Go('pokemon.type', 'psychic');
+note("METHOD: GO('pokemon.type', 'psychic'): " + chk(methodData), methodData);
 space(1);
-//
-var vPoke = 0, uPoke = 0, // counting
-  ePoke = {}; // error collection
 
-for (var _p in pokemon) {
-  var isGood = true,
-    key = pokemon[_p].key,
-    poke = Go(key);
+note("VERIFYING: Go(pokemon).IVs()");
+for (i in pokemon) methodData = Go(pokemon[i].key).IVs();
+note("METHOD: GO('Mewtwo').IVs(): " + chk(methodData), methodData);
+space(1);
 
-  if (!poke) {
-    if (!ePoke[key]) ePoke[key] = [];
-    ePoke[key].push(key + " CRITICAL ERROR, NO DATA FOUND.");
-    isGood = false;
-  }
-
-  if (!isGood) {
-    uPoke += 1;
-  } else {
-    vPoke += 1;
-  }
-}
-
-note("POKEMON VERIFIED: " + vPoke + ", ERROR: " + uPoke);
-if (uPoke > 1 || ePoke.length) {
-  for (var mon in ePoke) {
-    for (var err in ePoke[mon]) {
-      note(ePoke[mon][err]);
-    }
-  }
-}
+note("VERIFYING: Go(pokemon).duel()");
+for (i in pokemon) methodData = Go(pokemon[i].key).duel();
+note("METHOD: GO('Mewtwo').duel(): " + chk(methodData), methodData);
 
 space(2);
-note("------------DONE-CHECKING-----------");
+note(h1 + "VERIFYING POKEMON");
+space(1);
+
+var verified = 0, bad = 0, err = [];
+for (var p in pokemon) {
+  var good = true, key = pokemon[p].key, poke = Go(key);
+  if (!poke) { good = false; err.push(key + ": NO DATA"); }
+  if (!poke.IVs().ivs.length) { good = false; err.push(key + ": BAD IVs"); }
+  if (!poke.duel().weave) { good = false; err.push(key + ": BAD DUEL"); }
+  if (good) { verified += 1; } else { bad += 1; }
+}
+note("POKEMON VERIFIED: " + verified + "; ERROR: " + bad);
+for (i in err) note(err[i]);
+
+space(2);
+note(h1 + "DONE CHECKING");
 space(1);

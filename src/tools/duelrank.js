@@ -1,26 +1,32 @@
-/** duelrank.js | Ranking movesets and DPS **/
+/** DuelRank.js | Ranking movesets and DPS **/
 
-var _duelrank = function(mon) {
-  var duel = [];
-  // apply grades to array
-  var rank = function(arr,key) {
+var DuelRank = function(mon) {
+  var result = [];
+
+  // rank the combos!
+  var rank = function(arr, key) {
+    var total = arr.length;
+    // sort by key, so 0 is lowest, and length -1 is highest!
     arr.sort(function(a,b) { return a[key] < b[key]; });
-    for (var r = 0;r < arr.length;r++) {
-      arr[r][key + "Grade"] = Math.floor(((arr.length - r) / arr.length) * 100);
+    for (var i = 0; i < total; i++) {
+      var grade = Math.floor(((total - i) / total) * 100);
+      arr[i][key + "Grade"] = grade;
     }
+    return arr;
   };
 
-  for (var quickMove in mon.quickMoves) {
-    var quick = mon.quickMoves[quickMove];
-    for (var chargeMove in mon.chargeMoves) {
-      var charge = mon.chargeMoves[chargeMove];
-      // get every possible combination of movesets
+  for (var qMove in mon.moves.quick) {
+    for (var cMove in mon.moves.charge) {
+      // get every possible combo of moves
+      var quick = mon.moves.quick[qMove],
+        charge = mon.moves.charge[cMove];
 
       var tankiness = mon.stats.stamina * mon.stats.defense;
 
-      var noweave = quick.dps * 100; // over 100 seconds
+      // get damage over 100 seconds
+      var noweave = quick.dps * 100; // just quick attacks
 
-      // weave
+      // weave; quick attacks + charge attacks
       var weave, gymweave,
         energy = 100 / charge.charges,
         quick2Charge = energy / quick.energy,
@@ -41,24 +47,24 @@ var _duelrank = function(mon) {
       var offense = (noweave > weave ? noweave : weave) * mon.stats.attack;
       var defense = gymweave * mon.stats.attack * tankiness;
 
-      duel.push({
+      result.push({
         quick: quick.key,
         charge: charge.key,
         offense: Math.floor(offense),
         defense: Math.floor(defense),
         dueling: Math.floor(offense * tankiness),
-        toweave: weave > noweave,
+        toweave: (weave > noweave),
         noweave: Math.floor(noweave),
         weave: Math.floor(weave),
         gymweave: Math.floor(gymweave)
       });
-
     }
   }
 
-  // grade 'em
-  rank(duel, "defense");
-  rank(duel, "offense");
+  // now we grade the results!
+  result = rank(result, "defense");
+  result = rank(result, "offense");
 
-  return duel;
+  Note("Ranked Pokemon: " + mon.name);
+  return result;
 };

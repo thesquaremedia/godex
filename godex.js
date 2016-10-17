@@ -3951,385 +3951,239 @@ var typesData = {
   }
 };
 
-/** appraise.js | calculate iv's **/
-/** partial: 'this' refers to Pokemon class **/
-/** credit to: https://github.com/andromedado/pokemon-go-iv-calculator/ **/
+/** config.js | configuration **/
 
-var _appraise = function() {
-  var lvl;
-  var hpIVs = [], potential = [], result = {}, levels = [];
+// print things
+var debug = false;
 
-  // a lot of redundancy to make sure x is strongest
-  // for when the trainer appraises it so!
-  var reappraise = function(_, atk, def, sta) {
-    var strA = _.strongAtk, strD = _.strongDef, strS = _.strongHP;
+/** helpers.js | assortment of helpers **/
 
-    if (!strA && !strD && !strA) return true;
-    else if (strA && !strD && !strS) return (atk > def && atk > sta);
-    else if (!strA && strD && !strS) return (def > atk && def > sta);
-    else if (!strA && !strD && strS) return (sta > atk && sta > def);
-    else if (strA && strD && !strS) return (atk == def && atk > sta);
-    else if (strA && !strD && strS) return (atk == sta && atk > def);
-    else if (!strA && strD && strS) return (def == sta && def > atk);
-    else if (strA && strD && strS) return (atk == def && atk == sta);
-  };
-
-  var howPerf = function(ivs) {
-    return Math.floor(((ivs.atk + ivs.def + ivs.sta) / 45) * 100);
-  };
-
-  var grade = function(ivs) {
-    var grades = {}, toGrade = [],
-      add = function(a,b) {
-        return a + b;
-      };
-    if (ivs.length) {
-      grades.min = ivs[0].perf;
-      grades.max = ivs[0].perf;
-      for (var _g = 0;_g < ivs.length;_g++) {
-        toGrade.push(ivs[_g].perf);
-        if (ivs[_g].perf > grades.max) grades.max = ivs[_g].perf;
-        if (ivs[_g].perf < grades.min) grades.min = ivs[_g].perf;
-      }
-      grades.avg = Math.floor(toGrade.reduce(add, 0) / toGrade.length);
-    }
-    return grades;
-  };
-
-  for (lvl in levelsData) {
-    if (levelsData[lvl].dust == this._.dust) {
-      levels.push({ key: lvl, cpm: levelsData[lvl].cpm });
-    }
-  }
-
-  if (!levels.length) return { err: "Dust invalid." };
-
-  if (!this._.powered) {
-    // if never upgraded, remove half levels
-    for (lvl in levels) {
-      if (levels[lvl].key.toString().indexOf(".5") > -1) delete levels[lvl];
-    }
-  }
-
-  // get levels where HP matches
-  for (lvl in levels) {
-    var level = levels[lvl].key;
-    // loop through all possible sta IVs
-    for (staIV = 0;staIV < 16;staIV++) {
-      if (this.getHP(level, { sta: staIV }) == this._.hp) {
-        hpIVs.push({ level: level, iv: staIV });
-      }
-    }
-  }
-
-  // loop through stamina ivs
-  for (var h = 0;h < hpIVs.length;h++) {
-    staIV = hpIVs[h].iv;
-    // loop through all attack and defense IVs
-    for (atkIV = 0;atkIV < 16;atkIV++) {
-      for (defIV = 0;defIV < 16;defIV++) {
-        // now we have a combo of 3 IVs,
-        // let's calculate the CP!
-        var testCP = this.getCP(hpIVs[h].level, {
-          atk: atkIV, def: defIV, sta: staIV
-        });
-        // if test CP matches, we found a working set of IVs!
-        if (testCP == this._.cp) {
-          // quick reappraisal to filter!
-          if (reappraise(this._, atkIV, defIV, staIV)) {
-            potential.push({
-              atk: atkIV,
-              def: defIV,
-              sta: staIV,
-              lvl: hpIVs[h].level
-            });
-          }
-        }
-      }
-    }
-  }
-
-  // get percents for IV scores
-  for (var i = 0;i < potential.length;i++) {
-    potential[i].perf = howPerf(potential[i]);
-  }
-
-  // sort
-    potential.sort(function(a,b) {
-    if (a.perf == b.perf) return 0;
-    return a.perf > b.perf ? 1 : -1;
-  });
-
-  // build and grade
-  result.ivs = potential;
-  result.grade = grade(potential);
-
-  return result;
+// logging function
+var Note = function(msg, data) {
+  if (!debug) return;
+  var pre = "GoDEX >";
+  return data ? console.log(pre, msg, data) : console.log(pre, msg);
 };
 
-/** duelrank.js | Ranking movesets and DPS **/
+// rounding function
+var rnd = function(num){
+  return Math.round(num * 100) / 100;
+};
 
-var _duelrank = function(mon) {
-  var duel = [];
-  // apply grades to array
-  var rank = function(arr,key) {
-    arr.sort(function(a,b) { return a[key] < b[key]; });
-    for (var r = 0;r < arr.length;r++) {
-      arr[r][key + "Grade"] = Math.floor(((arr.length - r) / arr.length) * 100);
-    }
-  };
+// copy object function
+// yes, it's tacky
+var copy = function(obj) {
+  return JSON.parse(JSON.stringify(obj));
+};
 
-  for (var quickMove in mon.quickMoves) {
-    var quick = mon.quickMoves[quickMove];
-    for (var chargeMove in mon.chargeMoves) {
-      var charge = mon.chargeMoves[chargeMove];
-      // get every possible combination of movesets
+// clean a string into a key
+var key = function(s) {
+  if (typeof s !== "string") return s;
+  return s.replace(".","").replace(" ","-").replace("'","")
+    .replace("♀","f").replace("♂","m").toLowerCase();
+};
 
-      var tankiness = mon.stats.stamina * mon.stats.defense;
-
-      var noweave = quick.dps * 100; // over 100 seconds
-
-      // weave
-      var weave, gymweave,
-        energy = 100 / charge.charges,
-        quick2Charge = energy / quick.energy,
-        time2Charge = quick2Charge * quick.cooldown,
-        time2ChargeGym = quick2Charge * (quick.cooldown + 2),
-        time2Cycle = time2Charge + charge.cooldown,
-        time2CycleGym = time2ChargeGym + (charge.cooldown + 2),
-        totalCycles = Math.floor(100 / time2Cycle),
-        totalCyclesGym = Math.floor(100 / time2CycleGym),
-        cycleDmg = (time2Charge * quick.dps) + (charge.attack),
-        cycleDmgGym = (time2ChargeGym * quick.dpsGym) + (charge.attack),
-        bonusTime = 100 - (time2Cycle * totalCycles),
-        bonusTimeGym = 100 - (time2CycleGym * totalCyclesGym);
-
-      weave = (cycleDmg * totalCycles) + (bonusTime * quick.dps);
-      gymweave = (cycleDmgGym * totalCyclesGym) + (bonusTimeGym * quick.dpsGym);
-
-      var offense = (noweave > weave ? noweave : weave) * mon.stats.attack;
-      var defense = gymweave * mon.stats.attack * tankiness;
-
-      duel.push({
-        quick: quick.key,
-        charge: charge.key,
-        offense: Math.floor(offense),
-        defense: Math.floor(defense),
-        dueling: Math.floor(offense * tankiness),
-        toweave: weave > noweave,
-        noweave: Math.floor(noweave),
-        weave: Math.floor(weave),
-        gymweave: Math.floor(gymweave)
-      });
-
-    }
-  }
-
-  // grade 'em
-  rank(duel, "defense");
-  rank(duel, "offense");
-
-  return duel;
+var isArr = function(arr) {
+  return Array.isArray(arr);
 };
 
 /** Pokemon.js | The Pokemon Object **/
 
 var Pokemon = function(data) {
-  // store the data
-  for (var val in data) this[val] = data[val];
-  this._ = { // user input storage
-    candy: 0, quickMove: null, chargeMove: null, powered: false,
-    strongHP: false, strongAtk: false, strongDef: false
+  // User Input storage
+  this._ = {
+    candy: 0, // candy on hand
+    quickMove: null,
+    chargeMove: null,
+    powered: false, // powered up?
+    strongHP: false,
+    strongAtk: false,
+    strongDef: false // from team leader
   };
 
-  // helper function to round numbers nicely
-  var rnd = function(n) { return Math.round(n * 100) / 100; };
-
-  // calculate attack/dps for moves
-  var move = function(move, self) {
-    var result = {}, stabBonus = 1, avgDefense = 0, avg = 0, atkdef, attack;
-
-    for (var thing in move) result[thing] = move[thing];
-
-    // get average defense
-    for (var poke in pokemonData) {
-      avg += 1; avgDefense += pokemonData[poke].stats.defense;
-    }
-    avgDefense = Math.floor(avgDefense / avg);
-
-    atkdef = self.stats.attack / avgDefense; // vs
-    damage = Math.floor(0.5 * atkdef * move.attack) + 1;
-    if (self.type.indexOf(move.type) > -1) stab = 1.25; // stab?
-
-    // build move
-    result.stab = (stabBonus == 1.25);
-    result.damage = rnd(damage * stabBonus);
-    result.dps = rnd(result.damage / result.cooldown);
-    result.dpsGym = rnd(result.damage / (result.cooldown + 2));
-    return result;
+  this.id = data.id;
+  this.egg = data.egg;
+  this.candy = data.candy;
+  this.name = data.name;
+  if (data.cpm) this.cpm = data.cpm;
+  this.stats = data.stats;
+  this.type = data.type;
+  this.moves = {
+    quick: {}, charge: {}
   };
 
-  // let's build out the moveset
-  var tmp, _qm, qm, _cm, cm;
-  var bestQuick = 0, bestCharge = 0;
-  for (_qm in this.quickMoves) {
-    if (!this.quickMoves[_qm].key) {
-      tmp = movesData[this.quickMoves[_qm]];
-
-      qm = move(tmp, this);
-
-      qm.key = this.quickMoves[_qm];
-      console.log(qm.dps, bestQuick);
-      if (qm.dps > bestQuick) {
-        bestQuick = qm.dps;
-        this._.quickMove = qm.key;
-      }
-
-      this.quickMoves[_qm] = qm;
-    }
-  }
-  for (_cm in this.chargeMoves) {
-    if (!this.chargeMoves[_cm].key) {
-      tmp = movesData[this.chargeMoves[_cm]];
-
-      cm = move(tmp, this);
-      cm.key = this.chargeMoves[_cm];
-
-      if (cm.dps > bestCharge) {
-        bestCharge = cm.dps;
-        this._.chargeMove = cm.key;
-      }
-
-      this.chargeMoves[_cm] = cm;
+  var topQuick = 0, topCharge = 0;
+  for (var qM in data.quickMoves) {
+    var qmKey = data.quickMoves[qM];
+    this.moves.quick[qmKey] = new Move(qmKey, data.stats, data.type);
+    if (this.moves.quick[qmKey].dps > topQuick) {
+      this._.quickMove = qmKey; // set as best
+      topQuick = this.moves.quick[qmKey].dps;
     }
   }
 
-  // get type resistance
-  var i, _type, type, mod,
-    target, score, resistance = {};
-  for (_type in this.type) {
-    type = typesData[this.type[_type]];
-
-    // for each mod this type has
-    for (mod in type) {
-      // if it's a defense modifier
-      if (mod.indexOf("From") > -1) {
-        // then we loop again!
-        for (i = 0;i < type[mod].length;i++) {
-          target = type[mod][i];
-          score = resistance[target];
-          if (mod.indexOf("half") > -1) {
-            // not very effective
-            if (!score) resistance[target] = 0.8;
-            else resistance[target] = rnd(score * 0.8);
-          } else {
-            // super effective
-            if (!score) resistance[target] = 1.25;
-            else resistance[target] = rnd(score * 1.25);
-          }
-        }
-      }
+  for (var cM in data.chargeMoves) {
+    var cmKey = data.chargeMoves[cM];
+    this.moves.charge[cmKey] = new Move(cmKey, data.stats, data.type);
+    if (this.moves.charge[cmKey].dps > topCharge) {
+      this._.chargeMove = cmKey; // set as best
+      topCharge = this.moves.charge[cmKey].dps;
     }
   }
-  this.resistance = resistance;
 
-  // give the family tree some love
-  this.tree = { stages: 1, current: 1 };
-  this.tree.evolveTo = this.evolveTo ? pokemonData[this.evolveTo] : 0;
-  this.tree.evolveFrom = this.evolveFrom ? pokemonData[this.evolveFrom] : 0;
+  this.maxCP = this.getCP(40, 15, 15, 15);
 
-  if (this.tree.evolveFrom && this.tree.evolveFrom.evolveFrom) {
-    this.evolveStart = this.tree.evolveFrom.evolveFrom;
-  }
-  if (this.tree.evolveTo && this.tree.evolveTo.evolveTo) {
-    this.evolveEnd = this.tree.evolveTo.evolveTo;
-  }
-
-  this.tree.evolveStart = this.evolveStart ? pokemonData[this.evolveStart] : 0;
-  this.tree.evolveEnd = this.evolveEnd ? pokemonData[this.evolveEnd] : 0;
-
-  // Misc
-  this.maxCP = this.getCP(40, { atk: 15, def: 15, sta: 15 });
-
-  // Figure out stats at level 20 (for default reasons)
+  // Set defaults to level 20
   this._.cp = this.getCP(20);
   this._.hp = this.getHP(20);
   this._.dust = levelsData["20"].dust;
 
-  // external tools
-  this.dueling = _duelrank(this);
+  this.tree = this.buildTree(data);
+
+  Note("Built Pokemon: " + this.name);
 };
 
 Pokemon.prototype = {
-  // setter functions
-  _cp: function(cp) { this._.cp = parseInt(cp); return this; },
-  _hp: function(hp) { this._.hp = parseInt(hp); return this; },
-  _dust: function(dust) { this._.dust = parseInt(dust); return this; },
-  _candy: function(candy) { this._.candy = parseInt(candy); return this; },
-  _powered: function(p) { this._.powered = p ? true : false; return this; },
-  _strongAtk: function(s) { this._.strongAtk = s ? true : false; return this; },
-  _strongDef: function(s) { this._.strongDef = s ? true : false; return this; },
-  _strongHP: function(s) { this._.strongHP = s ? true : false; return this; },
-  _quickMove: function(m) { this._.quickMove = m; return this; },
-  _chargeMove: function(m) { this._.chargeMove = m; return this; },
+  // setter function
+  _set: function(obj) {
+    var self = this;
+    for (var val in obj) {
+      if (self._.hasOwnProperty(val)) self._[val] = obj[val];
+    }
+    return self;
+  },
 
-
-  // calculate CP at given level
-  getCP: function(lvl, stats) {
+  // calculate CP at a given level
+  getCP: function(lvl, attack, defense, stamina) {
     var atk, def, sta, mod;
-    atk = this.stats.attack + (stats ? stats.atk : 0);
-    def = Math.pow(this.stats.defense + (stats ? stats.def : 0), 0.5);
-    sta = Math.pow(this.stats.stamina + (stats ? stats.sta : 0), 0.5);
+    atk = this.stats.attack + (attack ? attack : 0);
+    def = Math.pow(this.stats.defense + (defense ? defense : 0), 0.5);
+    sta = Math.pow(this.stats.stamina + (stamina ? stamina : 0), 0.5);
     mod = Math.pow(levelsData[lvl].cpm, 2);
     return Math.floor(atk * (def * sta * mod) / 10);
   },
 
   // calculate HP at a given level
-  getHP: function(lvl, stats) {
-    var sta = this.stats.stamina + (stats ? stats.sta : 0);
+  getHP: function(lvl, stamina) {
+    var sta = this.stats.stamina + (stamina ? stamina : 0);
     return parseInt(Math.floor(sta * levelsData[lvl].cpm), 10);
   },
 
-  // get a pokeon's IV's
-  appraise: _appraise,
+  // build family tree (evolves)
+  buildTree: function(data) {
+    var result = { stages: 1, current: 1, };
+    if (data.evolveTo) {
+      if (isArr(data.evolveTo)) {
+        // Eevee support lolol
+        result.evolveTo = [];
+        for (var a = 0;a < data.evolveTo.length;a++) {
+          result.evolveTo.push(pokemonData[data.evolveTo[a]]);
+        }
+      } else result.evolveTo = pokemonData[data.evolveTo];
+    }
+    if (data.evolveFrom) result.evolveFrom = pokemonData[data.evolveFrom];
+    if (data.evolveTo && result.evolveTo.evolveTo) {
+      result.evolveEnd = pokemonData[result.evolveTo.evolveTo];
+    }
+    if (data.evolveFrom && result.evolveFrom.evolveFrom) {
+      result.evolveStart = pokemonData[result.evolveFrom.evolveFrom];
+    }
+    return result;
+  },
 
   // evolve calculator
-  // returns evolves and cp
   canEvolve: function() {
-    var cp = this._.cp,
-      has = this._.candy,
-      result = this.tree;
+    var cp = this._.cp, has = this._.candy, result = {},
+      evo = function(req) { return Math.floor(has/req + ((has/req)/req)); };
 
-    // quick math function
-    var evo = function(req) {
-      return Math.floor(has/req + Math.floor((has/req)/req));
-    };
-
+    // calculate CP of evolved mon
     var cpcalc = function(first, second) {
-      if (cp) {
-        var min = cp * first[0],
-          max = cp * first[1];
-        if (second) {
-          min *= second[0];
-          max *= second[1];
-        }
-        return Math.floor(min) + "-" + Math.floor(max);
-      } else {
-        return 0;
-      }
+      if (!cp) return 0;
+      if (!second) second = [1,1];
+      var min = cp * first[0] * second[0];
+      var max = cp * first[1] * second[1];
+      return Math.floor(min) + "-" + Math.floor(max);
     };
 
-    if (result.evolveTo) {
-      result.evolveTo.cp = cpcalc(this.cpm);
-      result.evolveTo.evolves = evo(this.candy);
-    }
-    if (result.evolveEnd) {
-      result.evolveEnd.cp = cpcalc(this.cpm, result.evolveTo.cpm);
-      result.evolveEnd.evolves = evo(this.candy + result.evolveTo.candy);
+    // next stage
+    if (this.tree.evolveTo) {
+      result.evolveTo = [];
+      if (isArr(this.tree.evolveTo)) {
+        // Eevee support again
+        for (var a = 0;a < this.tree.evolveTo.length;a++) {
+          result.evolveTo.push({
+            cp: cpcalc(this.tree.evolveTo[a].cpm),
+            evolves: evo(this.candy)
+          });
+        }
+      } else {
+        result.evolveTo.push({
+          cp: cpcalc(this.cpm),
+          evolves: evo(this.candy)
+        });
+      }
     }
 
+    // last stage
+    if (this.tree.evolveEnd) {
+      result.evolveEnd = {
+        cp: cpcalc(this.cpm, this.tree.evolveTo.cpm),
+        evolves: evo(this.candy + this.tree.evolveTo.candy)
+      };
+    }
     return result;
+  },
+
+  // get moveset rankings
+  duel: function() {
+    // only generate data once per pokemon
+    if (!this.dueling) this.dueling = DuelRank(this);
+    for (var score in this.dueling) {
+      var rank = this.dueling[score];
+      if (rank.quick == this._.quickMove && rank.charge == this._.chargeMove) {
+        return rank;
+      }
+    }
+
   }
+};
+
+/** Move.js | The Move Object **/
+
+var Move = function(name, stats, type) {
+  var data = movesData[name];
+  this.key = name;
+  this.name = data.name;
+  this.type = data.type;
+  this.attack = data.attack;
+  this.cooldown = data.cooldown;
+  if (data.dodge) this.dodge = data.dodge;
+  if (data.energy) this.energy = data.energy;
+  if (data.charges) this.charges = data.charges;
+
+  var mod = stats ? 0.5 : 1;
+  var vs = stats ? (stats.attack / this.avgDefense) : 1;
+  var stab = type ? (type.indexOf(this.type) > -1) ? 1.25 : 1 : 1;
+
+  this.stab = (stab == 1.25);
+  this.damage = Math.floor(mod * vs * this.attack * stab) + 1;
+  this.dps = rnd(this.damage / this.cooldown);
+  this.dpsGym = rnd(this.damage / (this.cooldown + 2));
+};
+
+// only need to find this once
+var findAvgDefense = function() {
+  var avg = 0, defense = 0;
+  for (var poke in pokemonData) {
+    avg += 1; defense += pokemonData[poke].stats.defense;
+  }
+  var avgdefense = Math.floor(defense / avg);
+  Note("Found Avg Defense: " + avgdefense);
+  return avgdefense;
+};
+
+Move.prototype = {
+  avgDefense: findAvgDefense()
 };
 
 /** gymtool.js | Allow for a collection of pokemon to review */
@@ -4477,150 +4331,282 @@ Gym.prototype = {
   }
 };
 
+/** DuelRank.js | Ranking movesets and DPS **/
+
+var DuelRank = function(mon) {
+  var result = [];
+
+  // rank the combos!
+  var rank = function(arr, key) {
+    var total = arr.length;
+    // sort by key, so 0 is lowest, and length -1 is highest!
+    arr.sort(function(a,b) { return a[key] < b[key]; });
+    for (var i = 0; i < total; i++) {
+      var grade = Math.floor(((total - i) / total) * 100);
+      arr[i][key + "Grade"] = grade;
+    }
+    return arr;
+  };
+
+  for (var qMove in mon.moves.quick) {
+    for (var cMove in mon.moves.charge) {
+      // get every possible combo of moves
+      var quick = mon.moves.quick[qMove],
+        charge = mon.moves.charge[cMove];
+
+      var tankiness = mon.stats.stamina * mon.stats.defense;
+
+      // get damage over 100 seconds
+      var noweave = quick.dps * 100; // just quick attacks
+
+      // weave; quick attacks + charge attacks
+      var weave, gymweave,
+        energy = 100 / charge.charges,
+        quick2Charge = energy / quick.energy,
+        time2Charge = quick2Charge * quick.cooldown,
+        time2ChargeGym = quick2Charge * (quick.cooldown + 2),
+        time2Cycle = time2Charge + charge.cooldown,
+        time2CycleGym = time2ChargeGym + (charge.cooldown + 2),
+        totalCycles = Math.floor(100 / time2Cycle),
+        totalCyclesGym = Math.floor(100 / time2CycleGym),
+        cycleDmg = (time2Charge * quick.dps) + (charge.attack),
+        cycleDmgGym = (time2ChargeGym * quick.dpsGym) + (charge.attack),
+        bonusTime = 100 - (time2Cycle * totalCycles),
+        bonusTimeGym = 100 - (time2CycleGym * totalCyclesGym);
+
+      weave = (cycleDmg * totalCycles) + (bonusTime * quick.dps);
+      gymweave = (cycleDmgGym * totalCyclesGym) + (bonusTimeGym * quick.dpsGym);
+
+      var offense = (noweave > weave ? noweave : weave) * mon.stats.attack;
+      var defense = gymweave * mon.stats.attack * tankiness;
+
+      result.push({
+        quick: quick.key,
+        charge: charge.key,
+        offense: Math.floor(offense),
+        defense: Math.floor(defense),
+        dueling: Math.floor(offense * tankiness),
+        toweave: (weave > noweave),
+        noweave: Math.floor(noweave),
+        weave: Math.floor(weave),
+        gymweave: Math.floor(gymweave)
+      });
+    }
+  }
+
+  // now we grade the results!
+  result = rank(result, "defense");
+  result = rank(result, "offense");
+
+  Note("Ranked Pokemon: " + mon.name);
+  return result;
+};
+
+/** Pokemon.IVs.js | calculate iv's **/
+/** credits to: https://github.com/andromedado/pokemon-go-iv-calculator/ **/
+
+
+Pokemon.prototype.IVs = function() {
+  var ivs = [], result = {};
+
+  // Filter out all but the highest stats
+  var byHighest = function(s, atk, def, sta) {
+    var sA = s.strongAtk, sD = s.strongDef, sH = s.strongHP;
+    if (!sA && !sD && !sH) return true;
+    else if (sA && !sD && !sH) return (atk > def && atk > sta);
+    else if (!sA && sD && !sH) return (def > atk && def > sta);
+    else if (!sA && !sD && sH) return (sta > atk && sta > def);
+    else if (sA && sD && !sH) return (atk == def && atk > sta);
+    else if (sA && !sD && sH) return (atk == sta && atk > def);
+    else if (!sA && sD && sH) return (def == sta && def > atk);
+    else if (sA && sD && sH) return (atk == def && atk == sta);
+  };
+
+  // Get levels by dust value
+  var levels = [];
+  for (var dustLevel in levelsData) {
+    // Unless it's been powered up, don't count half levels
+    if (this._.powered || dustLevel.toString().indexOf(".5") < 0) {
+      if (levelsData[dustLevel].dust == this._.dust) {
+        levels.push({
+          level: dustLevel,
+          cpm: levelsData[dustLevel].cpm
+        });
+      }
+    }
+  }
+  if (!levels.length) return { err: "Dust Invalid." };
+
+  // hunt down the stamina by HP
+  var hpIVs = [], stamina;
+  for (var hpLevel in levels) {
+    // loop through all the possible stamina IVs
+    for (stamina = 0;stamina <= 15;stamina++) {
+      var lvl = levels[hpLevel].level,
+        testHP = this.getHP(lvl, stamina);
+      if (testHP == this._.hp) hpIVs.push({ level: lvl, iv: stamina });
+    }
+  }
+
+  // use the stamina IV to find the others!
+  var attack, defense;
+  for (var i = 0;i < hpIVs.length;i++) {
+    var level = hpIVs[i].level; stamina = hpIVs[i].iv;
+
+    // loop through all the attack/defense IVs
+    for (attack = 0;attack <= 15;attack++) {
+      for (defense = 0;defense <= 15;defense++) {
+        // now we have a set of IVs, let's check!
+        if (this.getCP(level, attack, defense, stamina) == this._.cp) {
+          // Woo, this set of IVs works!
+          // Check it against highest stats...
+          if (byHighest(this._, attack, defense, stamina)) {
+            // Passed the second check, let's push it!
+            ivs.push({
+              atk: attack,
+              def: defense,
+              sta: stamina,
+              lvl: level,
+              perf: Math.floor(((attack + defense + stamina) / 45) * 100)
+            });
+          }
+        }
+      }
+    }
+  }
+
+  // sort
+  ivs.sort(function(a,b) {
+    if (a.perf == b.perf) return 0;
+    return a.perf > b.perf ? 1 : -1;
+  });
+
+  // build and grade
+  result.ivs = ivs;
+  result.grade = {
+    avg: 0,
+    min: ivs[0].perf,
+    max: ivs[ivs.length - 1].perf
+  };
+  for (var p = 0;p < ivs.length;p++) result.grade.avg += ivs[p].perf;
+  result.grade.avg = Math.floor(result.grade.avg / ivs.length);
+
+  return result;
+};
+
 /** Dex.js | Data & Tools wrapper **/
 
 var Dex = function(opts) {
-  // function to find what we're looking for!
-  var find = function(opts) {
-    // clean a string into a key
-    var key = function(s) {
-      if (typeof s !== "string") return s;
-      return s.replace(".","").replace(" ","-").replace("'","")
-        .replace("♀","f").replace("♂","m").toLowerCase();
-    };
-
-    var data, result, search, subtype, target, location;
-    if (!opts.length) return { err: "Nothing to find!" };
-
-    target = opts[opts.length - 1];
+  if (opts.length) {
+    var get, location, subtype, data;
+    // what are we looking for, and where are we looking?
+    get = opts[opts.length - 1];
     location = opts.length < 2 ? "pokemon" : opts[0].toLowerCase();
 
-    // check for subproperty
+    // is the location a subproperty?
     if (location.indexOf(".") > -1) {
       subtype = location.split(".")[1];
       location = location.split(".")[0];
     }
 
-    // define data for location
+    // define data based on location
     if (location.indexOf("type") > -1) data = typesData;
     if (location.indexOf("move") > -1) data = movesData;
     if (location.indexOf("level") > -1) data = levelsData;
     if (location.indexOf("pokemon") > -1) data = pokemonData;
-
-    if (!data) return { err: "Couldn't find: " + location };
+    if (!data) return (this.err = "Couldn't find: " + location);
 
     // was there a subtype?
     if (subtype) {
-      result = [];
+      this.data = [];
       for (var subtypes in data) {
-        // get all data with that subtype
-        var fetch = data[subtypes], _data = fetch[subtype];
-        fetch.key = subtypes; // save this for later
-        if (!_data) {
-          // couldn't find anything!
-          return { err: "Couldn't find subtype: " + subtype };
-        } else if (Array.isArray(_data)) {
-          // if an array, does it contain the target?
-          if (_data.indexOf(target) > -1) result.push(fetch);
-        } else if (isNaN(_data)) {
-          // if a string, does it by chance match?
-          if (key(_data) == key(target)) result.push(fetch);
-        } else {
-          // else..is...is IT the target?
-          if (_data == target) result.push(fetch);
-        }
+        var fetch = data[subtypes], got = fetch[subtype];
+        fetch.key = subtypes; // objects, amirite
+
+        if (!got) return (this.err = "Couldn't find subtype: " + subtype);
+        else if (isArr(got) && got.indexOf(get > -1)) this.data.push(fetch);
+        else if (isNaN(got) && key(got) == key(get)) this.data.push(fetch);
+        else if (got == get) this.data.push(fetch);
       }
-      // and we're done (if it was a subtype)
-      return result;
+      return;
     }
 
-    if (target == "all") return data; // if we want it all, return it all
-    if (target == "list") {
-      // alternatively, we could create a list
-      result = [];
+    // if we want it all, give it all
+    if (get == "all") return (this.data = data);
+    if (get == "list") {
+      // alternatively, make a brief list
+      this.data = [];
       for (var d in data) {
-        if (data[d].name) {
-          // if it's got a name, just a a list of names
-          // and maybe ID's
-          result.push({ key: d, name: data[d].name,
-            id: data[d].id ? data[d].id : 0 });
-        } else {
-          // just return data if no names?
-          result.push({ key: d, data: data[d] });
-        }
+        var item = data[d],
+          name = item.name, id = item.id ? item.id : 0;
+        if (!name) this.data.push({ key: d, data: item });
+        else this.data.push({ key: d, name: name, id: id });
       }
-      // done if it's a list!
-      return result;
+      return;
     }
 
-    if (data[key(target)]) {
-      // maybe it could be this easy!
-      result = data[key(target)];
-    } else {
-      // or I guess we'll look deeper.
-      for (search in data) {
-        // is it a name?
-        if (data[search].name == target) {
-          result = data[search];
-          target = search;
-        }
-        // or an ID?
-        if (data[search].id == parseInt(target)) {
-          result = data[search];
-          target = search;
-        }
+    // All right,
+    // let's find something
+    var result;
+    if (data[key(get)]) result = data[key(get)];
+    else {
+      for (var search in data) {
+        if (data[search].name == get) result = data[search]; // is it a name?
+        if (data[search].id == parseInt(get)) result = data[search]; // or id?
+        if (result) get = search;
       }
     }
 
-    // well, we've looked everywhere.
-    // did we find it?
-    if (!result) {
-      // well, darn.
-      result = { err: "Couldn't find: " + target };
-    } else {
-      // tell the people where we found it.
+    // did we find anything?
+    if (!result) return (this.err = "Couldn't find: " + get);
+    else {
+      // tell the people where we found it
       result.is = location;
-      result.key = key(target);
+      result.key = key(get);
     }
-    return result;
-  };
-
-  if (opts.length) {
-    this.data = find(opts);
-    if (this.data) {
-      if (this.data.err) this.err = this.data.err;
-    }
+    this.data = result;
+  } else {
+    this.err = "Nothing to find!";
   }
 };
 
+// One-Time Generators
+var alphabet = [];
+for (var poke in pokemonData) {
+  // get first letter of possible
+  // pokemon names (for filters)
+  var letter = poke.charAt(0);
+  if (alphabet.indexOf(letter) < 0) alphabet.push(letter);
+}
+
+var dustOptions = [];
+for (var level in levelsData) {
+  // get all the unique dust options
+  // for filters as well.
+  var option = levelsData[level].dust;
+  if (dustOptions.indexOf(option) < 0) dustOptions.push(option);
+}
+
+
 Dex.prototype = {
-  version: "2.0.0",
+  version: "2.2.0",
 
   // tools
   Gym: function() { return new Gym(); },
 
   // static data
-  _aZ: [ "a","b","c","d","e","f","g","h","i","j","k",
-      "l","m","n","o","p","r","s","t","v","w","z" ],
-
-  _dustLevels: [ 200, 400, 600, 800, 1000, 1300, 1600, 1900, 2200, 2500,
-    3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000 ]
+  _aZ: alphabet.sort(),
+  _dustLevels: dustOptions
 };
 
 /** Go.js | The interface **/
 
 var Go = function() {
-  var args = arguments;
-  var dex = new Dex(args);
+  var dex = new Dex(arguments);
   if (dex.data && !dex.data.err) {
-    // oh, we found something,
-    // is it a pokemon maybe?
-    if (dex.data.is == "pokemon") {
-      // woo, return a pokemon!
-      return new Pokemon(dex.data);
-    }
+    if (dex.data.is == "move") return new Move(dex.data.key);
+    if (dex.data.is == "pokemon") return new Pokemon(dex.data);
   }
-  // well, return what we got!
   return dex;
 };
 

@@ -1,199 +1,160 @@
 /** Pokemon.js | The Pokemon Object **/
 
 var Pokemon = function(data) {
-  // store the data
-  for (var val in data) this[val] = data[val];
-  this._ = { // user input storage
-    candy: 0, quickMove: null, chargeMove: null, powered: false,
-    strongHP: false, strongAtk: false, strongDef: false
+  // User Input storage
+  this._ = {
+    candy: 0, // candy on hand
+    quickMove: null,
+    chargeMove: null,
+    powered: false, // powered up?
+    strongHP: false,
+    strongAtk: false,
+    strongDef: false // from team leader
   };
 
-  // helper function to round numbers nicely
-  var rnd = function(n) { return Math.round(n * 100) / 100; };
-
-  // calculate attack/dps for moves
-  var move = function(move, self) {
-    var result = {}, stabBonus = 1, avgDefense = 0, avg = 0, atkdef, attack;
-
-    for (var thing in move) result[thing] = move[thing];
-
-    // get average defense
-    for (var poke in pokemonData) {
-      avg += 1; avgDefense += pokemonData[poke].stats.defense;
-    }
-    avgDefense = Math.floor(avgDefense / avg);
-
-    atkdef = self.stats.attack / avgDefense; // vs
-    damage = Math.floor(0.5 * atkdef * move.attack) + 1;
-    if (self.type.indexOf(move.type) > -1) stab = 1.25; // stab?
-
-    // build move
-    result.stab = (stabBonus == 1.25);
-    result.damage = rnd(damage * stabBonus);
-    result.dps = rnd(result.damage / result.cooldown);
-    result.dpsGym = rnd(result.damage / (result.cooldown + 2));
-    return result;
+  this.id = data.id;
+  this.egg = data.egg;
+  this.candy = data.candy;
+  this.name = data.name;
+  if (data.cpm) this.cpm = data.cpm;
+  this.stats = data.stats;
+  this.type = data.type;
+  this.moves = {
+    quick: {}, charge: {}
   };
 
-  // let's build out the moveset
-  var tmp, _qm, qm, _cm, cm;
-  var bestQuick = 0, bestCharge = 0;
-  
-  for (_qm in this.quickMoves) {
-    if (!this.quickMoves[_qm].key) {
-      tmp = movesData[this.quickMoves[_qm]];
-
-      qm = move(tmp, this);
-      qm.key = this.quickMoves[_qm];
-
-      if (qm.dps > bestQuick) {
-        bestQuick = qm.dps;
-        this._.quickMove = qm.key;
-      }
-
-      this.quickMoves[_qm] = qm;
-    }
-  }
-  for (_cm in this.chargeMoves) {
-    if (!this.chargeMoves[_cm].key) {
-      tmp = movesData[this.chargeMoves[_cm]];
-
-      cm = move(tmp, this);
-      cm.key = this.chargeMoves[_cm];
-
-      if (cm.dps > bestCharge) {
-        bestCharge = cm.dps;
-        this._.chargeMove = cm.key;
-      }
-
-      this.chargeMoves[_cm] = cm;
+  var topQuick = 0, topCharge = 0;
+  for (var qM in data.quickMoves) {
+    var qmKey = data.quickMoves[qM];
+    this.moves.quick[qmKey] = new Move(qmKey, data.stats, data.type);
+    if (this.moves.quick[qmKey].dps > topQuick) {
+      this._.quickMove = qmKey; // set as best
+      topQuick = this.moves.quick[qmKey].dps;
     }
   }
 
-  // get type resistance
-  var i, _type, type, mod,
-    target, score, resistance = {};
-  for (_type in this.type) {
-    type = typesData[this.type[_type]];
-
-    // for each mod this type has
-    for (mod in type) {
-      // if it's a defense modifier
-      if (mod.indexOf("From") > -1) {
-        // then we loop again!
-        for (i = 0;i < type[mod].length;i++) {
-          target = type[mod][i];
-          score = resistance[target];
-          if (mod.indexOf("half") > -1) {
-            // not very effective
-            if (!score) resistance[target] = 0.8;
-            else resistance[target] = rnd(score * 0.8);
-          } else {
-            // super effective
-            if (!score) resistance[target] = 1.25;
-            else resistance[target] = rnd(score * 1.25);
-          }
-        }
-      }
+  for (var cM in data.chargeMoves) {
+    var cmKey = data.chargeMoves[cM];
+    this.moves.charge[cmKey] = new Move(cmKey, data.stats, data.type);
+    if (this.moves.charge[cmKey].dps > topCharge) {
+      this._.chargeMove = cmKey; // set as best
+      topCharge = this.moves.charge[cmKey].dps;
     }
   }
-  this.resistance = resistance;
 
-  // give the family tree some love
-  this.tree = { stages: 1, current: 1 };
-  this.tree.evolveTo = this.evolveTo ? pokemonData[this.evolveTo] : 0;
-  this.tree.evolveFrom = this.evolveFrom ? pokemonData[this.evolveFrom] : 0;
+  this.maxCP = this.getCP(40, 15, 15, 15);
 
-  if (this.tree.evolveFrom && this.tree.evolveFrom.evolveFrom) {
-    this.evolveStart = this.tree.evolveFrom.evolveFrom;
-  }
-  if (this.tree.evolveTo && this.tree.evolveTo.evolveTo) {
-    this.evolveEnd = this.tree.evolveTo.evolveTo;
-  }
-
-  this.tree.evolveStart = this.evolveStart ? pokemonData[this.evolveStart] : 0;
-  this.tree.evolveEnd = this.evolveEnd ? pokemonData[this.evolveEnd] : 0;
-
-  // Misc
-  this.maxCP = this.getCP(40, { atk: 15, def: 15, sta: 15 });
-
-  // Figure out stats at level 20 (for default reasons)
+  // Set defaults to level 20
   this._.cp = this.getCP(20);
   this._.hp = this.getHP(20);
   this._.dust = levelsData["20"].dust;
 
-  // external tools
-  this.dueling = _duelrank(this);
+  this.tree = this.buildTree(data);
+
+  Note("Built Pokemon: " + this.name);
 };
 
 Pokemon.prototype = {
-  // setter functions
-  _cp: function(cp) { this._.cp = parseInt(cp); return this; },
-  _hp: function(hp) { this._.hp = parseInt(hp); return this; },
-  _dust: function(dust) { this._.dust = parseInt(dust); return this; },
-  _candy: function(candy) { this._.candy = parseInt(candy); return this; },
-  _powered: function(p) { this._.powered = p ? true : false; return this; },
-  _strongAtk: function(s) { this._.strongAtk = s ? true : false; return this; },
-  _strongDef: function(s) { this._.strongDef = s ? true : false; return this; },
-  _strongHP: function(s) { this._.strongHP = s ? true : false; return this; },
-  _quickMove: function(m) { this._.quickMove = m; return this; },
-  _chargeMove: function(m) { this._.chargeMove = m; return this; },
+  // setter function
+  _set: function(obj) {
+    var self = this;
+    for (var val in obj) {
+      if (self._.hasOwnProperty(val)) self._[val] = obj[val];
+    }
+    return self;
+  },
 
-
-  // calculate CP at given level
-  getCP: function(lvl, stats) {
+  // calculate CP at a given level
+  getCP: function(lvl, attack, defense, stamina) {
     var atk, def, sta, mod;
-    atk = this.stats.attack + (stats ? stats.atk : 0);
-    def = Math.pow(this.stats.defense + (stats ? stats.def : 0), 0.5);
-    sta = Math.pow(this.stats.stamina + (stats ? stats.sta : 0), 0.5);
+    atk = this.stats.attack + (attack ? attack : 0);
+    def = Math.pow(this.stats.defense + (defense ? defense : 0), 0.5);
+    sta = Math.pow(this.stats.stamina + (stamina ? stamina : 0), 0.5);
     mod = Math.pow(levelsData[lvl].cpm, 2);
     return Math.floor(atk * (def * sta * mod) / 10);
   },
 
   // calculate HP at a given level
-  getHP: function(lvl, stats) {
-    var sta = this.stats.stamina + (stats ? stats.sta : 0);
+  getHP: function(lvl, stamina) {
+    var sta = this.stats.stamina + (stamina ? stamina : 0);
     return parseInt(Math.floor(sta * levelsData[lvl].cpm), 10);
   },
 
-  // get a pokeon's IV's
-  appraise: _appraise,
+  // build family tree (evolves)
+  buildTree: function(data) {
+    var result = { stages: 1, current: 1, };
+    if (data.evolveTo) {
+      if (isArr(data.evolveTo)) {
+        // Eevee support lolol
+        result.evolveTo = [];
+        for (var a = 0;a < data.evolveTo.length;a++) {
+          result.evolveTo.push(pokemonData[data.evolveTo[a]]);
+        }
+      } else result.evolveTo = pokemonData[data.evolveTo];
+    }
+    if (data.evolveFrom) result.evolveFrom = pokemonData[data.evolveFrom];
+    if (data.evolveTo && result.evolveTo.evolveTo) {
+      result.evolveEnd = pokemonData[result.evolveTo.evolveTo];
+    }
+    if (data.evolveFrom && result.evolveFrom.evolveFrom) {
+      result.evolveStart = pokemonData[result.evolveFrom.evolveFrom];
+    }
+    return result;
+  },
 
   // evolve calculator
-  // returns evolves and cp
   canEvolve: function() {
-    var cp = this._.cp,
-      has = this._.candy,
-      result = this.tree;
+    var cp = this._.cp, has = this._.candy, result = {},
+      evo = function(req) { return Math.floor(has/req + ((has/req)/req)); };
 
-    // quick math function
-    var evo = function(req) {
-      return Math.floor(has/req + Math.floor((has/req)/req));
-    };
-
+    // calculate CP of evolved mon
     var cpcalc = function(first, second) {
-      if (cp) {
-        var min = cp * first[0],
-          max = cp * first[1];
-        if (second) {
-          min *= second[0];
-          max *= second[1];
-        }
-        return Math.floor(min) + "-" + Math.floor(max);
-      } else {
-        return 0;
-      }
+      if (!cp) return 0;
+      if (!second) second = [1,1];
+      var min = cp * first[0] * second[0];
+      var max = cp * first[1] * second[1];
+      return Math.floor(min) + "-" + Math.floor(max);
     };
 
-    if (result.evolveTo) {
-      result.evolveTo.cp = cpcalc(this.cpm);
-      result.evolveTo.evolves = evo(this.candy);
-    }
-    if (result.evolveEnd) {
-      result.evolveEnd.cp = cpcalc(this.cpm, result.evolveTo.cpm);
-      result.evolveEnd.evolves = evo(this.candy + result.evolveTo.candy);
+    // next stage
+    if (this.tree.evolveTo) {
+      result.evolveTo = [];
+      if (isArr(this.tree.evolveTo)) {
+        // Eevee support again
+        for (var a = 0;a < this.tree.evolveTo.length;a++) {
+          result.evolveTo.push({
+            cp: cpcalc(this.tree.evolveTo[a].cpm),
+            evolves: evo(this.candy)
+          });
+        }
+      } else {
+        result.evolveTo.push({
+          cp: cpcalc(this.cpm),
+          evolves: evo(this.candy)
+        });
+      }
     }
 
+    // last stage
+    if (this.tree.evolveEnd) {
+      result.evolveEnd = {
+        cp: cpcalc(this.cpm, this.tree.evolveTo.cpm),
+        evolves: evo(this.candy + this.tree.evolveTo.candy)
+      };
+    }
     return result;
+  },
+
+  // get moveset rankings
+  duel: function() {
+    // only generate data once per pokemon
+    if (!this.dueling) this.dueling = DuelRank(this);
+    for (var score in this.dueling) {
+      var rank = this.dueling[score];
+      if (rank.quick == this._.quickMove && rank.charge == this._.chargeMove) {
+        return rank;
+      }
+    }
+
   }
 };
