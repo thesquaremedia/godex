@@ -13,6 +13,7 @@ var Pokemon = function(data) {
   };
 
   this.id = data.id;
+  this.key = data.key
   this.egg = data.egg;
   this.candy = data.candy;
   this.name = data.name;

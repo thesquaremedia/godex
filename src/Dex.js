@@ -57,7 +57,10 @@ var Dex = function(opts) {
       for (var search in data) {
         if (data[search].name == get) result = data[search]; // is it a name?
         if (data[search].id == parseInt(get)) result = data[search]; // or id?
-        if (result) get = search;
+        if (result) {
+          get = search;
+          break;
+        }
       }
     }
 
