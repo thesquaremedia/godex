@@ -4072,23 +4072,50 @@ Pokemon.prototype = {
 
   // build family tree (evolves)
   buildTree: function(data) {
-    var result = { stages: 1, current: 1, };
-    if (data.evolveTo) {
-      if (isArr(data.evolveTo)) {
-        // Eevee support lolol
-        result.evolveTo = [];
-        for (var a = 0;a < data.evolveTo.length;a++) {
-          result.evolveTo.push(pokemonData[data.evolveTo[a]]);
-        }
-      } else result.evolveTo = pokemonData[data.evolveTo];
+    var result = { stages: 1, current: 1, },
+      evFr = data.evolveFrom,
+      evTo = data.evolveTo;
+
+    var Branch = function(to) {
+      var data = pokemonData[to];
+      this.id = data.id;
+      this.key = to;
+      this.stats = data.stats;
+      if (data.cpm) this.cpm = data.cpm;
+      if (data.candy) this.candy = data.candy;
+      if (data.evolveTo) this.evolveTo = data.evolveTo;
+      if (data.evolveFrom) this.evolveFrom = data.evolveFrom;
+    };
+
+    var build = function(thing) {
+      var result = [];
+      if (isArr(thing)) {
+        for (var t = 0;t < thing.length;t++) result.push(new Branch(thing[t]));
+      } else {
+        result.push(new Branch(thing));
+      }
+      return result;
+    };
+
+    var brStart, brFrom, brTo, brEnd;
+    if (evFr) {
+      brFrom = build(evFr);
+      for (var f = 0;f < brFrom.length;f++) {
+        if (brFrom[f].evolveFrom) brStart = build(brFrom[f].evolveFrom);
+      }
+      if (brFrom) result.evolveFrom = brFrom;
+      if (brStart) result.evolveStart = brStart;
     }
-    if (data.evolveFrom) result.evolveFrom = pokemonData[data.evolveFrom];
-    if (data.evolveTo && result.evolveTo.evolveTo) {
-      result.evolveEnd = pokemonData[result.evolveTo.evolveTo];
+
+    if (evTo) {
+      brTo = build(evTo);
+      for (var t = 0;t < brTo.length;t++) {
+        if (brTo[t].evolveTo) brEnd = build(brTo[t].evolveTo);
+      }
+      if (brTo) result.evolveTo = brTo;
+      if (brEnd) result.evolveEnd = brEnd;
     }
-    if (data.evolveFrom && result.evolveFrom.evolveFrom) {
-      result.evolveStart = pokemonData[result.evolveFrom.evolveFrom];
-    }
+
     return result;
   },
 
@@ -4113,12 +4140,14 @@ Pokemon.prototype = {
         // Eevee support again
         for (var a = 0;a < this.tree.evolveTo.length;a++) {
           result.evolveTo.push({
+            key: this.tree.evolveTo[a].key,
             cp: cpcalc(this.tree.evolveTo[a].cpm),
             evolves: evo(this.candy)
           });
         }
       } else {
         result.evolveTo.push({
+          key: this.tree.evolveTo.key,
           cp: cpcalc(this.cpm),
           evolves: evo(this.candy)
         });
@@ -4127,10 +4156,12 @@ Pokemon.prototype = {
 
     // last stage
     if (this.tree.evolveEnd) {
-      result.evolveEnd = {
+      result.evolveEnd = [];
+      result.evolveEnd.push({
+        key: this.tree.evolveEnd.key,
         cp: cpcalc(this.cpm, this.tree.evolveTo.cpm),
         evolves: evo(this.candy + this.tree.evolveTo.candy)
-      };
+      });
     }
     return result;
   },
