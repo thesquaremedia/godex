@@ -4617,7 +4617,7 @@ for (var level in levelsData) {
 
 
 Dex.prototype = {
-  version: "2.2.0",
+  version: "2.5.0",
 
   // tools
   Gym: function() { return new Gym(); },
