@@ -4136,19 +4136,10 @@ Pokemon.prototype = {
     // next stage
     if (this.tree.evolveTo) {
       result.evolveTo = [];
-      if (isArr(this.tree.evolveTo)) {
-        // Eevee support again
-        for (var a = 0;a < this.tree.evolveTo.length;a++) {
-          result.evolveTo.push({
-            key: this.tree.evolveTo[a].key,
-            cp: cpcalc(this.tree.evolveTo[a].cpm),
-            evolves: evo(this.candy)
-          });
-        }
-      } else {
+      for (var a = 0;a < this.tree.evolveTo.length;a++) {
         result.evolveTo.push({
-          key: this.tree.evolveTo.key,
-          cp: cpcalc(this.cpm),
+          key: this.tree.evolveTo[a].key,
+          cp: cpcalc(this.tree.evolveTo[a].cpm),
           evolves: evo(this.candy)
         });
       }
@@ -4157,11 +4148,13 @@ Pokemon.prototype = {
     // last stage
     if (this.tree.evolveEnd) {
       result.evolveEnd = [];
-      result.evolveEnd.push({
-        key: this.tree.evolveEnd.key,
-        cp: cpcalc(this.cpm, this.tree.evolveTo.cpm),
-        evolves: evo(this.candy + this.tree.evolveTo.candy)
-      });
+      for (var b = 0;b < this.tree.evolveEnd.length;b++) {
+        result.evolveEnd.push({
+          key: this.tree.evolveEnd[b].key,
+          cp: cpcalc(this.cpm, this.tree.evolveTo[0].cpm),
+          evolves: evo(this.candy + this.tree.evolveTo[0].candy)
+        });
+      }
     }
     return result;
   },
