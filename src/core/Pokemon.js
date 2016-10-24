@@ -150,7 +150,7 @@ Pokemon.prototype = {
       for (var a = 0;a < this.tree.evolveTo.length;a++) {
         result.evolveTo.push({
           key: this.tree.evolveTo[a].key,
-          cp: cpcalc(this.tree.evolveTo[a].cpm),
+          cp: cpcalc(this.cpm),
           evolves: evo(this.candy)
         });
       }
