@@ -147,10 +147,11 @@ Pokemon.prototype = {
     // next stage
     if (this.tree.evolveTo) {
       result.evolveTo = [];
+      var multiple = this.tree.evolveTo.length > 1;
       for (var a = 0;a < this.tree.evolveTo.length;a++) {
         result.evolveTo.push({
           key: this.tree.evolveTo[a].key,
-          cp: cpcalc(this.cpm),
+          cp: cpcalc(multiple ? this.tree.evolveTo[a].cpm : this.cpm),
           evolves: evo(this.candy)
         });
       }
