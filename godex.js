@@ -4002,7 +4002,7 @@ var Pokemon = function(data) {
   };
 
   this.id = data.id;
-  this.key = data.key
+  this.key = data.key;
   this.egg = data.egg;
   this.candy = data.candy;
   this.name = data.name;
@@ -4068,6 +4068,41 @@ Pokemon.prototype = {
   getHP: function(lvl, stamina) {
     var sta = this.stats.stamina + (stamina ? stamina : 0);
     return parseInt(Math.floor(sta * levelsData[lvl].cpm), 10);
+  },
+
+  resistance: function() {
+    // Make sure we only do generators once!
+    if (this.typeAdvantage) return this.typeAdvantage;
+    console.log("generating!");
+    var adv = {};
+    // for each type the pokemon has
+    for (var _type in this.type) {
+      var data = typesData[this.type[_type]];
+      // for each effectiveness for the type
+      for (var eff in data) {
+        for (var types in data[eff]) {
+          if (eff != "name") {
+            var type = data[eff][types];
+            if (!adv[type]) adv[type] = { off: 1, def: 1 };
+            if (eff == "halfTo") adv[type].off *= 0.8;
+            if (eff == "halfFrom") adv[type].def *= 0.8;
+            if (eff == "twiceTo") adv[type].off *= 1.25;
+            if (eff == "twiceFrom") adv[type].def *= 1.25;
+          }
+        }
+      }
+
+      for (var mod in adv) {
+        // make the data pretty
+        if (adv[mod].off == 1) delete adv[mod].off;
+        if (adv[mod].def == 1) delete adv[mod].def;
+        if (adv[mod].off) adv[mod].off = rnd(adv[mod].off);
+        if (adv[mod].def) adv[mod].def = rnd(adv[mod].def);
+      }
+
+      this.typeAdvantage = adv;
+      return this.typeAdvantage;
+    }
   },
 
   // build family tree (evolves)
