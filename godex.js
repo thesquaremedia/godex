@@ -4076,6 +4076,7 @@ Pokemon.prototype = {
     var adv = {};
     // for each type the pokemon has
     for (var _type in this.type) {
+      console.log(this.type[_type]);
       var data = typesData[this.type[_type]];
       // for each effectiveness for the type
       for (var eff in data) {
@@ -4090,18 +4091,18 @@ Pokemon.prototype = {
           }
         }
       }
-
-      for (var mod in adv) {
-        // make the data pretty
-        if (adv[mod].off == 1) delete adv[mod].off;
-        if (adv[mod].def == 1) delete adv[mod].def;
-        if (adv[mod].off) adv[mod].off = rnd(adv[mod].off);
-        if (adv[mod].def) adv[mod].def = rnd(adv[mod].def);
-      }
-
-      this.typeAdvantage = adv;
-      return this.typeAdvantage;
     }
+
+    for (var mod in adv) {
+      // make the data pretty
+      if (adv[mod].off == 1) delete adv[mod].off;
+      if (adv[mod].def == 1) delete adv[mod].def;
+      if (adv[mod].off) adv[mod].off = rnd(adv[mod].off);
+      if (adv[mod].def) adv[mod].def = rnd(adv[mod].def);
+    }
+
+    this.typeAdvantage = adv;
+    return this.typeAdvantage;
   },
 
   // build family tree (evolves)
