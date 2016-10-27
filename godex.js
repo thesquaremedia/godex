@@ -4073,7 +4073,6 @@ Pokemon.prototype = {
   resistance: function() {
     // Make sure we only do generators once!
     if (this.typeAdvantage) return this.typeAdvantage;
-    console.log("generating!");
     var adv = {};
     // for each type the pokemon has
     for (var _type in this.type) {
@@ -4212,7 +4211,8 @@ Pokemon.prototype = {
 /** Move.js | The Move Object **/
 
 var Move = function(name, stats, type) {
-  var data = movesData[name];
+  var data = movesData[name],
+    avgdef = Dex.prototype._average.defense;
   this.key = name;
   this.name = data.name;
   this.type = data.type;
@@ -4223,7 +4223,7 @@ var Move = function(name, stats, type) {
   if (data.charges) this.charges = data.charges;
 
   var mod = stats ? 0.5 : 1;
-  var vs = stats ? (stats.attack / this.avgDefense) : 1;
+  var vs = stats ? (stats.attack / avgdef) : 1;
   var stab = type ? (type.indexOf(this.type) > -1) ? 1.25 : 1 : 1;
 
   this.stab = (stab == 1.25);
@@ -4635,21 +4635,45 @@ var Dex = function(opts) {
 };
 
 // One-Time Generators
-var alphabet = [];
+var alphabet = [], dustOptions = [], avg = 0,
+  average = { attack: 0, defense: 0, stamina: 0 },
+  best = { attack: { score: 0 }, defense: { score: 0 }, stamina: { score: 0 } };
+
 for (var poke in pokemonData) {
   // get first letter of possible
   // pokemon names (for filters)
-  var letter = poke.charAt(0);
+  var letter = poke.charAt(0), mon = pokemonData[poke];
   if (alphabet.indexOf(letter) < 0) alphabet.push(letter);
+
+  // find best attack/defense/stamina
+  if (mon.stats.attack > best.attack.score) {
+    best.attack = { key: poke, name: mon.name, score: mon.stats.attack };
+  }
+  if (mon.stats.defense > best.defense.score) {
+    best.defense = { key: poke, name: mon.name, score: mon.stats.defense };
+  }
+  if (mon.stats.stamina > best.stamina.score) {
+    best.stamina = { key: poke, name: mon.name, score: mon.stats.stamina };
+  }
+
+  // collect for average attack/defense/stamina
+  avg += 1;
+  average.attack += mon.stats.attack;
+  average.defense += mon.stats.defense;
+  average.stamina += mon.stats.stamina;
 }
 
-var dustOptions = [];
 for (var level in levelsData) {
   // get all the unique dust options
   // for filters as well.
   var option = levelsData[level].dust;
   if (dustOptions.indexOf(option) < 0) dustOptions.push(option);
 }
+
+// Calculate averages for average stats
+average.attack = rnd(average.attack / avg);
+average.defense = rnd(average.defense / avg);
+average.stamina = rnd(average.stamina / avg);
 
 
 Dex.prototype = {
@@ -4660,6 +4684,8 @@ Dex.prototype = {
 
   // static data
   _aZ: alphabet.sort(),
+  _best: best,
+  _average: average,
   _dustLevels: dustOptions
 };
 

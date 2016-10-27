@@ -1,7 +1,8 @@
 /** Move.js | The Move Object **/
 
 var Move = function(name, stats, type) {
-  var data = movesData[name];
+  var data = movesData[name],
+    avgdef = Dex.prototype._average.defense;
   this.key = name;
   this.name = data.name;
   this.type = data.type;
@@ -12,7 +13,7 @@ var Move = function(name, stats, type) {
   if (data.charges) this.charges = data.charges;
 
   var mod = stats ? 0.5 : 1;
-  var vs = stats ? (stats.attack / this.avgDefense) : 1;
+  var vs = stats ? (stats.attack / avgdef) : 1;
   var stab = type ? (type.indexOf(this.type) > -1) ? 1.25 : 1 : 1;
 
   this.stab = (stab == 1.25);
