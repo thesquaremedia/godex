@@ -174,5 +174,5 @@ Dex.prototype = {
     stamina: { key: 'chansey', name: 'Chansey', score: 500 },
     damage: { key: 'mewtwo', name: 'Mewtwo', score: 1866 }
   },
-  _average: { attack: 151, defense: 146, stamina: 128, damage: 1194 }
+  _average: { attack: 151, defense: 146, stamina: 128, damage: 1036 }
 };
