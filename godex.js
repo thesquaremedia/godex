@@ -4709,9 +4709,9 @@ for (var level in levelsData) {
 }
 
 // Calculate averages for average stats
-average.attack = rnd(average.attack / avg);
-average.defense = rnd(average.defense / avg);
-average.stamina = rnd(average.stamina / avg);
+average.attack = Math.floor(average.attack / avg);
+average.defense = Math.floor(average.defense / avg);
+average.stamina = Math.floor(average.stamina / avg);
 
 
 Dex.prototype = {
