@@ -3,31 +3,28 @@
 Pokemon.prototype.rank = function() {
   // only run generators once!
   if (this.rankings) return this.rankings;
-  var _avg = Dex.prototype._average, _best = Dex.prototype._best;
+  var d = Dex.prototype, avg = d._average, best = d._best, rank = {}, data = {};
 
-  var rankStats = function(score, avgScore, bestScore) {
-    var avg = pc(score / avgScore),
-      best = pc(score / bestScore.score);
-
+  rank.stat = function(stat, mid, top) {
+    var rank = pc(stat / mid) - 100;
     return {
-      score: score,
-      average: avgScore,
-      best: bestScore,
-      rank: {
-        best: best,
-        average: avg,
-        gorank: Math.floor((best + avg) / 2)
-      }
+      score: stat,
+      average: mid,
+      best: top,
+      rank: (rank > 1 ? ("+" + rank) : rank)
     };
   };
 
-  // rank pokemon's stats
-  this.rankings = {
-    stat: {
-      attack: rankStats(this.stats.attack, _avg.attack, _best.attack),
-      defense: rankStats(this.stats.defense, _avg.defense, _best.defense),
-      stamina: rankStats(this.stats.stamina, _avg.stamina, _best.stamina)
-    }
+  rank.stats = function(atk, def, sta) {
+    return Math.floor((parseInt(atk) + parseInt(def) + parseInt(sta)) / 3);
   };
-  return this.rankings;
+
+  data.attack = rank.stat(this.stats.attack, avg.attack, best.attack);
+  data.defense = rank.stat(this.stats.defense, avg.defense, best.defense);
+  data.stamina = rank.stat(this.stats.stamina, avg.stamina, best.stamina);
+  data.stats = rank.stats(data.attack.rank, data.defense.rank, data.stamina.rank);
+
+  this.rankings = data;
+  Note("Ranked Pokemon: " + this.name);
+  return this.rank();
 };
