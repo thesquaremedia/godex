@@ -205,5 +205,4 @@ Pokemon.prototype = {
     }
     return result;
   }
-  
 };

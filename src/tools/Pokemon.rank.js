@@ -11,18 +11,21 @@ Pokemon.prototype.rank = function() {
       score: stat,
       average: mid,
       best: top,
-      rank: (rank > 1 ? ("+" + rank) : rank)
+      rank: rank
     };
   };
 
-  rank.stats = function(atk, def, sta) {
-    return Math.floor((parseInt(atk) + parseInt(def) + parseInt(sta)) / 3);
+  rank.stats = function(stats) {
+    var total = stats.attack.rank + stats.defense.rank + stats.stamina.rank;
+    return Math.floor(total / 3);
   };
 
-  data.attack = rank.stat(this.stats.attack, avg.attack, best.attack);
-  data.defense = rank.stat(this.stats.defense, avg.defense, best.defense);
-  data.stamina = rank.stat(this.stats.stamina, avg.stamina, best.stamina);
-  data.stats = rank.stats(data.attack.rank, data.defense.rank, data.stamina.rank);
+  data.stat = {
+    attack: rank.stat(this.stats.attack, avg.attack, best.attack),
+    defense: rank.stat(this.stats.defense, avg.defense, best.defense),
+    stamina: rank.stat(this.stats.stamina, avg.stamina, best.stamina)
+  };
+  data.stats = rank.stats(data.stat);
 
   this.rankings = data;
   Note("Ranked Pokemon: " + this.name);
