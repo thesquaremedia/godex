@@ -4081,7 +4081,6 @@ Pokemon.prototype = {
     var adv = {};
     // for each type the pokemon has
     for (var _type in this.type) {
-      console.log(this.type[_type]);
       var data = typesData[this.type[_type]];
       // for each effectiveness for the type
       for (var eff in data) {
@@ -4546,7 +4545,8 @@ var DuelRank = function(mon) {
         toweave: (weave > noweave),
         noweave: Math.floor(noweave),
         weave: Math.floor(weave),
-        gymweave: Math.floor(gymweave)
+        gymweave: Math.floor(gymweave),
+        output: (weave > noweave) ? Math.floor(weave) : Math.floor(noweave)
       });
     }
   }

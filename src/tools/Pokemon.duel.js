@@ -68,7 +68,8 @@ var DuelRank = function(mon) {
         toweave: (weave > noweave),
         noweave: Math.floor(noweave),
         weave: Math.floor(weave),
-        gymweave: Math.floor(gymweave)
+        gymweave: Math.floor(gymweave),
+        output: (weave > noweave) ? Math.floor(weave) : Math.floor(noweave)
       });
     }
   }
