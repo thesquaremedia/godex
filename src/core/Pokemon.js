@@ -87,7 +87,6 @@ Pokemon.prototype = {
     var adv = {};
     // for each type the pokemon has
     for (var _type in this.type) {
-      console.log(this.type[_type]);
       var data = typesData[this.type[_type]];
       // for each effectiveness for the type
       for (var eff in data) {
