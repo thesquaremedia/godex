@@ -1,4 +1,16 @@
-/** DuelRank.js | Ranking movesets and DPS **/
+/** Pokemon.duel.js | Ranking movesets and DPS **/
+
+Pokemon.prototype.duel = function() {
+  // only generate data once per pokemon
+  if (!this.dueling) this.dueling = DuelRank(this);
+
+  for (var score in this.dueling) {
+    var rank = this.dueling[score];
+    if (rank.quick == this._.quickMove && rank.charge == this._.chargeMove) {
+      return rank;
+    }
+  }
+};
 
 var DuelRank = function(mon) {
   var result = [];

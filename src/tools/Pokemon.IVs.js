@@ -1,7 +1,6 @@
 /** Pokemon.IVs.js | calculate iv's **/
 /** credits to: https://github.com/andromedado/pokemon-go-iv-calculator/ **/
 
-
 Pokemon.prototype.IVs = function() {
   var ivs = [], result = {};
 

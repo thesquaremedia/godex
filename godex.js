@@ -3966,8 +3966,13 @@ var Note = function(msg, data) {
 };
 
 // rounding function
-var rnd = function(num){
+var rnd = function(num) {
   return Math.round(num * 100) / 100;
+};
+
+// percent function
+var pc = function(num) {
+  return Math.floor(num * 100);
 };
 
 // copy object function
@@ -4193,20 +4198,8 @@ Pokemon.prototype = {
       }
     }
     return result;
-  },
-
-  // get moveset rankings
-  duel: function() {
-    // only generate data once per pokemon
-    if (!this.dueling) this.dueling = DuelRank(this);
-    for (var score in this.dueling) {
-      var rank = this.dueling[score];
-      if (rank.quick == this._.quickMove && rank.charge == this._.chargeMove) {
-        return rank;
-      }
-    }
-
   }
+  
 };
 
 /** Move.js | The Move Object **/
@@ -4396,7 +4389,6 @@ Gym.prototype = {
 /** Pokemon.IVs.js | calculate iv's **/
 /** credits to: https://github.com/andromedado/pokemon-go-iv-calculator/ **/
 
-
 Pokemon.prototype.IVs = function() {
   var ivs = [], result = {};
 
@@ -4485,7 +4477,19 @@ Pokemon.prototype.IVs = function() {
   return result;
 };
 
-/** DuelRank.js | Ranking movesets and DPS **/
+/** Pokemon.duel.js | Ranking movesets and DPS **/
+
+Pokemon.prototype.duel = function() {
+  // only generate data once per pokemon
+  if (!this.dueling) this.dueling = DuelRank(this);
+
+  for (var score in this.dueling) {
+    var rank = this.dueling[score];
+    if (rank.quick == this._.quickMove && rank.charge == this._.chargeMove) {
+      return rank;
+    }
+  }
+};
 
 var DuelRank = function(mon) {
   var result = [];
@@ -4554,6 +4558,40 @@ var DuelRank = function(mon) {
 
   Note("Ranked Pokemon: " + mon.name);
   return result;
+};
+
+/** Pokemon.rank.js | ranking a pokemon **/
+
+Pokemon.prototype.rank = function() {
+  // only run generators once!
+  if (this.rankings) return this.rankings;
+  var _avg = Dex.prototype._average, _best = Dex.prototype._best;
+
+  var rankStats = function(score, avgScore, bestScore) {
+    var avg = pc(score / avgScore),
+      best = pc(score / bestScore.score);
+
+    return {
+      score: score,
+      average: avgScore,
+      best: bestScore,
+      rank: {
+        best: best,
+        average: avg,
+        gorank: Math.floor((best + avg) / 2)
+      }
+    };
+  };
+
+  // rank pokemon's stats
+  this.rankings = {
+    stat: {
+      attack: rankStats(this.stats.attack, _avg.attack, _best.attack),
+      defense: rankStats(this.stats.defense, _avg.defense, _best.defense),
+      stamina: rankStats(this.stats.stamina, _avg.stamina, _best.stamina)
+    }
+  };
+  return this.rankings;
 };
 
 /** Dex.js | Data & Tools wrapper **/
