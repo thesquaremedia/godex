@@ -77,57 +77,102 @@ var Dex = function(opts) {
   }
 };
 
-// One-Time Generators
-var alphabet = [], dustOptions = [], avg = 0,
-  average = { attack: 0, defense: 0, stamina: 0 },
-  best = { attack: { score: 0 }, defense: { score: 0 }, stamina: { score: 0 } };
-
-for (var poke in pokemonData) {
-  // get first letter of possible
-  // pokemon names (for filters)
-  var letter = poke.charAt(0), mon = pokemonData[poke];
-  if (alphabet.indexOf(letter) < 0) alphabet.push(letter);
-
-  // find best attack/defense/stamina
-  if (mon.stats.attack > best.attack.score) {
-    best.attack = { key: poke, name: mon.name, score: mon.stats.attack };
-  }
-  if (mon.stats.defense > best.defense.score) {
-    best.defense = { key: poke, name: mon.name, score: mon.stats.defense };
-  }
-  if (mon.stats.stamina > best.stamina.score) {
-    best.stamina = { key: poke, name: mon.name, score: mon.stats.stamina };
-  }
-
-  // collect for average attack/defense/stamina
-  avg += 1;
-  average.attack += mon.stats.attack;
-  average.defense += mon.stats.defense;
-  average.stamina += mon.stats.stamina;
-}
-
-for (var level in levelsData) {
-  // get all the unique dust options
-  // for filters as well.
-  var option = levelsData[level].dust;
-  if (dustOptions.indexOf(option) < 0) dustOptions.push(option);
-}
-
-// Calculate averages for average stats
-average.attack = Math.floor(average.attack / avg);
-average.defense = Math.floor(average.defense / avg);
-average.stamina = Math.floor(average.stamina / avg);
-
-
 Dex.prototype = {
   version: "2.5.0",
 
   // tools
   Gym: function() { return new Gym(); },
 
+  // generator
+  // NOTE TODO README WHATEVER
+  // If data changes (pokemon, moves, type, etc), run
+  // the generator with Go().makeStatic(). This will
+  // re-generate all the static data here and print it
+  // in the log all nice and pretty. This data should
+  // remain static! Too intense to be running all the time.
+  makeStatic: function() {
+    // loop through all pokemon and collect data
+    var avg = 0, letters = [], dust = [];
+    var avgAtk = 0, avgDef = 0, avgSta = 0, avgDmg = 0;
+    var topAtk = { s: 0 }, topDef = { s: 0 };
+    var topSta = { s: 0 }, topDmg = { s: 0 };
+
+    for (var poke in pokemonData) {
+      var mon = Go(poke), stats = mon.stats;
+      avg += 1; // running tally of average
+      mon.duel(); // make sure we generate this
+      var duel = mon.dueling[0].output; // to set it here
+
+      // running alphabet of first-letters
+      // useful for letter tabs and sorting
+      // example: gen 1 has no 'U' pokemon.
+      var letter = poke.charAt(0);
+      if (letters.indexOf(letter) < 0) letters.push(letter);
+
+      // Find the best stats
+      if (stats.attack > topAtk.s) topAtk = { s: stats.attack, k: mon.key };
+      if (stats.defense > topDef.s) topDef = { s: stats.defense, k: mon.key };
+      if (stats.stamina > topSta.s) topSta = { s: stats.stamina, k: mon.key };
+      if (duel > topDmg.s) topDmg = { s: duel, k: mon.key };
+
+      // Tally for averages
+      var avgDuel = 0;
+      avgAtk += stats.attack;
+      avgDef += stats.defense;
+      avgSta += stats.stamina;
+      for (var i = 0; i < mon.dueling.length; i++) {
+        avgDuel += mon.dueling[i].output;
+      }
+      avgDmg += (avgDuel / mon.dueling.length);
+    }
+
+    for (var level in levelsData) {
+      // get all the unique dust options
+      // for filters as well.
+      var option = levelsData[level].dust;
+      if (dust.indexOf(option) < 0) dust.push(option);
+    }
+
+    avgAtk = Math.floor(avgAtk / avg);
+    avgDef = Math.floor(avgDef / avg);
+    avgSta = Math.floor(avgSta / avg);
+    avgDmg = Math.floor(avgDmg / avg);
+
+    console.log("letters");
+    console.log(letters.sort());
+
+    console.log("dust");
+    console.log(dust);
+
+    console.log("average");
+    console.log({
+      attack: avgAtk,
+      defense: avgDef,
+      stamina: avgSta,
+      damage: avgDmg
+    });
+
+    console.log("best");
+    console.log({
+      attack: topAtk,
+      defense: topDef,
+      stamina: topSta,
+      damage: topDmg
+    });
+  },
+
   // static data
-  _aZ: alphabet.sort(),
-  _best: best,
-  _average: average,
-  _dustLevels: dustOptions
+  _aZ: [ 'a','b','c','d','e','f','g','h','i','j',
+    'k','l','m','n','o','p','r','s','t','v','w','z' ],
+
+  _dustLevels: [ 200,400,600,800,1000,1300,1600,1900,2200,
+    2500,3000,3500,4000,4500,5000,6000,7000,8000,9000,10000 ],
+
+  _best: {
+    attack: { key: 'mewtwo', name: 'Mewtwo', score: 284 },
+    defense: { key: 'articuno', name: 'Articuno', score: 242 },
+    stamina: { key: 'chansey', name: 'Chansey', score: 500 },
+    damage: { key: 'mewtwo', name: 'Mewtwo', score: 1866 }
+  },
+  _average: { attack: 151, defense: 146, stamina: 128, damage: 1194 }
 };
