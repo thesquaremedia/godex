@@ -1852,7 +1852,7 @@ var pokemonData = {
       defense: 160
     },
     type: ["water"],
-    quickMoves: ["quick-attack", "water-gun"],
+    quickMoves: ["peck", "poison-jab"],
     chargeMoves: ["drill-run", "icy-wind", "megahorn"],
     evolveFrom: 'goldeen'
   },
