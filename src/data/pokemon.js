@@ -1893,6 +1893,7 @@ var pokemonData = {
     name: "Starmie",
     quickMoves: ["tackle", "water-gun"],
     chargeMoves: ["hydro-pump", "power-gem", "psychic"],
+    legacyMoves: ["quick-attack","psybeam"],
     stats: {
       stamina: 120,
       attack: 194,
