@@ -136,6 +136,7 @@ Version guide:
 ### Contributors
 
 - [xssc](https://github.com/xssc)
+- [jeff-wolff](https://github.com/jeff-wolff)
 
 ---
 
