@@ -38,10 +38,10 @@ Alternatively, download the repo and use the files that way!
 ```
 <script src="/path/to/godex.min.js"></script>
 ```
-Add script before your other scripts in your HTML. Exports as `dex`.
+Add script before your other scripts in your HTML. Exports as `Go`.
 
 ##### Node
-`var dex = require('godex');`
+`var Go = require('godex');`
 
 ---
 
