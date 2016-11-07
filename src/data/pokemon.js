@@ -615,7 +615,8 @@ var pokemonData = {
     },
     type: ["normal", "fairy"],
     quickMoves: ["feint-attack", "pound"],
-    chargeMoves: ["body-slam", "disarming-voice", "play-rough"],
+    chargeMoves: ["body-slam", "disarming-voice", "dazzling-gleam"],
+    legacyMoves: ["play-rough"],
     evolveTo: "wigglytuff"
   },
   "wigglytuff": {
@@ -786,8 +787,9 @@ var pokemonData = {
       defense: 86
     },
     type: ["ground"],
-    quickMoves: ["mud-shot", "scratch"],
+    quickMoves: ["mud-slap", "scratch"],
     chargeMoves: ["dig", "mud-bomb", "rock-tomb"],
+    legacyMoves: ["mud-shot"],
     evolveTo: "dugtrio"
   },
   "dugtrio": {
@@ -801,8 +803,9 @@ var pokemonData = {
       defense: 140
     },
     type: ["ground"],
-    quickMoves: ["mud-shot", "sucker-punch"],
+    quickMoves: ["mud-slap", "sucker-punch"],
     chargeMoves: ["earthquake", "mud-bomb", "stone-edge"],
+    legacyMoves: ["mud-shot"],
     evolveFrom: "diglett"
   },
   "meowth": {
@@ -1180,8 +1183,9 @@ var pokemonData = {
       defense: 156
     },
     type: ["rock", "ground"],
-    quickMoves: ["mud-shot", "rock-throw"],
+    quickMoves: ["mud-slap", "rock-throw"],
     chargeMoves: ["dig", "rock-slide", "stone-edge"],
+    legacyMoves: ["mud-shot"],
     evolveFrom: "geodude",
     evolveTo: "golem"
   },
@@ -1198,6 +1202,7 @@ var pokemonData = {
     type: ["rock", "ground"],
     quickMoves: ["mud-slap", "rock-throw"],
     chargeMoves: ["ancient-power", "earthquake", "stone-edge"],
+    legacyMoves: ["mud-shot"],
     evolveFrom: "graveler"
   },
   "ponyta": {
@@ -1350,8 +1355,9 @@ var pokemonData = {
       defense: 138
     },
     type: ["water"],
-    quickMoves: ["ice-shard", "water-gun"],
+    quickMoves: ["ice-shard", "lick"],
     chargeMoves: ["aqua-jet", "aqua-tail", "icy-wind"],
+    legacyMoves: ["water-gun"],
     evolveTo: "dewgong"
   },
   "dewgong": {
@@ -1381,8 +1387,9 @@ var pokemonData = {
       defense: 110
     },
     type: ["poison"],
-    quickMoves: ["acid", "mud-slap"],
-    chargeMoves: ["sludge", "sludge-bomb", "sludge-wave"],
+    quickMoves: ["poison-jab", "mud-slap"],
+    chargeMoves: ["sludge", "sludge-bomb", "mud-bomb"],
+    legacyMoves: ["acid"],
     evolveTo: "muk"
   },
   "muk": {
@@ -1396,8 +1403,9 @@ var pokemonData = {
       defense: 188
     },
     type: ["poison"],
-    quickMoves: ["acid", "poison-jab"],
-    chargeMoves: ["dark-pulse", "sludge", "sludge-bomb"],
+    quickMoves: ["poison-jab", "lick"],
+    chargeMoves: ["dark-pulse", "gunk-shot", "sludge-wave"],
+    legacyMoves: ["acid"],
     evolveFrom: "grimer"
   },
   "shellder": {
@@ -1476,7 +1484,8 @@ var pokemonData = {
     },
     type: ["ghost", "poison"],
     quickMoves: ["shadow-claw", "sucker-punch"],
-    chargeMoves: ["dark-pulse", "shadow-ball", "sludge-wave"],
+    chargeMoves: ["sludge-bomb", "dark-pulse", "shadow-ball"],
+    legacyMoves: ["sludge-wave"],
     evolveFrom: "haunter"
   },
   "onix": {
@@ -1660,7 +1669,8 @@ var pokemonData = {
     },
     type: ["fighting"],
     quickMoves: ["low-kick", "rock-smash"],
-    chargeMoves: ["low-sweep", "stomp", "stone-edge"]
+    chargeMoves: ["low-sweep", "brick-break", "stone-edge"],
+    legacyMoves: ["stomp"]
   },
   "hitmonchan": {
     id: 107,
@@ -1702,8 +1712,9 @@ var pokemonData = {
       defense: 142
     },
     type: ["poison"],
-    quickMoves: ["acid", "tackle"],
+    quickMoves: ["tackle"],
     chargeMoves: ["dark-pulse", "sludge", "sludge-bomb"],
+    legacyMoves: ["acid"],
     evolveTo: "weezing"
   },
   "weezing": {
@@ -1717,8 +1728,9 @@ var pokemonData = {
       defense: 198
     },
     type: ["poison"],
-    quickMoves: ["acid", "tackle"],
+    quickMoves: ["tackle"],
     chargeMoves: ["dark-pulse", "shadow-ball", "sludge-bomb"],
+    legacyMoves: ["acid"],
     evolveFrom: "koffing"
   },
   "rhyhorn": {
@@ -1764,7 +1776,8 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["pound", "zen-headbutt"],
-    chargeMoves: ["dazzling-gleam", "psybeam", "psychic"]
+    chargeMoves: ["dazzling-gleam", "hyper-beam", "psychic"],
+    legacyMoves: ["psybeam"]
   },
   "tangela": {
     id: 114,
@@ -1852,7 +1865,7 @@ var pokemonData = {
       defense: 160
     },
     type: ["water"],
-    quickMoves: ["quick-attack", "water-gun"],
+    quickMoves: ["peck", "poison-jab"],
     chargeMoves: ["drill-run", "icy-wind", "megahorn"],
     evolveFrom: 'goldeen'
   },
@@ -1868,8 +1881,9 @@ var pokemonData = {
       defense: 128
     },
     type: ["water"],
-    quickMoves: ["tackle", "quick-attack", "water-gun"],
+    quickMoves: ["tackle", "water-gun"],
     chargeMoves: ["bubble-beam", "power-gem", "swift"],
+    legacyMoves: ["quick-attack"],
     evolveTo: "starmie"
   },
   "starmie": {
@@ -1877,8 +1891,9 @@ var pokemonData = {
     egg: 0,
     candy: 0,
     name: "Starmie",
-    quickMoves: ["tackle", "quick-attack", "water-gun"],
-    chargeMoves: ["hydro-pump", "power-gem", "psybeam"],
+    quickMoves: ["tackle", "water-gun"],
+    chargeMoves: ["hydro-pump", "power-gem", "psychic"],
+    legacyMoves: ["quick-attack","psybeam"],
     stats: {
       stamina: 120,
       attack: 194,
@@ -2012,8 +2027,9 @@ var pokemonData = {
       defense: 196
     },
     type: ["water", "flying"],
-    quickMoves: ["bite", "dragon-breath"],
+    quickMoves: ["bite"],
     chargeMoves: ["dragon-pulse", "hydro-pump", "twister"],
+    legacyMoves: ["dragon-breath"],
     evolveFrom: "magikarp"
   },
   "lapras": {
@@ -2113,8 +2129,9 @@ var pokemonData = {
     egg: 5,
     candy: 0,
     name: "Porygon",
-    quickMoves: ["quick-attack", "tackle"],
+    quickMoves: ["zen-headbutt", "tackle"],
     chargeMoves: ["discharge", "signal-beam", "psybeam"],
+    legacyMoves: ["quick-attack"],
     stats: {
       stamina: 130,
       attack: 156,
@@ -2149,8 +2166,9 @@ var pokemonData = {
       defense: 202
     },
     type: ["rock", "water"],
-    quickMoves: ["rock-throw", "water-gun"],
+    quickMoves: ["mud-shot", "water-gun"],
     chargeMoves: ["ancient-power", "hydro-pump", "rock-slide"],
+    legacyMoves: ["rock-throw"],
     evolveFrom: "omanyte"
   },
   "kabuto": {
@@ -2328,7 +2346,8 @@ var pokemonData = {
     },
     type: ["psychic"],
     quickMoves: ["pound"],
-    chargeMoves: ["dragon-pulse", "earthquake", "fire-blast", "hurricane",
-      "hyper-beam", "moonblast", "psychic", "solar-beam"]
+    chargeMoves: ["dragon-pulse", "earthquake", "fire-blast", "blizzard",
+      "hyper-beam", "psychic", "solar-beam"],
+    legacyMoves: ["moonblast","hurricane"]
   }
 };
