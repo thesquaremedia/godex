@@ -24,6 +24,10 @@ var Pokemon = function(data) {
     quick: {}, charge: {}
   };
 
+  if (data.legacyMoves) {
+    this.moves.legacy = data.legacyMoves;
+  }
+
   var topQuick = 0, topCharge = 0;
   for (var qM in data.quickMoves) {
     var qmKey = data.quickMoves[qM];
