@@ -15,7 +15,8 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["tackle", "vine-whip"],
     chargeMoves: ["power-whip", "seed-bomb", "sludge-bomb"],
-    evolveTo: "ivysaur"
+    evolveTo: "ivysaur",
+    fleeRate: 0.1
   },
   "ivysaur": {
     id: 2,
@@ -32,7 +33,8 @@ var pokemonData = {
     quickMoves: ["vine-whip", "razor-leaf"],
     chargeMoves: ["power-whip", "sludge-bomb", "solar-beam"],
     evolveFrom: "bulbasaur",
-    evolveTo: "venusaur"
+    evolveTo: "venusaur",
+    fleeRate: 0.07
   },
   "venusaur": {
     id: 3,
@@ -47,7 +49,8 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["vine-whip", "razor-leaf"],
     chargeMoves: ["petal-blizzard", "sludge-bomb", "solar-beam"],
-    evolveFrom: "ivysaur"
+    evolveFrom: "ivysaur",
+    fleeRate: 0.05
   },
   "charmander": {
     id: 4,
@@ -63,7 +66,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "scratch"],
     chargeMoves: ["flame-burst", "flame-charge", "flamethrower"],
-    evolveTo: "charmeleon"
+    evolveTo: "charmeleon",
+    fleeRate: 0.1
   },
   "charmeleon": {
     id: 5,
@@ -80,7 +84,8 @@ var pokemonData = {
     quickMoves: ["ember", "scratch"],
     chargeMoves: ["fire-punch", "flame-burst", "flamethrower"],
     evolveFrom: "charmander",
-    evolveTo: "charizard"
+    evolveTo: "charizard",
+    fleeRate: 0.07
   },
   "charizard": {
     id: 6,
@@ -95,7 +100,8 @@ var pokemonData = {
     type: ["fire", "flying"],
     quickMoves: ["ember", "wing-attack"],
     chargeMoves: ["dragon-claw", "fire-blast", "flamethrower"],
-    evolveFrom: "charmeleon"
+    evolveFrom: "charmeleon",
+    fleeRate: 0.05
   },
   "squirtle": {
     id: 7,
@@ -111,7 +117,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "tackle"],
     chargeMoves: ["aqua-jet", "aqua-tail", "water-pulse"],
-    evolveTo: "wartortle"
+    evolveTo: "wartortle",
+    fleeRate: 0.1
   },
   "wartortle": {
     id: 8,
@@ -128,7 +135,8 @@ var pokemonData = {
     quickMoves: ["bite", "water-gun"],
     chargeMoves: ["aqua-jet", "hydro-pump", "ice-beam"],
     evolveFrom: "squirtle",
-    evolveTo: "blastoise"
+    evolveTo: "blastoise",
+    fleeRate: 0.07
   },
   "blastoise": {
     id: 9,
@@ -143,7 +151,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bite", "water-gun"],
     chargeMoves: ["flash-cannon", "hydro-pump", "ice-beam"],
-    evolveFrom: "wartortle"
+    evolveFrom: "wartortle",
+    fleeRate: 0.05
   },
   "caterpie": {
     id: 10,
@@ -159,7 +168,8 @@ var pokemonData = {
     type: ["bug"],
     quickMoves: ["bug-bite", "tackle"],
     chargeMoves: ["struggle"],
-    evolveTo: "metapod"
+    evolveTo: "metapod",
+    fleeRate: 0.2
   },
   "metapod": {
     id: 11,
@@ -176,7 +186,8 @@ var pokemonData = {
     quickMoves: ["bug-bite", "tackle"],
     chargeMoves: ["struggle"],
     evolveFrom: "caterpie",
-    evolveTo: "butterfree"
+    evolveTo: "butterfree",
+    fleeRate: 0.09
   },
   "butterfree": {
     id: 12,
@@ -191,7 +202,8 @@ var pokemonData = {
     type: ["bug", "flying"],
     quickMoves: ["bug-bite", "confusion"],
     chargeMoves: ["bug-buzz", "signal-beam", "psychic"],
-    evolveFrom: "metapod"
+    evolveFrom: "metapod",
+    fleeRate: 0.06
   },
   "weedle": {
     id: 13,
@@ -207,7 +219,8 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-sting"],
     chargeMoves: ["struggle"],
-    evolveTo: "kakuna"
+    evolveTo: "kakuna",
+    fleeRate: 0.2
   },
   "kakuna": {
     id: 14,
@@ -224,7 +237,8 @@ var pokemonData = {
     quickMoves: ["bug-bite", "poison-sting"],
     chargeMoves: ["struggle"],
     evolveFrom: "weedle",
-    evolveTo: "beedrill"
+    evolveTo: "beedrill",
+    fleeRate: 0.09
   },
   "beedrill": {
     id: 15,
@@ -239,7 +253,8 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-jab"],
     chargeMoves: ["aerial-ace", "sludge-bomb", "x-scissor"],
-    evolveFrom: "kakuna"
+    evolveFrom: "kakuna",
+    fleeRate: 0.06
   },
   "pidgey": {
     id: 16,
@@ -255,7 +270,8 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["tackle", "quick-attack"],
     chargeMoves: ["aerial-ace", "air-cutter", "twister"],
-    evolveTo: "pidgeotto"
+    evolveTo: "pidgeotto",
+    fleeRate: 0.2
   },
   "pidgeotto": {
     id: 17,
@@ -272,7 +288,8 @@ var pokemonData = {
     quickMoves: ["steel-wing", "wing-attack"],
     chargeMoves: ["aerial-ace", "air-cutter", "twister"],
     evolveFrom: "pidgeot",
-    evolveTo: "pidgeot"
+    evolveTo: "pidgeot",
+    fleeRate: 0.09
   },
   "pidgeot": {
     id: 18,
@@ -287,7 +304,8 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["steel-wing", "wing-attack"],
     chargeMoves: ["aerial-ace", "air-cutter", "hurricane"],
-    evolveFrom: "pidgeotto"
+    evolveFrom: "pidgeotto",
+    fleeRate: 0.06
   },
   "rattata": {
     id: 19,
@@ -303,7 +321,8 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["tackle", "quick-attack"],
     chargeMoves: ["body-slam", "dig", "hyper-fang"],
-    evolveTo: "raticate"
+    evolveTo: "raticate",
+    fleeRate: 0.2
   },
   "raticate": {
     id: 20,
@@ -318,7 +337,8 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["bite", "quick-attack"],
     chargeMoves: ["dig", "hyper-beam", "hyper-fang"],
-    evolveFrom: "rattata"
+    evolveFrom: "rattata",
+    fleeRate: 0.07
   },
   "spearow": {
     id: 21,
@@ -334,7 +354,8 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
     chargeMoves: ["aerial-ace", "drill-peck", "twister"],
-    evolveTo: "fearow"
+    evolveTo: "fearow",
+    fleeRate: 0.15
   },
   "fearow": {
     id: 22,
@@ -349,7 +370,8 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "steel-wing"],
     chargeMoves: ["aerial-ace", "drill-run", "twister"],
-    evolveFrom: "spearow"
+    evolveFrom: "spearow",
+    fleeRate: 0.07
   },
   "ekans": {
     id: 23,
@@ -365,7 +387,8 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["acid", "poison-sting"],
     chargeMoves: ["gunk-shot", "sludge-bomb", "wrap"],
-    evolveTo: "arbok"
+    evolveTo: "arbok",
+    fleeRate: 0.15
   },
   "arbok": {
     id: 24,
@@ -380,7 +403,8 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["acid", "bite"],
     chargeMoves: ["dark-pulse", "gunk-shot", "sludge-wave"],
-    evolveFrom: "ekans"
+    evolveFrom: "ekans",
+    fleeRate: 0.07
   },
   "pikachu": {
     id: 25,
@@ -396,7 +420,8 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["thunder-shock", "quick-attack"],
     chargeMoves: ["discharge", "thunder", "thunderbolt"],
-    evolveTo: "raichu"
+    evolveTo: "raichu",
+    fleeRate: 0.1
   },
   "raichu": {
     id: 26,
@@ -411,7 +436,8 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["spark", "thunder-shock"],
     chargeMoves: ["brick-break", "thunder", "thunder-punch"],
-    evolveFrom: "pikachu"
+    evolveFrom: "pikachu",
+    fleeRate: 0.06
   },
   "sandshrew": {
     id: 27,
@@ -427,7 +453,8 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["mud-shot", "scratch"],
     chargeMoves: ["dig", "rock-slide", "rock-tomb"],
-    evolveTo: "sandslash"
+    evolveTo: "sandslash",
+    fleeRate: 0.1
   },
   "sandslash": {
     id: 28,
@@ -442,7 +469,8 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["metal-claw", "mud-shot"],
     chargeMoves: ["bulldoze", "earthquake", "rock-tomb"],
-    evolveFrom: "sandshrew"
+    evolveFrom: "sandshrew",
+    fleeRate: 0.06
   },
   "nidoran-f": {
     id: 29,
@@ -458,7 +486,8 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["bite", "poison-sting"],
     chargeMoves: ["body-slam", "poison-fang", "sludge-bomb"],
-    evolveTo: "nidorina"
+    evolveTo: "nidorina",
+    fleeRate: 0.15
   },
   "nidorina": {
     id: 30,
@@ -475,7 +504,8 @@ var pokemonData = {
     quickMoves: ["bite", "poison-sting"],
     chargeMoves: ["dig", "poison-fang", "sludge-bomb"],
     evolveFrom: "nidoran-f",
-    evolveTo: "nidoqueen"
+    evolveTo: "nidoqueen",
+    fleeRate: 0.07
   },
   "nidoqueen": {
     id: 31,
@@ -490,7 +520,8 @@ var pokemonData = {
     type: ["poison", "ground"],
     quickMoves: ["bite", "poison-jab"],
     chargeMoves: ["earthquake", "sludge-wave", "stone-edge"],
-    evolveFrom: "nidorina"
+    evolveFrom: "nidorina",
+    fleeRate: 0.05
   },
   "nidoran-m": {
     id: 32,
@@ -506,7 +537,8 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["peck", "poison-sting"],
     chargeMoves: ["body-slam", "horn-attack", "sludge-bomb"],
-    evolveTo: "nidorino"
+    evolveTo: "nidorino",
+    fleeRate: 0.15
   },
   "nidorino": {
     id: 33,
@@ -523,7 +555,8 @@ var pokemonData = {
     quickMoves: ["bite", "poison-jab"],
     chargeMoves: ["dig", "horn-attack", "sludge-bomb"],
     evolveFrom: "nidoran-m",
-    evolveTo: "nidoking"
+    evolveTo: "nidoking",
+    fleeRate: 0.07
   },
   "nidoking": {
     id: 34,
@@ -538,7 +571,8 @@ var pokemonData = {
     type: ["poison", "ground"],
     quickMoves: ["fury-cutter", "poison-jab"],
     chargeMoves: ["earthquake", "megahorn", "sludge-wave"],
-    evolveFrom: "nidorino"
+    evolveFrom: "nidorino",
+    fleeRate: 0.05
   },
   "clefairy": {
     id: 35,
@@ -554,7 +588,8 @@ var pokemonData = {
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["body-slam", "disarming-voice", "moonblast"],
-    evolveTo: "clefable"
+    evolveTo: "clefable",
+    fleeRate: 0.1
   },
   "clefable": {
     id: 36,
@@ -569,7 +604,8 @@ var pokemonData = {
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["dazzling-gleam", "moonblast", "psychic"],
-    evolveFrom: "clefairy"
+    evolveFrom: "clefairy",
+    fleeRate: 0.06
   },
   "vulpix": {
     id: 37,
@@ -585,7 +621,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "quick-attack"],
     chargeMoves: ["body-slam", "flame-charge", "flamethrower"],
-    evolveTo: "ninetales"
+    evolveTo: "ninetales",
+    fleeRate: 0.1
   },
   "ninetales": {
     id: 38,
@@ -600,7 +637,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "feint-attack"],
     chargeMoves: ["fire-blast", "flamethrower", "heat-wave"],
-    evolveFrom: "vulpix"
+    evolveFrom: "vulpix",
+    fleeRate: 0.06
   },
   "jigglypuff": {
     id: 39,
@@ -617,7 +655,8 @@ var pokemonData = {
     quickMoves: ["feint-attack", "pound"],
     chargeMoves: ["body-slam", "disarming-voice", "dazzling-gleam"],
     legacyMoves: ["play-rough"],
-    evolveTo: "wigglytuff"
+    evolveTo: "wigglytuff",
+    fleeRate: 0.1
   },
   "wigglytuff": {
     id: 40,
@@ -632,7 +671,8 @@ var pokemonData = {
     type: ["normal", "fairy"],
     quickMoves: ["feint-attack", "pound"],
     chargeMoves: ["dazzling-gleam", "hyper-beam", "play-rough"],
-    evolveFrom: "jigglypuff"
+    evolveFrom: "jigglypuff",
+    fleeRate: 0.06
   },
   "zubat": {
     id: 41,
@@ -648,7 +688,8 @@ var pokemonData = {
     type: ["poison", "flying"],
     quickMoves: ["bite", "quick-attack"],
     chargeMoves: ["air-cutter", "poison-fang", "sludge-bomb"],
-    evolveTo: "golbat"
+    evolveTo: "golbat",
+    fleeRate: 0.2
   },
   "golbat": {
     id: 42,
@@ -663,7 +704,8 @@ var pokemonData = {
     type: ["poison", "flying"],
     quickMoves: ["bite", "wing-attack"],
     chargeMoves: ["air-cutter", "ominous-wind", "poison-fang"],
-    evolveFrom: "zubat"
+    evolveFrom: "zubat",
+    fleeRate: 0.07
   },
   "oddish": {
     id: 43,
@@ -679,7 +721,8 @@ var pokemonData = {
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["moonblast", "seed-bomb", "sludge-bomb"],
-    evolveTo: "gloom"
+    evolveTo: "gloom",
+    fleeRate: 0.15
   },
   "gloom": {
     id: 44,
@@ -696,7 +739,8 @@ var pokemonData = {
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["moonblast", "petal-blizzard", "sludge-bomb"],
     evolveFrom: "oddish",
-    evolveTo: "vileplume"
+    evolveTo: "vileplume",
+    fleeRate: 0.07
   },
   "vileplume": {
     id: 45,
@@ -711,7 +755,8 @@ var pokemonData = {
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["moonblast", "petal-blizzard", "solar-beam"],
-    evolveFrom: "gloom"
+    evolveFrom: "gloom",
+    fleeRate: 0.05
   },
   "paras": {
     id: 46,
@@ -727,7 +772,8 @@ var pokemonData = {
     type: ["bug", "grass"],
     quickMoves: ["bug-bite", "scratch"],
     chargeMoves: ["cross-poison", "seed-bomb", "x-scissor"],
-    evolveTo: "parasect"
+    evolveTo: "parasect",
+    fleeRate: 0.15
   },
   "parasect": {
     id: 47,
@@ -742,7 +788,8 @@ var pokemonData = {
     type: ["bug", "grass"],
     quickMoves: ["bug-bite", "fury-cutter"],
     chargeMoves: ["cross-poison", "solar-beam", "x-scissor"],
-    evolveFrom: "paras"
+    evolveFrom: "paras",
+    fleeRate: 0.07
   },
   "venonat": {
     id: 48,
@@ -758,7 +805,8 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "confusion"],
     chargeMoves: ["poison-fang", "psybeam", "signal-beam"],
-    evolveTo: "venomoth"
+    evolveTo: "venomoth",
+    fleeRate: 0.15
   },
   "venomoth": {
     id: 49,
@@ -773,7 +821,8 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "confusion"],
     chargeMoves: ["bug-buzz", "poison-fang", "psychic"],
-    evolveFrom: "venonat"
+    evolveFrom: "venonat",
+    fleeRate: 0.07
   },
   "diglett": {
     id: 50,
@@ -790,7 +839,8 @@ var pokemonData = {
     quickMoves: ["mud-slap", "scratch"],
     chargeMoves: ["dig", "mud-bomb", "rock-tomb"],
     legacyMoves: ["mud-shot"],
-    evolveTo: "dugtrio"
+    evolveTo: "dugtrio",
+    fleeRate: 0.1
   },
   "dugtrio": {
     id: 51,
@@ -806,7 +856,8 @@ var pokemonData = {
     quickMoves: ["mud-slap", "sucker-punch"],
     chargeMoves: ["earthquake", "mud-bomb", "stone-edge"],
     legacyMoves: ["mud-shot"],
-    evolveFrom: "diglett"
+    evolveFrom: "diglett",
+    fleeRate: 0.06
   },
   "meowth": {
     id: 52,
@@ -822,7 +873,8 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["bite", "scratch"],
     chargeMoves: ["body-slam", "dark-pulse", "night-slash"],
-    evolveTo: "persian"
+    evolveTo: "persian",
+    fleeRate: 0.15
   },
   "persian": {
     id: 53,
@@ -837,7 +889,8 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["feint-attack", "scratch"],
     chargeMoves: ["night-slash", "play-rough", "power-gem"],
-    evolveFrom: "meowth"
+    evolveFrom: "meowth",
+    fleeRate: 0.07
   },
   "psyduck": {
     id: 54,
@@ -853,7 +906,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["water-gun", "zen-headbutt"],
     chargeMoves: ["aqua-tail", "cross-chop", "psybeam"],
-    evolveTo: "golduck"
+    evolveTo: "golduck",
+    fleeRate: 0.1
   },
   "golduck": {
     id: 55,
@@ -868,7 +922,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["confusion", "water-gun"],
     chargeMoves: ["hydro-pump", "ice-beam", "psychic"],
-    evolveFrom: "psyduck"
+    evolveFrom: "psyduck",
+    fleeRate: 0.06
   },
   "mankey": {
     id: 56,
@@ -884,7 +939,8 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["karate-chop", "scratch"],
     chargeMoves: ["brick-break", "cross-chop", "low-sweep"],
-    evolveTo: "primeape"
+    evolveTo: "primeape",
+    fleeRate: 0.1
   },
   "primeape": {
     id: 57,
@@ -899,7 +955,8 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
     chargeMoves: ["cross-chop", "low-sweep", "night-slash"],
-    evolveFrom: "mankey"
+    evolveFrom: "mankey",
+    fleeRate: 0.06
   },
   "growlithe": {
     id: 58,
@@ -915,7 +972,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["bite", "ember"],
     chargeMoves: ["body-slam", "flame-wheel", "flamethrower"],
-    evolveTo: "arcanine"
+    evolveTo: "arcanine",
+    fleeRate: 0.1
   },
   "arcanine": {
     id: 59,
@@ -930,7 +988,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["bite", "fire-fang"],
     chargeMoves: ["bulldoze", "fire-blast", "flamethrower"],
-    evolveFrom: "growlithe"
+    evolveFrom: "growlithe",
+    fleeRate: 0.06
   },
   "poliwag": {
     id: 60,
@@ -946,7 +1005,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["body-slam", "bubble-beam", "mud-bomb"],
-    evolveTo: "poliwhirl"
+    evolveTo: "poliwhirl",
+    fleeRate: 0.15
   },
   "poliwhirl": {
     id: 61,
@@ -963,7 +1023,8 @@ var pokemonData = {
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["bubble-beam", "scald", "mud-bomb"],
     evolveFrom: "poliwag",
-    evolveTo: "poliwrath"
+    evolveTo: "poliwrath",
+    fleeRate: 0.07
   },
   "poliwrath": {
     id: 62,
@@ -978,7 +1039,8 @@ var pokemonData = {
     type: ["water", "fighting"],
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["hydro-pump", "ice-punch", "submission"],
-    evolveFrom: "poliwhirl"
+    evolveFrom: "poliwhirl",
+    fleeRate: 0.05
   },
   "abra": {
     id: 63,
@@ -994,7 +1056,8 @@ var pokemonData = {
     cpm: [1.36, 1.95],
     quickMoves: ["zen-headbutt"],
     chargeMoves: ["psyshock", "shadow-ball", "signal-beam"],
-    evolveTo: "kadabra"
+    evolveTo: "kadabra",
+    fleeRate: 0.99
   },
   "kadabra": {
     id: 64,
@@ -1011,7 +1074,8 @@ var pokemonData = {
     quickMoves: ["confusion", "psycho-cut"],
     chargeMoves: ["dazzling-gleam", "psybeam", "shadow-ball"],
     evolveFrom: "abra",
-    evolveTo: "alakazam"
+    evolveTo: "alakazam",
+    fleeRate: 0.07
   },
   "alakazam": {
     id: 65,
@@ -1026,7 +1090,8 @@ var pokemonData = {
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
     chargeMoves: ["dazzling-gleam", "psychic", "shadow-ball"],
-    evolveFrom: "kadabra"
+    evolveFrom: "kadabra",
+    fleeRate: 0.05
   },
   "machop": {
     id: 66,
@@ -1042,7 +1107,8 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
     chargeMoves: ["brick-break", "cross-chop", "low-sweep"],
-    evolveTo: "machoke"
+    evolveTo: "machoke",
+    fleeRate: 0.1
   },
   "machoke": {
     id: 67,
@@ -1059,7 +1125,8 @@ var pokemonData = {
     quickMoves: ["karate-chop", "low-kick"],
     chargeMoves: ["brick-break", "cross-chop", "submission"],
     evolveFrom: "machop",
-    evolveTo: "machamp"
+    evolveTo: "machamp",
+    fleeRate: 0.07
   },
   "machamp": {
     id: 68,
@@ -1074,7 +1141,8 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["bullet-punch", "karate-chop"],
     chargeMoves: ["cross-chop", "stone-edge", "submission"],
-    evolveFrom: "machoke"
+    evolveFrom: "machoke",
+    fleeRate: 0.05
   },
   "bellsprout": {
     id: 69,
@@ -1090,7 +1158,8 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["acid", "vine-whip"],
     chargeMoves: ["power-whip", "sludge-bomb", "wrap"],
-    evolveTo: "weepinbell"
+    evolveTo: "weepinbell",
+    fleeRate: 0.15
   },
   "weepinbell": {
     id: 70,
@@ -1107,7 +1176,8 @@ var pokemonData = {
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["power-whip", "seed-bomb", "sludge-bomb"],
     evolveFrom: "bellsprout",
-    evolveTo: "victreebel"
+    evolveTo: "victreebel",
+    fleeRate: 0.07
   },
   "victreebel": {
     id: 71,
@@ -1122,7 +1192,8 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["leaf-blade", "sludge-bomb", "solar-beam"],
-    evolveFrom: "weepinbell"
+    evolveFrom: "weepinbell",
+    fleeRate: 0.05
   },
   "tentacool": {
     id: 72,
@@ -1138,7 +1209,8 @@ var pokemonData = {
     type: ["water", "poison"],
     quickMoves: ["bubble", "poison-sting"],
     chargeMoves: ["bubble-beam", "water-pulse", "wrap"],
-    evolveTo: "tentacruel"
+    evolveTo: "tentacruel",
+    fleeRate: 0.15
   },
   "tentacruel": {
     id: 73,
@@ -1153,7 +1225,8 @@ var pokemonData = {
     type: ["water", "poison"],
     quickMoves: ["acid", "poison-jab"],
     chargeMoves: ["blizzard", "hydro-pump", "sludge-wave"],
-    evolveFrom: "tentacool"
+    evolveFrom: "tentacool",
+    fleeRate: 0.07
   },
   "geodude": {
     id: 74,
@@ -1169,7 +1242,8 @@ var pokemonData = {
     type: ["rock", "ground"],
     quickMoves: ["rock-throw", "tackle"],
     chargeMoves: ["dig", "rock-slide", "rock-tomb"],
-    evolveTo: "graveler"
+    evolveTo: "graveler",
+    fleeRate: 0.1
   },
   "graveler": {
     id: 75,
@@ -1187,7 +1261,8 @@ var pokemonData = {
     chargeMoves: ["dig", "rock-slide", "stone-edge"],
     legacyMoves: ["mud-shot"],
     evolveFrom: "geodude",
-    evolveTo: "golem"
+    evolveTo: "golem",
+    fleeRate: 0.07
   },
   "golem": {
     id: 76,
@@ -1203,7 +1278,8 @@ var pokemonData = {
     quickMoves: ["mud-slap", "rock-throw"],
     chargeMoves: ["ancient-power", "earthquake", "stone-edge"],
     legacyMoves: ["mud-shot"],
-    evolveFrom: "graveler"
+    evolveFrom: "graveler",
+    fleeRate: 0.05
   },
   "ponyta": {
     id: 77,
@@ -1219,7 +1295,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "tackle"],
     chargeMoves: ["fire-blast", "flame-charge", "flame-wheel"],
-    evolveTo: "rapidash"
+    evolveTo: "rapidash",
+    fleeRate: 0.1
   },
   "rapidash": {
     id: 78,
@@ -1234,7 +1311,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "low-kick"],
     chargeMoves: ["drill-run", "fire-blast", "heat-wave"],
-    evolveFrom: "ponyta"
+    evolveFrom: "ponyta",
+    fleeRate: 0.06
   },
   "slowpoke": {
     id: 79,
@@ -1250,7 +1328,8 @@ var pokemonData = {
     type: ["water", "psychic"],
     quickMoves: ["confusion", "water-gun"],
     chargeMoves: ["water-pulse", "psybeam", "psychic"],
-    evolveTo: "slowbro"
+    evolveTo: "slowbro",
+    fleeRate: 0.1
   },
   "slowbro": {
     id: 80,
@@ -1265,7 +1344,8 @@ var pokemonData = {
     type: ["water", "psychic"],
     quickMoves: ["confusion", "water-gun"],
     chargeMoves: ["ice-beam", "psychic", "water-pulse"],
-    evolveFrom: "slowpoke"
+    evolveFrom: "slowpoke",
+    fleeRate: 0.06
   },
   "magnemite": {
     id: 81,
@@ -1281,7 +1361,8 @@ var pokemonData = {
     type: ["electric", "steel"],
     quickMoves: ["spark", "thunder-shock"],
     chargeMoves: ["discharge", "magnet-bomb", "thunderbolt"],
-    evolveFrom: "magneton"
+    evolveFrom: "magneton",
+    fleeRate: 0.1
   },
   "magneton": {
     id: 82,
@@ -1296,7 +1377,8 @@ var pokemonData = {
     type: ["electric", "steel"],
     quickMoves: ["spark", "thunder-shock"],
     chargeMoves: ["discharge", "flash-cannon", "magnet-bomb"],
-    evolveTo: "magnemite"
+    evolveTo: "magnemite",
+    fleeRate: 0.06
   },
   "farfetchd": {
     id: 83,
@@ -1310,7 +1392,8 @@ var pokemonData = {
     },
     type: ["normal", "flying"],
     quickMoves: ["cut", "fury-cutter"],
-    chargeMoves: ["aerial-ace", "air-cutter", "leaf-blade"]
+    chargeMoves: ["aerial-ace", "air-cutter", "leaf-blade"],
+    fleeRate: 0.09
   },
   "doduo": {
     id: 84,
@@ -1326,7 +1409,8 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
     chargeMoves: ["aerial-ace", "drill-peck", "swift"],
-    evolveTo: "dodrio"
+    evolveTo: "dodrio",
+    fleeRate: 0.1
   },
   "dodrio": {
     id: 85,
@@ -1341,7 +1425,8 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["feint-attack", "steel-wing"],
     chargeMoves: ["aerial-ace", "air-cutter", "drill-peck"],
-    evolveFrom: "doduo"
+    evolveFrom: "doduo",
+    fleeRate: 0.06
   },
   "seel": {
     id: 86,
@@ -1358,7 +1443,8 @@ var pokemonData = {
     quickMoves: ["ice-shard", "lick"],
     chargeMoves: ["aqua-jet", "aqua-tail", "icy-wind"],
     legacyMoves: ["water-gun"],
-    evolveTo: "dewgong"
+    evolveTo: "dewgong",
+    fleeRate: 0.09
   },
   "dewgong": {
     id: 87,
@@ -1373,7 +1459,8 @@ var pokemonData = {
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
     chargeMoves: ["aqua-jet", "blizzard", "icy-wind"],
-    evolveFrom: "seel"
+    evolveFrom: "seel",
+    fleeRate: 0.06
   },
   "grimer": {
     id: 88,
@@ -1390,7 +1477,8 @@ var pokemonData = {
     quickMoves: ["poison-jab", "mud-slap"],
     chargeMoves: ["sludge", "sludge-bomb", "mud-bomb"],
     legacyMoves: ["acid"],
-    evolveTo: "muk"
+    evolveTo: "muk",
+    fleeRate: 0.1
   },
   "muk": {
     id: 89,
@@ -1406,7 +1494,8 @@ var pokemonData = {
     quickMoves: ["poison-jab", "lick"],
     chargeMoves: ["dark-pulse", "gunk-shot", "sludge-wave"],
     legacyMoves: ["acid"],
-    evolveFrom: "grimer"
+    evolveFrom: "grimer",
+    fleeRate: 0.06
   },
   "shellder": {
     id: 90,
@@ -1422,7 +1511,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["ice-shard", "tackle"],
     chargeMoves: ["bubble-beam", "icy-wind", "water-pulse"],
-    evolveTo: "cloyster"
+    evolveTo: "cloyster",
+    fleeRate: 0.1
   },
   "cloyster": {
     id: 91,
@@ -1437,7 +1527,8 @@ var pokemonData = {
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
     chargeMoves: ["blizzard", "icy-wind", "hydro-pump"],
-    evolveFrom: "shellder"
+    evolveFrom: "shellder",
+    fleeRate: 0.06
   },
   "gastly": {
     id: 92,
@@ -1453,7 +1544,8 @@ var pokemonData = {
     type: ["ghost", "poison"],
     quickMoves: ["lick", "sucker-punch"],
     chargeMoves: ["dark-pulse", "ominous-wind", "sludge-bomb"],
-    evolveTo: "haunter"
+    evolveTo: "haunter",
+    fleeRate: 0.1
   },
   "haunter": {
     id: 93,
@@ -1470,7 +1562,8 @@ var pokemonData = {
     quickMoves: ["lick", "shadow-claw"],
     chargeMoves: ["dark-pulse", "shadow-ball", "sludge-bomb"],
     evolveFrom: "gastly",
-    evolveTo: "gengar"
+    evolveTo: "gengar",
+    fleeRate: 0.07
   },
   "gengar": {
     id: 94,
@@ -1486,7 +1579,8 @@ var pokemonData = {
     quickMoves: ["shadow-claw", "sucker-punch"],
     chargeMoves: ["sludge-bomb", "dark-pulse", "shadow-ball"],
     legacyMoves: ["sludge-wave"],
-    evolveFrom: "haunter"
+    evolveFrom: "haunter",
+    fleeRate: 0.05
   },
   "onix": {
     id: 95,
@@ -1500,7 +1594,8 @@ var pokemonData = {
     },
     type: ["rock", "ground"],
     quickMoves: ["rock-throw", "tackle"],
-    chargeMoves: ["iron-head", "rock-slide", "stone-edge"]
+    chargeMoves: ["iron-head", "rock-slide", "stone-edge"],
+    fleeRate: 0.09
   },
   "drowzee": {
     id: 96,
@@ -1516,7 +1611,8 @@ var pokemonData = {
     type: ["psychic"],
     quickMoves: ["confusion", "pound"],
     chargeMoves: ["psybeam", "psychic", "psyshock"],
-    evolveTo: "hypno"
+    evolveTo: "hypno",
+    fleeRate: 0.1
   },
   "hypno": {
     id: 97,
@@ -1531,7 +1627,8 @@ var pokemonData = {
     type: ["psychic"],
     quickMoves: ["confusion", "zen-headbutt"],
     chargeMoves: ["psychic", "psyshock", "shadow-ball"],
-    evolveFrom: "drowzee"
+    evolveFrom: "drowzee",
+    fleeRate: 0.06
   },
   "krabby": {
     id: 98,
@@ -1547,7 +1644,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["bubble-beam", "vice-grip", "water-pulse"],
-    evolveTo: "kingler"
+    evolveTo: "kingler",
+    fleeRate: 0.15
   },
   "kingler": {
     id: 99,
@@ -1562,7 +1660,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["metal-claw", "mud-shot"],
     chargeMoves: ["vice-grip", "water-pulse", "x-scissor"],
-    evolveFrom: "krabby"
+    evolveFrom: "krabby",
+    fleeRate: 0.07
   },
   "voltorb": {
     id: 100,
@@ -1578,7 +1677,8 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["spark", "tackle"],
     chargeMoves: ["discharge", "signal-beam", "thunderbolt"],
-    evolveTo: "electrode"
+    evolveTo: "electrode",
+    fleeRate: 0.1
   },
   "electrode": {
     id: 101,
@@ -1593,7 +1693,8 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["spark", "tackle"],
     chargeMoves: ["discharge", "hyper-beam", "thunderbolt"],
-    evolveFrom: "voltorb"
+    evolveFrom: "voltorb",
+    fleeRate: 0.06
   },
   "exeggcute": {
     id: 102,
@@ -1609,7 +1710,8 @@ var pokemonData = {
     type: ["grass", "psychic"],
     quickMoves: ["confusion"],
     chargeMoves: ["ancient-power", "psychic", "seed-bomb"],
-    evolveTo: "exeggutor"
+    evolveTo: "exeggutor",
+    fleeRate: 0.1
   },
   "exeggutor": {
     id: 103,
@@ -1624,7 +1726,8 @@ var pokemonData = {
     type: ["grass", "psychic"],
     quickMoves: ["confusion", "zen-headbutt"],
     chargeMoves: ["psychic", "seed-bomb", "solar-beam"],
-    evolveFrom: "exeggcute"
+    evolveFrom: "exeggcute",
+    fleeRate: 0.06
   },
   "cubone": {
     id: 104,
@@ -1640,7 +1743,8 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["bone-club", "bulldoze", "dig"],
-    evolveTo: "marowak"
+    evolveTo: "marowak",
+    fleeRate: 0.1
   },
   "marowak": {
     id: 105,
@@ -1655,7 +1759,8 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["bone-club", "dig", "earthquake"],
-    evolveFrom: "cubone"
+    evolveFrom: "cubone",
+    fleeRate: 0.06
   },
   "hitmonlee": {
     id: 106,
@@ -1670,7 +1775,8 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["low-kick", "rock-smash"],
     chargeMoves: ["low-sweep", "brick-break", "stone-edge"],
-    legacyMoves: ["stomp"]
+    legacyMoves: ["stomp"],
+    fleeRate: 0.09
   },
   "hitmonchan": {
     id: 107,
@@ -1684,7 +1790,8 @@ var pokemonData = {
     },
     type: ["fighting"],
     quickMoves: ["bullet-punch", "rock-smash"],
-    chargeMoves: ["brick-break", "fire-punch", "ice-punch", "thunder-punch"]
+    chargeMoves: ["brick-break", "fire-punch", "ice-punch", "thunder-punch"],
+    fleeRate: 0.09
   },
   "lickitung": {
     id: 108,
@@ -1698,7 +1805,8 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["lick", "zen-headbutt"],
-    chargeMoves: ["hyper-beam", "power-whip", "hyper-beam"]
+    chargeMoves: ["hyper-beam", "power-whip", "hyper-beam"],
+    fleeRate: 0.09
   },
   "koffing": {
     id: 109,
@@ -1715,7 +1823,8 @@ var pokemonData = {
     quickMoves: ["tackle"],
     chargeMoves: ["dark-pulse", "sludge", "sludge-bomb"],
     legacyMoves: ["acid"],
-    evolveTo: "weezing"
+    evolveTo: "weezing",
+    fleeRate: 0.1
   },
   "weezing": {
     id: 110,
@@ -1731,7 +1840,8 @@ var pokemonData = {
     quickMoves: ["tackle"],
     chargeMoves: ["dark-pulse", "shadow-ball", "sludge-bomb"],
     legacyMoves: ["acid"],
-    evolveFrom: "koffing"
+    evolveFrom: "koffing",
+    fleeRate: 0.06
   },
   "rhyhorn": {
     id: 111,
@@ -1747,7 +1857,8 @@ var pokemonData = {
     type: ["ground", "rock"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["bulldoze", "horn-attack", "stomp"],
-    evolveTo: "rhydon"
+    evolveTo: "rhydon",
+    fleeRate: 0.1
   },
   "rhydon": {
     id: 112,
@@ -1762,7 +1873,8 @@ var pokemonData = {
     type: ["ground", "rock"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["earthquake", "megahorn", "stone-edge"],
-    evolveFrom: "rhyhorn"
+    evolveFrom: "rhyhorn",
+    fleeRate: 0.06
   },
   "chansey": {
     id: 113,
@@ -1777,7 +1889,8 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["dazzling-gleam", "hyper-beam", "psychic"],
-    legacyMoves: ["psybeam"]
+    legacyMoves: ["psybeam"],
+    fleeRate: 0.09
   },
   "tangela": {
     id: 114,
@@ -1791,7 +1904,8 @@ var pokemonData = {
     },
     type: ["grass"],
     quickMoves: ["vine-whip"],
-    chargeMoves: ["power-whip", "sludge-bomb", "solar-beam"]
+    chargeMoves: ["power-whip", "sludge-bomb", "solar-beam"],
+    fleeRate: 0.09
   },
   "kangaskhan": {
     id: 115,
@@ -1805,7 +1919,8 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["low-kick", "mud-slap"],
-    chargeMoves: ["brick-break", "earthquake", "stomp"]
+    chargeMoves: ["brick-break", "earthquake", "stomp"],
+    fleeRate: 0.09
   },
   "horsea": {
     id: 116,
@@ -1821,7 +1936,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "water-gun"],
     chargeMoves: ["bubble-beam", "dragon-pulse", "flash-cannon"],
-    evolveTo: "seadra"
+    evolveTo: "seadra",
+    fleeRate: 0.1
   },
   "seadra": {
     id: 117,
@@ -1836,7 +1952,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["dragon-breath", "water-gun"],
     chargeMoves: ["blizzard", "dragon-pulse", "hydro-pump"],
-    evolveFrom: "horsea"
+    evolveFrom: "horsea",
+    fleeRate: 0.06
   },
   "goldeen": {
     id: 118,
@@ -1852,7 +1969,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["mud-shot", "peck"],
     chargeMoves: ["aqua-tail", "horn-attack", "water-pulse"],
-    evolveTo: "seaking"
+    evolveTo: "seaking",
+    fleeRate: 0.15
   },
   "seaking": {
     id: 119,
@@ -1867,7 +1985,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["peck", "poison-jab"],
     chargeMoves: ["drill-run", "icy-wind", "megahorn"],
-    evolveFrom: 'goldeen'
+    evolveFrom: 'goldeen',
+    fleeRate: 0.07
   },
   "staryu": {
     id: 120,
@@ -1884,7 +2003,8 @@ var pokemonData = {
     quickMoves: ["tackle", "water-gun"],
     chargeMoves: ["bubble-beam", "power-gem", "swift"],
     legacyMoves: ["quick-attack"],
-    evolveTo: "starmie"
+    evolveTo: "starmie",
+    fleeRate: 0.15
   },
   "starmie": {
     id: 121,
@@ -1900,7 +2020,8 @@ var pokemonData = {
       defense: 192
     },
     type: ["water", "psychic"],
-    evolveFrom: "staryu"
+    evolveFrom: "staryu",
+    fleeRate: 0.06
   },
   "mr-mime": {
     id: 122,
@@ -1914,7 +2035,8 @@ var pokemonData = {
     },
     type: ["psychic", "fairy"],
     quickMoves: ["confusion", "zen-headbutt"],
-    chargeMoves: ["psybeam", "psychic", "shadow-ball"]
+    chargeMoves: ["psybeam", "psychic", "shadow-ball"],
+    fleeRate: 0.09
   },
   "scyther": {
     id: 123,
@@ -1928,7 +2050,8 @@ var pokemonData = {
     },
     type: ["bug", "flying"],
     quickMoves: ["fury-cutter", "steel-wing"],
-    chargeMoves: ["bug-buzz", "night-slash", "x-scissor"]
+    chargeMoves: ["bug-buzz", "night-slash", "x-scissor"],
+    fleeRate: 0.09
   },
   "jynx": {
     id: 124,
@@ -1942,7 +2065,8 @@ var pokemonData = {
     },
     type: ["ice", "psychic"],
     quickMoves: ["frost-breath", "pound"],
-    chargeMoves: ["draining-kiss", "psybeam", "psyshock"]
+    chargeMoves: ["draining-kiss", "psybeam", "psyshock"],
+    fleeRate: 0.09
   },
   "electabuzz": {
     id: 125,
@@ -1956,7 +2080,8 @@ var pokemonData = {
     },
     type: ["electric"],
     quickMoves: ["low-kick", "thunder-shock"],
-    chargeMoves: ["thunder", "thunder-punch", "thunderbolt"]
+    chargeMoves: ["thunder", "thunder-punch", "thunderbolt"],
+    fleeRate: 0.09
   },
   "magmar": {
     id: 126,
@@ -1970,7 +2095,8 @@ var pokemonData = {
     },
     type: ["fire"],
     quickMoves: ["ember", "karate-chop"],
-    chargeMoves: ["fire-blast", "fire-punch", "flamethrower"]
+    chargeMoves: ["fire-blast", "fire-punch", "flamethrower"],
+    fleeRate: 0.09
   },
   "pinsir": {
     id: 127,
@@ -1984,7 +2110,8 @@ var pokemonData = {
     },
     type: ["bug"],
     quickMoves: ["fury-cutter", "rock-smash"],
-    chargeMoves: ["submission", "vice-grip", "x-scissor"]
+    chargeMoves: ["submission", "vice-grip", "x-scissor"],
+    fleeRate: 0.09
   },
   "tauros": {
     id: 128,
@@ -1998,7 +2125,8 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["tackle", "zen-headbutt"],
-    chargeMoves: ["earthquake", "horn-attack", "iron-head"]
+    chargeMoves: ["earthquake", "horn-attack", "iron-head"],
+    fleeRate: 0.09
   },
   "magikarp": {
     id: 129,
@@ -2014,7 +2142,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["splash"],
     chargeMoves: ["struggle"],
-    evolveTo: "gyarados"
+    evolveTo: "gyarados",
+    fleeRate: 0.15
   },
   "gyarados": {
     id: 130,
@@ -2030,7 +2159,8 @@ var pokemonData = {
     quickMoves: ["bite"],
     chargeMoves: ["dragon-pulse", "hydro-pump", "twister"],
     legacyMoves: ["dragon-breath"],
-    evolveFrom: "magikarp"
+    evolveFrom: "magikarp",
+    fleeRate: 0.07
   },
   "lapras": {
     id: 131,
@@ -2044,7 +2174,8 @@ var pokemonData = {
     },
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
-    chargeMoves: ["blizzard", "dragon-pulse", "ice-beam"]
+    chargeMoves: ["blizzard", "dragon-pulse", "ice-beam"],
+    fleeRate: 0.09
   },
   "ditto": {
     id: 132,
@@ -2058,7 +2189,8 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["pound"],
-    chargeMoves: ["struggle"]
+    chargeMoves: ["struggle"],
+    fleeRate: 0.1
   },
   "eevee": {
     id: 133,
@@ -2074,7 +2206,8 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["quick-attack", "tackle"],
     chargeMoves: ["body-slam", "dig", "swift"],
-    evolveTo: ["vaporeon", "jolteon", "flareon"]
+    evolveTo: ["vaporeon", "jolteon", "flareon"],
+    fleeRate: 0.1
   },
   "vaporeon": {
     id: 134,
@@ -2090,7 +2223,8 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["water-gun"],
     chargeMoves: ["aqua-tail", "hydro-pump", "water-pulse"],
-    evolveFrom: "eevee"
+    evolveFrom: "eevee",
+    fleeRate: 0.06
   },
   "jolteon": {
     id: 135,
@@ -2106,7 +2240,8 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["thunder-shock"],
     chargeMoves: ["discharge", "thunder", "thunderbolt"],
-    evolveFrom: "eevee"
+    evolveFrom: "eevee",
+    fleeRate: 0.06
   },
   "flareon": {
     id: 136,
@@ -2122,7 +2257,8 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember"],
     chargeMoves: ["fire-blast", "flamethrower", "heat-wave"],
-    evolveFrom: "eevee"
+    evolveFrom: "eevee",
+    fleeRate: 0.06
   },
   "porygon": {
     id: 137,
@@ -2137,7 +2273,8 @@ var pokemonData = {
       attack: 156,
       defense: 158
     },
-    type: ["normal"]
+    type: ["normal"],
+    fleeRate: 0.09
   },
   "omanyte": {
     id: 138,
@@ -2153,7 +2290,8 @@ var pokemonData = {
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "water-gun"],
     chargeMoves: ["ancient-power", "brine", "rock-tomb"],
-    evolveTo: "omastar"
+    evolveTo: "omastar",
+    fleeRate: 0.09
   },
   "omastar": {
     id: 139,
@@ -2169,7 +2307,8 @@ var pokemonData = {
     quickMoves: ["mud-shot", "water-gun"],
     chargeMoves: ["ancient-power", "hydro-pump", "rock-slide"],
     legacyMoves: ["rock-throw"],
-    evolveFrom: "omanyte"
+    evolveFrom: "omanyte",
+    fleeRate: 0.05
   },
   "kabuto": {
     id: 140,
@@ -2185,7 +2324,8 @@ var pokemonData = {
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "scratch"],
     chargeMoves: ["ancient-power", "aqua-jet", "rock-tomb"],
-    evolveTo: "kabutops"
+    evolveTo: "kabutops",
+    fleeRate: 0.09
   },
   "kabutops": {
     id: 141,
@@ -2200,7 +2340,8 @@ var pokemonData = {
     type: ["rock", "water"],
     quickMoves: ["fury-cutter", "mud-shot"],
     chargeMoves: ["ancient-power", "stone-edge", "water-pulse"],
-    evolveFrom: "kabuto"
+    evolveFrom: "kabuto",
+    fleeRate: 0.05
   },
   "aerodactyl": {
     id: 142,
@@ -2214,7 +2355,8 @@ var pokemonData = {
     },
     type: ["rock", "flying"],
     quickMoves: ["bite", "steel-wing"],
-    chargeMoves: ["ancient-power", "hyper-beam", "iron-head"]
+    chargeMoves: ["ancient-power", "hyper-beam", "iron-head"],
+    fleeRate: 0.09
   },
   "snorlax": {
     id: 143,
@@ -2228,7 +2370,8 @@ var pokemonData = {
       attack: 180,
       defense: 180
     },
-    type: ["normal"]
+    type: ["normal"],
+    fleeRate: 0.09
   },
   "articuno": {
     id: 144,
@@ -2242,7 +2385,8 @@ var pokemonData = {
     },
     type: ["ice", "flying"],
     quickMoves: ["frost-breath"],
-    chargeMoves: ["blizzard", "ice-beam", "icy-wind"]
+    chargeMoves: ["blizzard", "ice-beam", "icy-wind"],
+    fleeRate: 0.1
   },
   "zapdos": {
     id: 145,
@@ -2256,7 +2400,8 @@ var pokemonData = {
     },
     type: ["electric", "flying"],
     quickMoves: ["thunder-shock"],
-    chargeMoves: ["discharge", "thunder", "thunderbolt"]
+    chargeMoves: ["discharge", "thunder", "thunderbolt"],
+    fleeRate: 0.1
   },
   "moltres": {
     id: 146,
@@ -2270,7 +2415,8 @@ var pokemonData = {
     },
     type: ["fire", "flying"],
     quickMoves: ["ember"],
-    chargeMoves: ["fire-blast", "flamethrower", "heat-wave"]
+    chargeMoves: ["fire-blast", "flamethrower", "heat-wave"],
+    fleeRate: 0.1
   },
   "dratini": {
     id: 147,
@@ -2286,7 +2432,8 @@ var pokemonData = {
     type: ["dragon"],
     quickMoves: ["dragon-breath"],
     chargeMoves: ["aqua-tail", "twister", "wrap"],
-    evolveTo: "dragonair"
+    evolveTo: "dragonair",
+    fleeRate: 0.09
   },
   "dragonair": {
     id: 148,
@@ -2303,7 +2450,8 @@ var pokemonData = {
     quickMoves: ["dragon-breath"],
     chargeMoves: ["aqua-tail", "dragon-pulse", "wrap"],
     evolveFrom: "dratini",
-    evolveTo: "dragonite"
+    evolveTo: "dragonite",
+    fleeRate: 0.06
   },
   "dragonite": {
     id: 149,
@@ -2318,7 +2466,8 @@ var pokemonData = {
     type: ["dragon", "flying"],
     quickMoves: ["dragon-breath", "steel-wing"],
     chargeMoves: ["dragon-claw", "dragon-pulse", "hyper-beam"],
-    evolveFrom: "dragonair"
+    evolveFrom: "dragonair",
+    fleeRate: 0.05
   },
   "mewtwo": {
     id: 150,
@@ -2332,7 +2481,8 @@ var pokemonData = {
     },
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
-    chargeMoves: ["hyper-beam", "psychic", "shadow-ball"]
+    chargeMoves: ["hyper-beam", "psychic", "shadow-ball"],
+    fleeRate: 0.1
   },
   "mew": {
     id: 151,
@@ -2348,6 +2498,7 @@ var pokemonData = {
     quickMoves: ["pound"],
     chargeMoves: ["dragon-pulse", "earthquake", "fire-blast", "blizzard",
       "hyper-beam", "psychic", "solar-beam"],
-    legacyMoves: ["moonblast","hurricane"]
+    legacyMoves: ["moonblast","hurricane"],
+    fleeRate: 0.1
   }
 };
