@@ -4,6 +4,7 @@ var pokemonData = {
   "bulbasaur": {
     id: 1,
     egg: 2,
+    buddy: 3,
     candy: 25,
     name: "Bulbasaur",
     cpm: [1.53, 1.58],
@@ -21,6 +22,7 @@ var pokemonData = {
   "ivysaur": {
     id: 2,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Ivysaur",
     cpm: [1.2, 1.6],
@@ -39,6 +41,7 @@ var pokemonData = {
   "venusaur": {
     id: 3,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Venusaur",
     stats: {
@@ -55,6 +58,7 @@ var pokemonData = {
   "charmander": {
     id: 4,
     egg: 2,
+    buddy: 3,
     candy: 25,
     name: "Charmander",
     cpm: [1.64, 1.7],
@@ -72,6 +76,7 @@ var pokemonData = {
   "charmeleon": {
     id: 5,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Charmeleon",
     cpm: [1.71, 1.79],
@@ -90,6 +95,7 @@ var pokemonData = {
   "charizard": {
     id: 6,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Charizard",
     stats: {
@@ -106,6 +112,7 @@ var pokemonData = {
   "squirtle": {
     id: 7,
     egg: 2,
+    buddy: 3,
     candy: 25,
     name: "Squirtle",
     cpm: [1.58, 2.1],
@@ -123,6 +130,7 @@ var pokemonData = {
   "wartortle": {
     id: 8,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Wartortle",
     cpm: [1.4, 1.68],
@@ -141,6 +149,7 @@ var pokemonData = {
   "blastoise": {
     id: 9,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Blastoise",
     stats: {
@@ -157,6 +166,7 @@ var pokemonData = {
   "caterpie": {
     id: 10,
     egg: 2,
+    buddy: 1,
     candy: 12,
     name: "Caterpie",
     cpm: [1.04, 1.08],
@@ -174,6 +184,7 @@ var pokemonData = {
   "metapod": {
     id: 11,
     egg: 0,
+    buddy: 1,
     candy: 50,
     name: "Metapod",
     cpm: [3.05, 3.79],
@@ -192,6 +203,7 @@ var pokemonData = {
   "butterfree": {
     id: 12,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Butterfree",
     stats: {
@@ -208,6 +220,7 @@ var pokemonData = {
   "weedle": {
     id: 13,
     egg: 2,
+    buddy: 1,
     candy: 12,
     name: "Weedle",
     cpm: [1.06, 1.13],
@@ -225,6 +238,7 @@ var pokemonData = {
   "kakuna": {
     id: 14,
     egg: 0,
+    buddy: 1,
     candy: 50,
     name: "Kakuna",
     cpm: [3.01, 3.42],
@@ -243,6 +257,7 @@ var pokemonData = {
   "beedrill": {
     id: 15,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Beedrill",
     stats: {
@@ -259,6 +274,7 @@ var pokemonData = {
   "pidgey": {
     id: 16,
     egg: 2,
+    buddy: 1,
     candy: 12,
     name: "Pidgey",
     cpm: [1.71, 1.95],
@@ -276,6 +292,7 @@ var pokemonData = {
   "pidgeotto": {
     id: 17,
     egg: 0,
+    buddy: 1,
     candy: 50,
     name: "Pidgeotto",
     cpm: [1.73, 1.8],
@@ -294,6 +311,7 @@ var pokemonData = {
   "pidgeot": {
     id: 18,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Pidgeot",
     stats: {
@@ -310,6 +328,7 @@ var pokemonData = {
   "rattata": {
     id: 19,
     egg: 2,
+    buddy: 1,
     candy: 25,
     name: "Rattata",
     cpm: [2.55, 2.73],
@@ -327,6 +346,7 @@ var pokemonData = {
   "raticate": {
     id: 20,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Raticate",
     stats: {
@@ -343,6 +363,7 @@ var pokemonData = {
   "spearow": {
     id: 21,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Spearow",
     cpm: [2.58, 2.81],
@@ -360,6 +381,7 @@ var pokemonData = {
   "fearow": {
     id: 22,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Fearow",
     stats: {
@@ -376,6 +398,7 @@ var pokemonData = {
   "ekans": {
     id: 23,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Ekans",
     cpm: [2.21, 2.27],
@@ -393,6 +416,7 @@ var pokemonData = {
   "arbok": {
     id: 24,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Arbok",
     stats: {
@@ -409,6 +433,7 @@ var pokemonData = {
   "pikachu": {
     id: 25,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Pikachu",
     cpm: [2.33, 2.38],
@@ -426,6 +451,7 @@ var pokemonData = {
   "raichu": {
     id: 26,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Raichu",
     stats: {
@@ -442,6 +468,7 @@ var pokemonData = {
   "sandshrew": {
     id: 27,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Sandshrew",
     cpm: [2.3, 2.76],
@@ -459,6 +486,7 @@ var pokemonData = {
   "sandslash": {
     id: 28,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Sandslash",
     stats: {
@@ -475,6 +503,7 @@ var pokemonData = {
   "nidoran-f": {
     id: 29,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Nidoran ♀",
     cpm: [1.62, 1.66],
@@ -492,6 +521,7 @@ var pokemonData = {
   "nidorina": {
     id: 30,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Nidorina",
     cpm: [1.83, 2.48],
@@ -510,6 +540,7 @@ var pokemonData = {
   "nidoqueen": {
     id: 31,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Nidoqueen",
     stats: {
@@ -526,6 +557,7 @@ var pokemonData = {
   "nidoran-m": {
     id: 32,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Nidoran ♂",
     cpm: [1.64, 1.7],
@@ -543,6 +575,7 @@ var pokemonData = {
   "nidorino": {
     id: 33,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Nidorino",
     cpm: [1.64, 1.86],
@@ -561,6 +594,7 @@ var pokemonData = {
   "nidoking": {
     id: 34,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Nidoking",
     stats: {
@@ -577,6 +611,7 @@ var pokemonData = {
   "clefairy": {
     id: 35,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Clefairy",
     cpm: [2.03, 2.14],
@@ -594,6 +629,7 @@ var pokemonData = {
   "clefable": {
     id: 36,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Clefable",
     stats: {
@@ -610,6 +646,7 @@ var pokemonData = {
   "vulpix": {
     id: 37,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Vulpix",
     cpm: [2.74, 2.81],
@@ -627,6 +664,7 @@ var pokemonData = {
   "ninetales": {
     id: 38,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Ninetales",
     stats: {
@@ -643,6 +681,7 @@ var pokemonData = {
   "jigglypuff": {
     id: 39,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Jigglypuff",
     cpm: [2.41, 2.47],
@@ -661,6 +700,7 @@ var pokemonData = {
   "wigglytuff": {
     id: 40,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Wigglytuff",
     stats: {
@@ -677,6 +717,7 @@ var pokemonData = {
   "zubat": {
     id: 41,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Zubat",
     cpm: [2.6, 3.67],
@@ -694,6 +735,7 @@ var pokemonData = {
   "golbat": {
     id: 42,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Golbat",
     stats: {
@@ -710,6 +752,7 @@ var pokemonData = {
   "oddish": {
     id: 43,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Oddish",
     cpm: [1.48, 1.51],
@@ -727,6 +770,7 @@ var pokemonData = {
   "gloom": {
     id: 44,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Gloom",
     cpm: [1.48, 1.53],
@@ -745,6 +789,7 @@ var pokemonData = {
   "vileplume": {
     id: 45,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Vileplume",
     stats: {
@@ -761,6 +806,7 @@ var pokemonData = {
   "paras": {
     id: 46,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Paras",
     cpm: [1.92, 2.02],
@@ -778,6 +824,7 @@ var pokemonData = {
   "parasect": {
     id: 47,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Parasect",
     stats: {
@@ -794,6 +841,7 @@ var pokemonData = {
   "venonat": {
     id: 48,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Venonat",
     cpm: [1.86, 1.9],
@@ -811,6 +859,7 @@ var pokemonData = {
   "venomoth": {
     id: 49,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Venomoth",
     stats: {
@@ -827,6 +876,7 @@ var pokemonData = {
   "diglett": {
     id: 50,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Diglett",
     cpm: [2.68, 2.77],
@@ -845,6 +895,7 @@ var pokemonData = {
   "dugtrio": {
     id: 51,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Dugtrio",
     stats: {
@@ -862,6 +913,7 @@ var pokemonData = {
   "meowth": {
     id: 52,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Meowth",
     cpm: [1.98, 2.24],
@@ -879,6 +931,7 @@ var pokemonData = {
   "persian": {
     id: 53,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Persian",
     stats: {
@@ -895,6 +948,7 @@ var pokemonData = {
   "psyduck": {
     id: 54,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Psyduck",
     cpm: [2.22, 2.29],
@@ -912,6 +966,7 @@ var pokemonData = {
   "golduck": {
     id: 55,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Golduck",
     stats: {
@@ -928,6 +983,7 @@ var pokemonData = {
   "mankey": {
     id: 56,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Mankey",
     cpm: [2.18, 2.28],
@@ -945,6 +1001,7 @@ var pokemonData = {
   "primeape": {
     id: 57,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Primeape",
     stats: {
@@ -961,6 +1018,7 @@ var pokemonData = {
   "growlithe": {
     id: 58,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Growlithe",
     cpm: [2.31, 2.36],
@@ -978,6 +1036,7 @@ var pokemonData = {
   "arcanine": {
     id: 59,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Arcanine",
     stats: {
@@ -994,6 +1053,7 @@ var pokemonData = {
   "poliwag": {
     id: 60,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Poliwag",
     cpm: [1.72, 1.77],
@@ -1011,6 +1071,7 @@ var pokemonData = {
   "poliwhirl": {
     id: 61,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Poliwhirl",
     cpm: [1.9, 1.96],
@@ -1029,6 +1090,7 @@ var pokemonData = {
   "poliwrath": {
     id: 62,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Poliwrath",
     stats: {
@@ -1045,6 +1107,7 @@ var pokemonData = {
   "abra": {
     id: 63,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Abra",
     stats: {
@@ -1062,6 +1125,7 @@ var pokemonData = {
   "kadabra": {
     id: 64,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Kadabra",
     cpm: [1.4, 1.65],
@@ -1080,6 +1144,7 @@ var pokemonData = {
   "alakazam": {
     id: 65,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Alakazam",
     stats: {
@@ -1096,6 +1161,7 @@ var pokemonData = {
   "machop": {
     id: 66,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Machop",
     cpm: [1.62, 1.67],
@@ -1113,6 +1179,7 @@ var pokemonData = {
   "machoke": {
     id: 67,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Machoke",
     cpm: [1.48, 1.7],
@@ -1131,6 +1198,7 @@ var pokemonData = {
   "machamp": {
     id: 68,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Machamp",
     stats: {
@@ -1147,6 +1215,7 @@ var pokemonData = {
   "bellsprout": {
     id: 69,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Bellsprout",
     cpm: [1.54, 1.6],
@@ -1164,6 +1233,7 @@ var pokemonData = {
   "weepinbell": {
     id: 70,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Weepinbell",
     cpm: [1.47, 1.59],
@@ -1182,6 +1252,7 @@ var pokemonData = {
   "victreebel": {
     id: 71,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Victreebel",
     stats: {
@@ -1198,6 +1269,7 @@ var pokemonData = {
   "tentacool": {
     id: 72,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Tentacool",
     cpm: [2.47, 2.6],
@@ -1215,6 +1287,7 @@ var pokemonData = {
   "tentacruel": {
     id: 73,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Tentacruel",
     stats: {
@@ -1231,6 +1304,7 @@ var pokemonData = {
   "geodude": {
     id: 74,
     egg: 2,
+    buddy: 1,
     candy: 25,
     name: "Geodude",
     cpm: [1.7, 1.76],
@@ -1248,6 +1322,7 @@ var pokemonData = {
   "graveler": {
     id: 75,
     egg: 0,
+    buddy: 1,
     candy: 100,
     name: "Graveler",
     cpm: [1.62, 1.72],
@@ -1267,6 +1342,7 @@ var pokemonData = {
   "golem": {
     id: 76,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Golem",
     stats: {
@@ -1284,6 +1360,7 @@ var pokemonData = {
   "ponyta": {
     id: 77,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Ponyta",
     cpm: [1.46, 1.5],
@@ -1301,6 +1378,7 @@ var pokemonData = {
   "rapidash": {
     id: 78,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Rapidash",
     stats: {
@@ -1317,6 +1395,7 @@ var pokemonData = {
   "slowpoke": {
     id: 79,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Slowpoke",
     cpm: [2.19, 2.21],
@@ -1334,6 +1413,7 @@ var pokemonData = {
   "slowbro": {
     id: 80,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Slowbro",
     stats: {
@@ -1350,6 +1430,7 @@ var pokemonData = {
   "magnemite": {
     id: 81,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Magnemite",
     cpm: [2.16, 2.18],
@@ -1367,6 +1448,7 @@ var pokemonData = {
   "magneton": {
     id: 82,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Magneton",
     stats: {
@@ -1383,6 +1465,7 @@ var pokemonData = {
   "farfetchd": {
     id: 83,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Farfetch'd",
     stats: {
@@ -1398,6 +1481,7 @@ var pokemonData = {
   "doduo": {
     id: 84,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Doduo",
     cpm: [2.19, 2.3],
@@ -1415,6 +1499,7 @@ var pokemonData = {
   "dodrio": {
     id: 85,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Dodrio",
     stats: {
@@ -1431,6 +1516,7 @@ var pokemonData = {
   "seel": {
     id: 86,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Seel",
     cpm: [1.04, 1.96],
@@ -1449,6 +1535,7 @@ var pokemonData = {
   "dewgong": {
     id: 87,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Dewgong",
     stats: {
@@ -1465,6 +1552,7 @@ var pokemonData = {
   "grimer": {
     id: 88,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Grimer",
     cpm: [2.01, 2.44],
@@ -1483,6 +1571,7 @@ var pokemonData = {
   "muk": {
     id: 89,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Muk",
     stats: {
@@ -1500,6 +1589,7 @@ var pokemonData = {
   "shellder": {
     id: 90,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Shellder",
     cpm: [2.62, 2.65],
@@ -1517,6 +1607,7 @@ var pokemonData = {
   "cloyster": {
     id: 91,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Cloyster",
     stats: {
@@ -1533,6 +1624,7 @@ var pokemonData = {
   "gastly": {
     id: 92,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Gastly",
     cpm: [1.75, 1.83],
@@ -1550,6 +1642,7 @@ var pokemonData = {
   "haunter": {
     id: 93,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Haunter",
     cpm: [1.56, 1.58],
@@ -1568,6 +1661,7 @@ var pokemonData = {
   "gengar": {
     id: 94,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Gengar",
     stats: {
@@ -1585,6 +1679,7 @@ var pokemonData = {
   "onix": {
     id: 95,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Onix",
     stats: {
@@ -1600,6 +1695,7 @@ var pokemonData = {
   "drowzee": {
     id: 96,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Drowzee",
     cpm: [2.06, 2.09],
@@ -1617,6 +1713,7 @@ var pokemonData = {
   "hypno": {
     id: 97,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Hypno",
     stats: {
@@ -1633,6 +1730,7 @@ var pokemonData = {
   "krabby": {
     id: 98,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Krabby",
     cpm: [2.32, 2.4],
@@ -1650,6 +1748,7 @@ var pokemonData = {
   "kingler": {
     id: 99,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Kingler",
     stats: {
@@ -1666,6 +1765,7 @@ var pokemonData = {
   "voltorb": {
     id: 100,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Voltorb",
     cpm: [2.01, 2.01],
@@ -1683,6 +1783,7 @@ var pokemonData = {
   "electrode": {
     id: 101,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Electrode",
     stats: {
@@ -1699,6 +1800,7 @@ var pokemonData = {
   "exeggcute": {
     id: 102,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Exeggcute",
     cpm: [2.7, 3.18],
@@ -1716,6 +1818,7 @@ var pokemonData = {
   "exeggutor": {
     id: 103,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Exeggutor",
     stats: {
@@ -1732,6 +1835,7 @@ var pokemonData = {
   "cubone": {
     id: 104,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Cubone",
     cpm: [1.65, 1.67],
@@ -1749,6 +1853,7 @@ var pokemonData = {
   "marowak": {
     id: 105,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Marowak",
     stats: {
@@ -1765,6 +1870,7 @@ var pokemonData = {
   "hitmonlee": {
     id: 106,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Hitmonlee",
     stats: {
@@ -1781,6 +1887,7 @@ var pokemonData = {
   "hitmonchan": {
     id: 107,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Hitmonchan",
     stats: {
@@ -1796,6 +1903,7 @@ var pokemonData = {
   "lickitung": {
     id: 108,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Lickitung",
     stats: {
@@ -1811,6 +1919,7 @@ var pokemonData = {
   "koffing": {
     id: 109,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Koffing",
     cpm: [1.95, 2.03],
@@ -1829,6 +1938,7 @@ var pokemonData = {
   "weezing": {
     id: 110,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Weezing",
     stats: {
@@ -1846,6 +1956,7 @@ var pokemonData = {
   "rhyhorn": {
     id: 111,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Rhyhorn",
     cpm: [1.9, 1.91],
@@ -1863,6 +1974,7 @@ var pokemonData = {
   "rhydon": {
     id: 112,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Rhydon",
     stats: {
@@ -1879,6 +1991,7 @@ var pokemonData = {
   "chansey": {
     id: 113,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Chansey",
     stats: {
@@ -1895,6 +2008,7 @@ var pokemonData = {
   "tangela": {
     id: 114,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Tangela",
     stats: {
@@ -1910,6 +2024,7 @@ var pokemonData = {
   "kangaskhan": {
     id: 115,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Kangaskhan",
     stats: {
@@ -1925,6 +2040,7 @@ var pokemonData = {
   "horsea": {
     id: 116,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Horsea",
     cpm: [2.19, 2.23],
@@ -1942,6 +2058,7 @@ var pokemonData = {
   "seadra": {
     id: 117,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Seadra",
     stats: {
@@ -1958,6 +2075,7 @@ var pokemonData = {
   "goldeen": {
     id: 118,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Goldeen",
     cpm: [2.14, 2.24],
@@ -1975,6 +2093,7 @@ var pokemonData = {
   "seaking": {
     id: 119,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Seaking",
     stats: {
@@ -1991,6 +2110,7 @@ var pokemonData = {
   "staryu": {
     id: 120,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Staryu",
     cpm: [2.34, 2.41],
@@ -2009,6 +2129,7 @@ var pokemonData = {
   "starmie": {
     id: 121,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Starmie",
     quickMoves: ["tackle", "water-gun"],
@@ -2026,6 +2147,7 @@ var pokemonData = {
   "mr-mime": {
     id: 122,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Mr. Mime",
     stats: {
@@ -2041,6 +2163,7 @@ var pokemonData = {
   "scyther": {
     id: 123,
     egg: 01,
+    buddy: 5,
     candy: 0,
     name: "Scyther",
     stats: {
@@ -2056,6 +2179,7 @@ var pokemonData = {
   "jynx": {
     id: 124,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Jynx",
     stats: {
@@ -2071,6 +2195,7 @@ var pokemonData = {
   "electabuzz": {
     id: 125,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Electabuzz",
     stats: {
@@ -2086,6 +2211,7 @@ var pokemonData = {
   "magmar": {
     id: 126,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Magmar",
     stats: {
@@ -2101,6 +2227,7 @@ var pokemonData = {
   "pinsir": {
     id: 127,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Pinsir",
     stats: {
@@ -2116,6 +2243,7 @@ var pokemonData = {
   "tauros": {
     id: 128,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Tauros",
     stats: {
@@ -2131,6 +2259,7 @@ var pokemonData = {
   "magikarp": {
     id: 129,
     egg: 2,
+    buddy: 1,
     candy: 400,
     name: "Magikarp",
     cpm: [10.1, 11.8],
@@ -2148,6 +2277,7 @@ var pokemonData = {
   "gyarados": {
     id: 130,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Gyarados",
     stats: {
@@ -2165,6 +2295,7 @@ var pokemonData = {
   "lapras": {
     id: 131,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Lapras",
     stats: {
@@ -2180,6 +2311,7 @@ var pokemonData = {
   "ditto": {
     id: 132,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Ditto",
     stats: {
@@ -2195,6 +2327,7 @@ var pokemonData = {
   "eevee": {
     id: 133,
     egg: 10,
+    buddy: 5,
     candy: 25,
     name: "Eevee",
     cpm: [2.02, 2.64],
@@ -2212,6 +2345,7 @@ var pokemonData = {
   "vaporeon": {
     id: 134,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Vaporeon",
     cpm: [2.63, 2.73],
@@ -2229,6 +2363,7 @@ var pokemonData = {
   "jolteon": {
     id: 135,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Jolteon",
     cpm: [2, 2.1],
@@ -2246,6 +2381,7 @@ var pokemonData = {
   "flareon": {
     id: 136,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Flareon",
     cpm: [2.48, 2.48],
@@ -2263,6 +2399,7 @@ var pokemonData = {
   "porygon": {
     id: 137,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Porygon",
     quickMoves: ["zen-headbutt", "tackle"],
@@ -2279,6 +2416,7 @@ var pokemonData = {
   "omanyte": {
     id: 138,
     egg: 10,
+    buddy: 5,
     candy: 50,
     name: "Omanyte",
     cpm: [1.99, 2.12],
@@ -2296,6 +2434,7 @@ var pokemonData = {
   "omastar": {
     id: 139,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Omastar",
     stats: {
@@ -2313,6 +2452,7 @@ var pokemonData = {
   "kabuto": {
     id: 140,
     egg: 10,
+    buddy: 5,
     candy: 50,
     name: "Kabuto",
     cpm: [1.97, 2.37],
@@ -2330,6 +2470,7 @@ var pokemonData = {
   "kabutops": {
     id: 141,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Kabutops",
     stats: {
@@ -2346,6 +2487,7 @@ var pokemonData = {
   "aerodactyl": {
     id: 142,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Aerodactyl",
     stats: {
@@ -2361,6 +2503,7 @@ var pokemonData = {
   "snorlax": {
     id: 143,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Snorlax",
     quickMoves: ["lick", "zen-headbutt"],
@@ -2376,6 +2519,7 @@ var pokemonData = {
   "articuno": {
     id: 144,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Articuno",
     stats: {
@@ -2391,6 +2535,7 @@ var pokemonData = {
   "zapdos": {
     id: 145,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Zapdos",
     stats: {
@@ -2406,6 +2551,7 @@ var pokemonData = {
   "moltres": {
     id: 146,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Moltres",
     stats: {
@@ -2421,6 +2567,7 @@ var pokemonData = {
   "dratini": {
     id: 147,
     egg: 10,
+    buddy: 5,
     candy: 25,
     name: "Dratini",
     cpm: [1.79, 1.85],
@@ -2438,6 +2585,7 @@ var pokemonData = {
   "dragonair": {
     id: 148,
     egg: 0,
+    buddy: 5,
     candy: 100,
     name: "Dragonair",
     cpm: [2.03, 2.08],
@@ -2456,6 +2604,7 @@ var pokemonData = {
   "dragonite": {
     id: 149,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Dragonite",
     stats: {
@@ -2472,6 +2621,7 @@ var pokemonData = {
   "mewtwo": {
     id: 150,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Mewtwo",
     stats: {
@@ -2487,6 +2637,7 @@ var pokemonData = {
   "mew": {
     id: 151,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Mew",
     stats: {
