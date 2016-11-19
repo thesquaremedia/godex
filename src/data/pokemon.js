@@ -4,6 +4,7 @@ var pokemonData = {
   "bulbasaur": {
     id: 1,
     egg: 2,
+    buddy: 3,
     candy: 25,
     name: "Bulbasaur",
     cpm: [1.53, 1.58],
@@ -15,11 +16,13 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["tackle", "vine-whip"],
     chargeMoves: ["power-whip", "seed-bomb", "sludge-bomb"],
-    evolveTo: "ivysaur"
+    evolveTo: "ivysaur",
+    fleeRate: 0.1
   },
   "ivysaur": {
     id: 2,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Ivysaur",
     cpm: [1.2, 1.6],
@@ -32,11 +35,13 @@ var pokemonData = {
     quickMoves: ["vine-whip", "razor-leaf"],
     chargeMoves: ["power-whip", "sludge-bomb", "solar-beam"],
     evolveFrom: "bulbasaur",
-    evolveTo: "venusaur"
+    evolveTo: "venusaur",
+    fleeRate: 0.07
   },
   "venusaur": {
     id: 3,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Venusaur",
     stats: {
@@ -47,11 +52,13 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["vine-whip", "razor-leaf"],
     chargeMoves: ["petal-blizzard", "sludge-bomb", "solar-beam"],
-    evolveFrom: "ivysaur"
+    evolveFrom: "ivysaur",
+    fleeRate: 0.05
   },
   "charmander": {
     id: 4,
     egg: 2,
+    buddy: 3,
     candy: 25,
     name: "Charmander",
     cpm: [1.64, 1.7],
@@ -63,11 +70,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "scratch"],
     chargeMoves: ["flame-burst", "flame-charge", "flamethrower"],
-    evolveTo: "charmeleon"
+    evolveTo: "charmeleon",
+    fleeRate: 0.1
   },
   "charmeleon": {
     id: 5,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Charmeleon",
     cpm: [1.71, 1.79],
@@ -80,11 +89,13 @@ var pokemonData = {
     quickMoves: ["ember", "scratch"],
     chargeMoves: ["fire-punch", "flame-burst", "flamethrower"],
     evolveFrom: "charmander",
-    evolveTo: "charizard"
+    evolveTo: "charizard",
+    fleeRate: 0.07
   },
   "charizard": {
     id: 6,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Charizard",
     stats: {
@@ -95,11 +106,13 @@ var pokemonData = {
     type: ["fire", "flying"],
     quickMoves: ["ember", "wing-attack"],
     chargeMoves: ["dragon-claw", "fire-blast", "flamethrower"],
-    evolveFrom: "charmeleon"
+    evolveFrom: "charmeleon",
+    fleeRate: 0.05
   },
   "squirtle": {
     id: 7,
     egg: 2,
+    buddy: 3,
     candy: 25,
     name: "Squirtle",
     cpm: [1.58, 2.1],
@@ -111,11 +124,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "tackle"],
     chargeMoves: ["aqua-jet", "aqua-tail", "water-pulse"],
-    evolveTo: "wartortle"
+    evolveTo: "wartortle",
+    fleeRate: 0.1
   },
   "wartortle": {
     id: 8,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Wartortle",
     cpm: [1.4, 1.68],
@@ -128,11 +143,13 @@ var pokemonData = {
     quickMoves: ["bite", "water-gun"],
     chargeMoves: ["aqua-jet", "hydro-pump", "ice-beam"],
     evolveFrom: "squirtle",
-    evolveTo: "blastoise"
+    evolveTo: "blastoise",
+    fleeRate: 0.07
   },
   "blastoise": {
     id: 9,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Blastoise",
     stats: {
@@ -143,11 +160,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bite", "water-gun"],
     chargeMoves: ["flash-cannon", "hydro-pump", "ice-beam"],
-    evolveFrom: "wartortle"
+    evolveFrom: "wartortle",
+    fleeRate: 0.05
   },
   "caterpie": {
     id: 10,
     egg: 2,
+    buddy: 1,
     candy: 12,
     name: "Caterpie",
     cpm: [1.04, 1.08],
@@ -159,11 +178,13 @@ var pokemonData = {
     type: ["bug"],
     quickMoves: ["bug-bite", "tackle"],
     chargeMoves: ["struggle"],
-    evolveTo: "metapod"
+    evolveTo: "metapod",
+    fleeRate: 0.2
   },
   "metapod": {
     id: 11,
     egg: 0,
+    buddy: 1,
     candy: 50,
     name: "Metapod",
     cpm: [3.05, 3.79],
@@ -176,11 +197,13 @@ var pokemonData = {
     quickMoves: ["bug-bite", "tackle"],
     chargeMoves: ["struggle"],
     evolveFrom: "caterpie",
-    evolveTo: "butterfree"
+    evolveTo: "butterfree",
+    fleeRate: 0.09
   },
   "butterfree": {
     id: 12,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Butterfree",
     stats: {
@@ -191,11 +214,13 @@ var pokemonData = {
     type: ["bug", "flying"],
     quickMoves: ["bug-bite", "confusion"],
     chargeMoves: ["bug-buzz", "signal-beam", "psychic"],
-    evolveFrom: "metapod"
+    evolveFrom: "metapod",
+    fleeRate: 0.06
   },
   "weedle": {
     id: 13,
     egg: 2,
+    buddy: 1,
     candy: 12,
     name: "Weedle",
     cpm: [1.06, 1.13],
@@ -207,11 +232,13 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-sting"],
     chargeMoves: ["struggle"],
-    evolveTo: "kakuna"
+    evolveTo: "kakuna",
+    fleeRate: 0.2
   },
   "kakuna": {
     id: 14,
     egg: 0,
+    buddy: 1,
     candy: 50,
     name: "Kakuna",
     cpm: [3.01, 3.42],
@@ -224,11 +251,13 @@ var pokemonData = {
     quickMoves: ["bug-bite", "poison-sting"],
     chargeMoves: ["struggle"],
     evolveFrom: "weedle",
-    evolveTo: "beedrill"
+    evolveTo: "beedrill",
+    fleeRate: 0.09
   },
   "beedrill": {
     id: 15,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Beedrill",
     stats: {
@@ -239,11 +268,13 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-jab"],
     chargeMoves: ["aerial-ace", "sludge-bomb", "x-scissor"],
-    evolveFrom: "kakuna"
+    evolveFrom: "kakuna",
+    fleeRate: 0.06
   },
   "pidgey": {
     id: 16,
     egg: 2,
+    buddy: 1,
     candy: 12,
     name: "Pidgey",
     cpm: [1.71, 1.95],
@@ -255,11 +286,13 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["tackle", "quick-attack"],
     chargeMoves: ["aerial-ace", "air-cutter", "twister"],
-    evolveTo: "pidgeotto"
+    evolveTo: "pidgeotto",
+    fleeRate: 0.2
   },
   "pidgeotto": {
     id: 17,
     egg: 0,
+    buddy: 1,
     candy: 50,
     name: "Pidgeotto",
     cpm: [1.73, 1.8],
@@ -272,11 +305,13 @@ var pokemonData = {
     quickMoves: ["steel-wing", "wing-attack"],
     chargeMoves: ["aerial-ace", "air-cutter", "twister"],
     evolveFrom: "pidgeot",
-    evolveTo: "pidgeot"
+    evolveTo: "pidgeot",
+    fleeRate: 0.09
   },
   "pidgeot": {
     id: 18,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Pidgeot",
     stats: {
@@ -287,11 +322,13 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["steel-wing", "wing-attack"],
     chargeMoves: ["aerial-ace", "air-cutter", "hurricane"],
-    evolveFrom: "pidgeotto"
+    evolveFrom: "pidgeotto",
+    fleeRate: 0.06
   },
   "rattata": {
     id: 19,
     egg: 2,
+    buddy: 1,
     candy: 25,
     name: "Rattata",
     cpm: [2.55, 2.73],
@@ -303,11 +340,13 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["tackle", "quick-attack"],
     chargeMoves: ["body-slam", "dig", "hyper-fang"],
-    evolveTo: "raticate"
+    evolveTo: "raticate",
+    fleeRate: 0.2
   },
   "raticate": {
     id: 20,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Raticate",
     stats: {
@@ -318,11 +357,13 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["bite", "quick-attack"],
     chargeMoves: ["dig", "hyper-beam", "hyper-fang"],
-    evolveFrom: "rattata"
+    evolveFrom: "rattata",
+    fleeRate: 0.07
   },
   "spearow": {
     id: 21,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Spearow",
     cpm: [2.58, 2.81],
@@ -334,11 +375,13 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
     chargeMoves: ["aerial-ace", "drill-peck", "twister"],
-    evolveTo: "fearow"
+    evolveTo: "fearow",
+    fleeRate: 0.15
   },
   "fearow": {
     id: 22,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Fearow",
     stats: {
@@ -349,11 +392,13 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "steel-wing"],
     chargeMoves: ["aerial-ace", "drill-run", "twister"],
-    evolveFrom: "spearow"
+    evolveFrom: "spearow",
+    fleeRate: 0.07
   },
   "ekans": {
     id: 23,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Ekans",
     cpm: [2.21, 2.27],
@@ -365,11 +410,13 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["acid", "poison-sting"],
     chargeMoves: ["gunk-shot", "sludge-bomb", "wrap"],
-    evolveTo: "arbok"
+    evolveTo: "arbok",
+    fleeRate: 0.15
   },
   "arbok": {
     id: 24,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Arbok",
     stats: {
@@ -380,11 +427,13 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["acid", "bite"],
     chargeMoves: ["dark-pulse", "gunk-shot", "sludge-wave"],
-    evolveFrom: "ekans"
+    evolveFrom: "ekans",
+    fleeRate: 0.07
   },
   "pikachu": {
     id: 25,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Pikachu",
     cpm: [2.33, 2.38],
@@ -396,11 +445,13 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["thunder-shock", "quick-attack"],
     chargeMoves: ["discharge", "thunder", "thunderbolt"],
-    evolveTo: "raichu"
+    evolveTo: "raichu",
+    fleeRate: 0.1
   },
   "raichu": {
     id: 26,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Raichu",
     stats: {
@@ -411,11 +462,13 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["spark", "thunder-shock"],
     chargeMoves: ["brick-break", "thunder", "thunder-punch"],
-    evolveFrom: "pikachu"
+    evolveFrom: "pikachu",
+    fleeRate: 0.06
   },
   "sandshrew": {
     id: 27,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Sandshrew",
     cpm: [2.3, 2.76],
@@ -427,11 +480,13 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["mud-shot", "scratch"],
     chargeMoves: ["dig", "rock-slide", "rock-tomb"],
-    evolveTo: "sandslash"
+    evolveTo: "sandslash",
+    fleeRate: 0.1
   },
   "sandslash": {
     id: 28,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Sandslash",
     stats: {
@@ -442,11 +497,13 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["metal-claw", "mud-shot"],
     chargeMoves: ["bulldoze", "earthquake", "rock-tomb"],
-    evolveFrom: "sandshrew"
+    evolveFrom: "sandshrew",
+    fleeRate: 0.06
   },
   "nidoran-f": {
     id: 29,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Nidoran ♀",
     cpm: [1.62, 1.66],
@@ -458,11 +515,13 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["bite", "poison-sting"],
     chargeMoves: ["body-slam", "poison-fang", "sludge-bomb"],
-    evolveTo: "nidorina"
+    evolveTo: "nidorina",
+    fleeRate: 0.15
   },
   "nidorina": {
     id: 30,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Nidorina",
     cpm: [1.83, 2.48],
@@ -475,11 +534,13 @@ var pokemonData = {
     quickMoves: ["bite", "poison-sting"],
     chargeMoves: ["dig", "poison-fang", "sludge-bomb"],
     evolveFrom: "nidoran-f",
-    evolveTo: "nidoqueen"
+    evolveTo: "nidoqueen",
+    fleeRate: 0.07
   },
   "nidoqueen": {
     id: 31,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Nidoqueen",
     stats: {
@@ -490,11 +551,13 @@ var pokemonData = {
     type: ["poison", "ground"],
     quickMoves: ["bite", "poison-jab"],
     chargeMoves: ["earthquake", "sludge-wave", "stone-edge"],
-    evolveFrom: "nidorina"
+    evolveFrom: "nidorina",
+    fleeRate: 0.05
   },
   "nidoran-m": {
     id: 32,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Nidoran ♂",
     cpm: [1.64, 1.7],
@@ -506,11 +569,13 @@ var pokemonData = {
     type: ["poison"],
     quickMoves: ["peck", "poison-sting"],
     chargeMoves: ["body-slam", "horn-attack", "sludge-bomb"],
-    evolveTo: "nidorino"
+    evolveTo: "nidorino",
+    fleeRate: 0.15
   },
   "nidorino": {
     id: 33,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Nidorino",
     cpm: [1.64, 1.86],
@@ -523,11 +588,13 @@ var pokemonData = {
     quickMoves: ["bite", "poison-jab"],
     chargeMoves: ["dig", "horn-attack", "sludge-bomb"],
     evolveFrom: "nidoran-m",
-    evolveTo: "nidoking"
+    evolveTo: "nidoking",
+    fleeRate: 0.07
   },
   "nidoking": {
     id: 34,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Nidoking",
     stats: {
@@ -538,11 +605,13 @@ var pokemonData = {
     type: ["poison", "ground"],
     quickMoves: ["fury-cutter", "poison-jab"],
     chargeMoves: ["earthquake", "megahorn", "sludge-wave"],
-    evolveFrom: "nidorino"
+    evolveFrom: "nidorino",
+    fleeRate: 0.05
   },
   "clefairy": {
     id: 35,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Clefairy",
     cpm: [2.03, 2.14],
@@ -554,11 +623,13 @@ var pokemonData = {
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["body-slam", "disarming-voice", "moonblast"],
-    evolveTo: "clefable"
+    evolveTo: "clefable",
+    fleeRate: 0.1
   },
   "clefable": {
     id: 36,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Clefable",
     stats: {
@@ -569,11 +640,13 @@ var pokemonData = {
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["dazzling-gleam", "moonblast", "psychic"],
-    evolveFrom: "clefairy"
+    evolveFrom: "clefairy",
+    fleeRate: 0.06
   },
   "vulpix": {
     id: 37,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Vulpix",
     cpm: [2.74, 2.81],
@@ -585,11 +658,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "quick-attack"],
     chargeMoves: ["body-slam", "flame-charge", "flamethrower"],
-    evolveTo: "ninetales"
+    evolveTo: "ninetales",
+    fleeRate: 0.1
   },
   "ninetales": {
     id: 38,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Ninetales",
     stats: {
@@ -600,11 +675,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "feint-attack"],
     chargeMoves: ["fire-blast", "flamethrower", "heat-wave"],
-    evolveFrom: "vulpix"
+    evolveFrom: "vulpix",
+    fleeRate: 0.06
   },
   "jigglypuff": {
     id: 39,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Jigglypuff",
     cpm: [2.41, 2.47],
@@ -617,11 +694,13 @@ var pokemonData = {
     quickMoves: ["feint-attack", "pound"],
     chargeMoves: ["body-slam", "disarming-voice", "dazzling-gleam"],
     legacyMoves: ["play-rough"],
-    evolveTo: "wigglytuff"
+    evolveTo: "wigglytuff",
+    fleeRate: 0.1
   },
   "wigglytuff": {
     id: 40,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Wigglytuff",
     stats: {
@@ -632,11 +711,13 @@ var pokemonData = {
     type: ["normal", "fairy"],
     quickMoves: ["feint-attack", "pound"],
     chargeMoves: ["dazzling-gleam", "hyper-beam", "play-rough"],
-    evolveFrom: "jigglypuff"
+    evolveFrom: "jigglypuff",
+    fleeRate: 0.06
   },
   "zubat": {
     id: 41,
     egg: 2,
+    buddy: 1,
     candy: 50,
     name: "Zubat",
     cpm: [2.6, 3.67],
@@ -648,11 +729,13 @@ var pokemonData = {
     type: ["poison", "flying"],
     quickMoves: ["bite", "quick-attack"],
     chargeMoves: ["air-cutter", "poison-fang", "sludge-bomb"],
-    evolveTo: "golbat"
+    evolveTo: "golbat",
+    fleeRate: 0.2
   },
   "golbat": {
     id: 42,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Golbat",
     stats: {
@@ -663,11 +746,13 @@ var pokemonData = {
     type: ["poison", "flying"],
     quickMoves: ["bite", "wing-attack"],
     chargeMoves: ["air-cutter", "ominous-wind", "poison-fang"],
-    evolveFrom: "zubat"
+    evolveFrom: "zubat",
+    fleeRate: 0.07
   },
   "oddish": {
     id: 43,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Oddish",
     cpm: [1.48, 1.51],
@@ -679,11 +764,13 @@ var pokemonData = {
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["moonblast", "seed-bomb", "sludge-bomb"],
-    evolveTo: "gloom"
+    evolveTo: "gloom",
+    fleeRate: 0.15
   },
   "gloom": {
     id: 44,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Gloom",
     cpm: [1.48, 1.53],
@@ -696,11 +783,13 @@ var pokemonData = {
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["moonblast", "petal-blizzard", "sludge-bomb"],
     evolveFrom: "oddish",
-    evolveTo: "vileplume"
+    evolveTo: "vileplume",
+    fleeRate: 0.07
   },
   "vileplume": {
     id: 45,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Vileplume",
     stats: {
@@ -711,11 +800,13 @@ var pokemonData = {
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["moonblast", "petal-blizzard", "solar-beam"],
-    evolveFrom: "gloom"
+    evolveFrom: "gloom",
+    fleeRate: 0.05
   },
   "paras": {
     id: 46,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Paras",
     cpm: [1.92, 2.02],
@@ -727,11 +818,13 @@ var pokemonData = {
     type: ["bug", "grass"],
     quickMoves: ["bug-bite", "scratch"],
     chargeMoves: ["cross-poison", "seed-bomb", "x-scissor"],
-    evolveTo: "parasect"
+    evolveTo: "parasect",
+    fleeRate: 0.15
   },
   "parasect": {
     id: 47,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Parasect",
     stats: {
@@ -742,11 +835,13 @@ var pokemonData = {
     type: ["bug", "grass"],
     quickMoves: ["bug-bite", "fury-cutter"],
     chargeMoves: ["cross-poison", "solar-beam", "x-scissor"],
-    evolveFrom: "paras"
+    evolveFrom: "paras",
+    fleeRate: 0.07
   },
   "venonat": {
     id: 48,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Venonat",
     cpm: [1.86, 1.9],
@@ -758,11 +853,13 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "confusion"],
     chargeMoves: ["poison-fang", "psybeam", "signal-beam"],
-    evolveTo: "venomoth"
+    evolveTo: "venomoth",
+    fleeRate: 0.15
   },
   "venomoth": {
     id: 49,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Venomoth",
     stats: {
@@ -773,11 +870,13 @@ var pokemonData = {
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "confusion"],
     chargeMoves: ["bug-buzz", "poison-fang", "psychic"],
-    evolveFrom: "venonat"
+    evolveFrom: "venonat",
+    fleeRate: 0.07
   },
   "diglett": {
     id: 50,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Diglett",
     cpm: [2.68, 2.77],
@@ -790,11 +889,13 @@ var pokemonData = {
     quickMoves: ["mud-slap", "scratch"],
     chargeMoves: ["dig", "mud-bomb", "rock-tomb"],
     legacyMoves: ["mud-shot"],
-    evolveTo: "dugtrio"
+    evolveTo: "dugtrio",
+    fleeRate: 0.1
   },
   "dugtrio": {
     id: 51,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Dugtrio",
     stats: {
@@ -806,11 +907,13 @@ var pokemonData = {
     quickMoves: ["mud-slap", "sucker-punch"],
     chargeMoves: ["earthquake", "mud-bomb", "stone-edge"],
     legacyMoves: ["mud-shot"],
-    evolveFrom: "diglett"
+    evolveFrom: "diglett",
+    fleeRate: 0.06
   },
   "meowth": {
     id: 52,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Meowth",
     cpm: [1.98, 2.24],
@@ -822,11 +925,13 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["bite", "scratch"],
     chargeMoves: ["body-slam", "dark-pulse", "night-slash"],
-    evolveTo: "persian"
+    evolveTo: "persian",
+    fleeRate: 0.15
   },
   "persian": {
     id: 53,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Persian",
     stats: {
@@ -837,11 +942,13 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["feint-attack", "scratch"],
     chargeMoves: ["night-slash", "play-rough", "power-gem"],
-    evolveFrom: "meowth"
+    evolveFrom: "meowth",
+    fleeRate: 0.07
   },
   "psyduck": {
     id: 54,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Psyduck",
     cpm: [2.22, 2.29],
@@ -853,11 +960,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["water-gun", "zen-headbutt"],
     chargeMoves: ["aqua-tail", "cross-chop", "psybeam"],
-    evolveTo: "golduck"
+    evolveTo: "golduck",
+    fleeRate: 0.1
   },
   "golduck": {
     id: 55,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Golduck",
     stats: {
@@ -868,11 +977,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["confusion", "water-gun"],
     chargeMoves: ["hydro-pump", "ice-beam", "psychic"],
-    evolveFrom: "psyduck"
+    evolveFrom: "psyduck",
+    fleeRate: 0.06
   },
   "mankey": {
     id: 56,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Mankey",
     cpm: [2.18, 2.28],
@@ -884,11 +995,13 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["karate-chop", "scratch"],
     chargeMoves: ["brick-break", "cross-chop", "low-sweep"],
-    evolveTo: "primeape"
+    evolveTo: "primeape",
+    fleeRate: 0.1
   },
   "primeape": {
     id: 57,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Primeape",
     stats: {
@@ -899,11 +1012,13 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
     chargeMoves: ["cross-chop", "low-sweep", "night-slash"],
-    evolveFrom: "mankey"
+    evolveFrom: "mankey",
+    fleeRate: 0.06
   },
   "growlithe": {
     id: 58,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Growlithe",
     cpm: [2.31, 2.36],
@@ -915,11 +1030,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["bite", "ember"],
     chargeMoves: ["body-slam", "flame-wheel", "flamethrower"],
-    evolveTo: "arcanine"
+    evolveTo: "arcanine",
+    fleeRate: 0.1
   },
   "arcanine": {
     id: 59,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Arcanine",
     stats: {
@@ -930,11 +1047,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["bite", "fire-fang"],
     chargeMoves: ["bulldoze", "fire-blast", "flamethrower"],
-    evolveFrom: "growlithe"
+    evolveFrom: "growlithe",
+    fleeRate: 0.06
   },
   "poliwag": {
     id: 60,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Poliwag",
     cpm: [1.72, 1.77],
@@ -946,11 +1065,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["body-slam", "bubble-beam", "mud-bomb"],
-    evolveTo: "poliwhirl"
+    evolveTo: "poliwhirl",
+    fleeRate: 0.15
   },
   "poliwhirl": {
     id: 61,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Poliwhirl",
     cpm: [1.9, 1.96],
@@ -963,11 +1084,13 @@ var pokemonData = {
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["bubble-beam", "scald", "mud-bomb"],
     evolveFrom: "poliwag",
-    evolveTo: "poliwrath"
+    evolveTo: "poliwrath",
+    fleeRate: 0.07
   },
   "poliwrath": {
     id: 62,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Poliwrath",
     stats: {
@@ -978,11 +1101,13 @@ var pokemonData = {
     type: ["water", "fighting"],
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["hydro-pump", "ice-punch", "submission"],
-    evolveFrom: "poliwhirl"
+    evolveFrom: "poliwhirl",
+    fleeRate: 0.05
   },
   "abra": {
     id: 63,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Abra",
     stats: {
@@ -994,11 +1119,13 @@ var pokemonData = {
     cpm: [1.36, 1.95],
     quickMoves: ["zen-headbutt"],
     chargeMoves: ["psyshock", "shadow-ball", "signal-beam"],
-    evolveTo: "kadabra"
+    evolveTo: "kadabra",
+    fleeRate: 0.99
   },
   "kadabra": {
     id: 64,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Kadabra",
     cpm: [1.4, 1.65],
@@ -1011,11 +1138,13 @@ var pokemonData = {
     quickMoves: ["confusion", "psycho-cut"],
     chargeMoves: ["dazzling-gleam", "psybeam", "shadow-ball"],
     evolveFrom: "abra",
-    evolveTo: "alakazam"
+    evolveTo: "alakazam",
+    fleeRate: 0.07
   },
   "alakazam": {
     id: 65,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Alakazam",
     stats: {
@@ -1026,11 +1155,13 @@ var pokemonData = {
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
     chargeMoves: ["dazzling-gleam", "psychic", "shadow-ball"],
-    evolveFrom: "kadabra"
+    evolveFrom: "kadabra",
+    fleeRate: 0.05
   },
   "machop": {
     id: 66,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Machop",
     cpm: [1.62, 1.67],
@@ -1042,11 +1173,13 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
     chargeMoves: ["brick-break", "cross-chop", "low-sweep"],
-    evolveTo: "machoke"
+    evolveTo: "machoke",
+    fleeRate: 0.1
   },
   "machoke": {
     id: 67,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Machoke",
     cpm: [1.48, 1.7],
@@ -1059,11 +1192,13 @@ var pokemonData = {
     quickMoves: ["karate-chop", "low-kick"],
     chargeMoves: ["brick-break", "cross-chop", "submission"],
     evolveFrom: "machop",
-    evolveTo: "machamp"
+    evolveTo: "machamp",
+    fleeRate: 0.07
   },
   "machamp": {
     id: 68,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Machamp",
     stats: {
@@ -1074,11 +1209,13 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["bullet-punch", "karate-chop"],
     chargeMoves: ["cross-chop", "stone-edge", "submission"],
-    evolveFrom: "machoke"
+    evolveFrom: "machoke",
+    fleeRate: 0.05
   },
   "bellsprout": {
     id: 69,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Bellsprout",
     cpm: [1.54, 1.6],
@@ -1090,11 +1227,13 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["acid", "vine-whip"],
     chargeMoves: ["power-whip", "sludge-bomb", "wrap"],
-    evolveTo: "weepinbell"
+    evolveTo: "weepinbell",
+    fleeRate: 0.15
   },
   "weepinbell": {
     id: 70,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Weepinbell",
     cpm: [1.47, 1.59],
@@ -1107,11 +1246,13 @@ var pokemonData = {
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["power-whip", "seed-bomb", "sludge-bomb"],
     evolveFrom: "bellsprout",
-    evolveTo: "victreebel"
+    evolveTo: "victreebel",
+    fleeRate: 0.07
   },
   "victreebel": {
     id: 71,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Victreebel",
     stats: {
@@ -1122,11 +1263,13 @@ var pokemonData = {
     type: ["grass", "poison"],
     quickMoves: ["acid", "razor-leaf"],
     chargeMoves: ["leaf-blade", "sludge-bomb", "solar-beam"],
-    evolveFrom: "weepinbell"
+    evolveFrom: "weepinbell",
+    fleeRate: 0.05
   },
   "tentacool": {
     id: 72,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Tentacool",
     cpm: [2.47, 2.6],
@@ -1138,11 +1281,13 @@ var pokemonData = {
     type: ["water", "poison"],
     quickMoves: ["bubble", "poison-sting"],
     chargeMoves: ["bubble-beam", "water-pulse", "wrap"],
-    evolveTo: "tentacruel"
+    evolveTo: "tentacruel",
+    fleeRate: 0.15
   },
   "tentacruel": {
     id: 73,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Tentacruel",
     stats: {
@@ -1153,11 +1298,13 @@ var pokemonData = {
     type: ["water", "poison"],
     quickMoves: ["acid", "poison-jab"],
     chargeMoves: ["blizzard", "hydro-pump", "sludge-wave"],
-    evolveFrom: "tentacool"
+    evolveFrom: "tentacool",
+    fleeRate: 0.07
   },
   "geodude": {
     id: 74,
     egg: 2,
+    buddy: 1,
     candy: 25,
     name: "Geodude",
     cpm: [1.7, 1.76],
@@ -1169,11 +1316,13 @@ var pokemonData = {
     type: ["rock", "ground"],
     quickMoves: ["rock-throw", "tackle"],
     chargeMoves: ["dig", "rock-slide", "rock-tomb"],
-    evolveTo: "graveler"
+    evolveTo: "graveler",
+    fleeRate: 0.1
   },
   "graveler": {
     id: 75,
     egg: 0,
+    buddy: 1,
     candy: 100,
     name: "Graveler",
     cpm: [1.62, 1.72],
@@ -1187,11 +1336,13 @@ var pokemonData = {
     chargeMoves: ["dig", "rock-slide", "stone-edge"],
     legacyMoves: ["mud-shot"],
     evolveFrom: "geodude",
-    evolveTo: "golem"
+    evolveTo: "golem",
+    fleeRate: 0.07
   },
   "golem": {
     id: 76,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Golem",
     stats: {
@@ -1203,11 +1354,13 @@ var pokemonData = {
     quickMoves: ["mud-slap", "rock-throw"],
     chargeMoves: ["ancient-power", "earthquake", "stone-edge"],
     legacyMoves: ["mud-shot"],
-    evolveFrom: "graveler"
+    evolveFrom: "graveler",
+    fleeRate: 0.05
   },
   "ponyta": {
     id: 77,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Ponyta",
     cpm: [1.46, 1.5],
@@ -1219,11 +1372,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "tackle"],
     chargeMoves: ["fire-blast", "flame-charge", "flame-wheel"],
-    evolveTo: "rapidash"
+    evolveTo: "rapidash",
+    fleeRate: 0.1
   },
   "rapidash": {
     id: 78,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Rapidash",
     stats: {
@@ -1234,11 +1389,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "low-kick"],
     chargeMoves: ["drill-run", "fire-blast", "heat-wave"],
-    evolveFrom: "ponyta"
+    evolveFrom: "ponyta",
+    fleeRate: 0.06
   },
   "slowpoke": {
     id: 79,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Slowpoke",
     cpm: [2.19, 2.21],
@@ -1250,11 +1407,13 @@ var pokemonData = {
     type: ["water", "psychic"],
     quickMoves: ["confusion", "water-gun"],
     chargeMoves: ["water-pulse", "psybeam", "psychic"],
-    evolveTo: "slowbro"
+    evolveTo: "slowbro",
+    fleeRate: 0.1
   },
   "slowbro": {
     id: 80,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Slowbro",
     stats: {
@@ -1265,11 +1424,13 @@ var pokemonData = {
     type: ["water", "psychic"],
     quickMoves: ["confusion", "water-gun"],
     chargeMoves: ["ice-beam", "psychic", "water-pulse"],
-    evolveFrom: "slowpoke"
+    evolveFrom: "slowpoke",
+    fleeRate: 0.06
   },
   "magnemite": {
     id: 81,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Magnemite",
     cpm: [2.16, 2.18],
@@ -1281,11 +1442,13 @@ var pokemonData = {
     type: ["electric", "steel"],
     quickMoves: ["spark", "thunder-shock"],
     chargeMoves: ["discharge", "magnet-bomb", "thunderbolt"],
-    evolveFrom: "magneton"
+    evolveFrom: "magneton",
+    fleeRate: 0.1
   },
   "magneton": {
     id: 82,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Magneton",
     stats: {
@@ -1296,11 +1459,13 @@ var pokemonData = {
     type: ["electric", "steel"],
     quickMoves: ["spark", "thunder-shock"],
     chargeMoves: ["discharge", "flash-cannon", "magnet-bomb"],
-    evolveTo: "magnemite"
+    evolveTo: "magnemite",
+    fleeRate: 0.06
   },
   "farfetchd": {
     id: 83,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Farfetch'd",
     stats: {
@@ -1310,11 +1475,13 @@ var pokemonData = {
     },
     type: ["normal", "flying"],
     quickMoves: ["cut", "fury-cutter"],
-    chargeMoves: ["aerial-ace", "air-cutter", "leaf-blade"]
+    chargeMoves: ["aerial-ace", "air-cutter", "leaf-blade"],
+    fleeRate: 0.09
   },
   "doduo": {
     id: 84,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Doduo",
     cpm: [2.19, 2.3],
@@ -1326,11 +1493,13 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
     chargeMoves: ["aerial-ace", "drill-peck", "swift"],
-    evolveTo: "dodrio"
+    evolveTo: "dodrio",
+    fleeRate: 0.1
   },
   "dodrio": {
     id: 85,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Dodrio",
     stats: {
@@ -1341,11 +1510,13 @@ var pokemonData = {
     type: ["normal", "flying"],
     quickMoves: ["feint-attack", "steel-wing"],
     chargeMoves: ["aerial-ace", "air-cutter", "drill-peck"],
-    evolveFrom: "doduo"
+    evolveFrom: "doduo",
+    fleeRate: 0.06
   },
   "seel": {
     id: 86,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Seel",
     cpm: [1.04, 1.96],
@@ -1358,11 +1529,13 @@ var pokemonData = {
     quickMoves: ["ice-shard", "lick"],
     chargeMoves: ["aqua-jet", "aqua-tail", "icy-wind"],
     legacyMoves: ["water-gun"],
-    evolveTo: "dewgong"
+    evolveTo: "dewgong",
+    fleeRate: 0.09
   },
   "dewgong": {
     id: 87,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Dewgong",
     stats: {
@@ -1373,11 +1546,13 @@ var pokemonData = {
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
     chargeMoves: ["aqua-jet", "blizzard", "icy-wind"],
-    evolveFrom: "seel"
+    evolveFrom: "seel",
+    fleeRate: 0.06
   },
   "grimer": {
     id: 88,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Grimer",
     cpm: [2.01, 2.44],
@@ -1390,11 +1565,13 @@ var pokemonData = {
     quickMoves: ["poison-jab", "mud-slap"],
     chargeMoves: ["sludge", "sludge-bomb", "mud-bomb"],
     legacyMoves: ["acid"],
-    evolveTo: "muk"
+    evolveTo: "muk",
+    fleeRate: 0.1
   },
   "muk": {
     id: 89,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Muk",
     stats: {
@@ -1406,11 +1583,13 @@ var pokemonData = {
     quickMoves: ["poison-jab", "lick"],
     chargeMoves: ["dark-pulse", "gunk-shot", "sludge-wave"],
     legacyMoves: ["acid"],
-    evolveFrom: "grimer"
+    evolveFrom: "grimer",
+    fleeRate: 0.06
   },
   "shellder": {
     id: 90,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Shellder",
     cpm: [2.62, 2.65],
@@ -1422,11 +1601,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["ice-shard", "tackle"],
     chargeMoves: ["bubble-beam", "icy-wind", "water-pulse"],
-    evolveTo: "cloyster"
+    evolveTo: "cloyster",
+    fleeRate: 0.1
   },
   "cloyster": {
     id: 91,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Cloyster",
     stats: {
@@ -1437,11 +1618,13 @@ var pokemonData = {
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
     chargeMoves: ["blizzard", "icy-wind", "hydro-pump"],
-    evolveFrom: "shellder"
+    evolveFrom: "shellder",
+    fleeRate: 0.06
   },
   "gastly": {
     id: 92,
     egg: 5,
+    buddy: 3,
     candy: 25,
     name: "Gastly",
     cpm: [1.75, 1.83],
@@ -1453,11 +1636,13 @@ var pokemonData = {
     type: ["ghost", "poison"],
     quickMoves: ["lick", "sucker-punch"],
     chargeMoves: ["dark-pulse", "ominous-wind", "sludge-bomb"],
-    evolveTo: "haunter"
+    evolveTo: "haunter",
+    fleeRate: 0.1
   },
   "haunter": {
     id: 93,
     egg: 0,
+    buddy: 3,
     candy: 100,
     name: "Haunter",
     cpm: [1.56, 1.58],
@@ -1470,11 +1655,13 @@ var pokemonData = {
     quickMoves: ["lick", "shadow-claw"],
     chargeMoves: ["dark-pulse", "shadow-ball", "sludge-bomb"],
     evolveFrom: "gastly",
-    evolveTo: "gengar"
+    evolveTo: "gengar",
+    fleeRate: 0.07
   },
   "gengar": {
     id: 94,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Gengar",
     stats: {
@@ -1486,11 +1673,13 @@ var pokemonData = {
     quickMoves: ["shadow-claw", "sucker-punch"],
     chargeMoves: ["sludge-bomb", "dark-pulse", "shadow-ball"],
     legacyMoves: ["sludge-wave"],
-    evolveFrom: "haunter"
+    evolveFrom: "haunter",
+    fleeRate: 0.05
   },
   "onix": {
     id: 95,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Onix",
     stats: {
@@ -1500,11 +1689,13 @@ var pokemonData = {
     },
     type: ["rock", "ground"],
     quickMoves: ["rock-throw", "tackle"],
-    chargeMoves: ["iron-head", "rock-slide", "stone-edge"]
+    chargeMoves: ["iron-head", "rock-slide", "stone-edge"],
+    fleeRate: 0.09
   },
   "drowzee": {
     id: 96,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Drowzee",
     cpm: [2.06, 2.09],
@@ -1516,11 +1707,13 @@ var pokemonData = {
     type: ["psychic"],
     quickMoves: ["confusion", "pound"],
     chargeMoves: ["psybeam", "psychic", "psyshock"],
-    evolveTo: "hypno"
+    evolveTo: "hypno",
+    fleeRate: 0.1
   },
   "hypno": {
     id: 97,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Hypno",
     stats: {
@@ -1531,11 +1724,13 @@ var pokemonData = {
     type: ["psychic"],
     quickMoves: ["confusion", "zen-headbutt"],
     chargeMoves: ["psychic", "psyshock", "shadow-ball"],
-    evolveFrom: "drowzee"
+    evolveFrom: "drowzee",
+    fleeRate: 0.06
   },
   "krabby": {
     id: 98,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Krabby",
     cpm: [2.32, 2.4],
@@ -1547,11 +1742,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
     chargeMoves: ["bubble-beam", "vice-grip", "water-pulse"],
-    evolveTo: "kingler"
+    evolveTo: "kingler",
+    fleeRate: 0.15
   },
   "kingler": {
     id: 99,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Kingler",
     stats: {
@@ -1562,11 +1759,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["metal-claw", "mud-shot"],
     chargeMoves: ["vice-grip", "water-pulse", "x-scissor"],
-    evolveFrom: "krabby"
+    evolveFrom: "krabby",
+    fleeRate: 0.07
   },
   "voltorb": {
     id: 100,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Voltorb",
     cpm: [2.01, 2.01],
@@ -1578,11 +1777,13 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["spark", "tackle"],
     chargeMoves: ["discharge", "signal-beam", "thunderbolt"],
-    evolveTo: "electrode"
+    evolveTo: "electrode",
+    fleeRate: 0.1
   },
   "electrode": {
     id: 101,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Electrode",
     stats: {
@@ -1593,11 +1794,13 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["spark", "tackle"],
     chargeMoves: ["discharge", "hyper-beam", "thunderbolt"],
-    evolveFrom: "voltorb"
+    evolveFrom: "voltorb",
+    fleeRate: 0.06
   },
   "exeggcute": {
     id: 102,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Exeggcute",
     cpm: [2.7, 3.18],
@@ -1609,11 +1812,13 @@ var pokemonData = {
     type: ["grass", "psychic"],
     quickMoves: ["confusion"],
     chargeMoves: ["ancient-power", "psychic", "seed-bomb"],
-    evolveTo: "exeggutor"
+    evolveTo: "exeggutor",
+    fleeRate: 0.1
   },
   "exeggutor": {
     id: 103,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Exeggutor",
     stats: {
@@ -1624,11 +1829,13 @@ var pokemonData = {
     type: ["grass", "psychic"],
     quickMoves: ["confusion", "zen-headbutt"],
     chargeMoves: ["psychic", "seed-bomb", "solar-beam"],
-    evolveFrom: "exeggcute"
+    evolveFrom: "exeggcute",
+    fleeRate: 0.06
   },
   "cubone": {
     id: 104,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Cubone",
     cpm: [1.65, 1.67],
@@ -1640,11 +1847,13 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["bone-club", "bulldoze", "dig"],
-    evolveTo: "marowak"
+    evolveTo: "marowak",
+    fleeRate: 0.1
   },
   "marowak": {
     id: 105,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Marowak",
     stats: {
@@ -1655,11 +1864,13 @@ var pokemonData = {
     type: ["ground"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["bone-club", "dig", "earthquake"],
-    evolveFrom: "cubone"
+    evolveFrom: "cubone",
+    fleeRate: 0.06
   },
   "hitmonlee": {
     id: 106,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Hitmonlee",
     stats: {
@@ -1670,11 +1881,13 @@ var pokemonData = {
     type: ["fighting"],
     quickMoves: ["low-kick", "rock-smash"],
     chargeMoves: ["low-sweep", "brick-break", "stone-edge"],
-    legacyMoves: ["stomp"]
+    legacyMoves: ["stomp"],
+    fleeRate: 0.09
   },
   "hitmonchan": {
     id: 107,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Hitmonchan",
     stats: {
@@ -1684,11 +1897,13 @@ var pokemonData = {
     },
     type: ["fighting"],
     quickMoves: ["bullet-punch", "rock-smash"],
-    chargeMoves: ["brick-break", "fire-punch", "ice-punch", "thunder-punch"]
+    chargeMoves: ["brick-break", "fire-punch", "ice-punch", "thunder-punch"],
+    fleeRate: 0.09
   },
   "lickitung": {
     id: 108,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Lickitung",
     stats: {
@@ -1698,11 +1913,13 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["lick", "zen-headbutt"],
-    chargeMoves: ["hyper-beam", "power-whip", "hyper-beam"]
+    chargeMoves: ["hyper-beam", "power-whip", "hyper-beam"],
+    fleeRate: 0.09
   },
   "koffing": {
     id: 109,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Koffing",
     cpm: [1.95, 2.03],
@@ -1715,11 +1932,13 @@ var pokemonData = {
     quickMoves: ["tackle"],
     chargeMoves: ["dark-pulse", "sludge", "sludge-bomb"],
     legacyMoves: ["acid"],
-    evolveTo: "weezing"
+    evolveTo: "weezing",
+    fleeRate: 0.1
   },
   "weezing": {
     id: 110,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Weezing",
     stats: {
@@ -1731,11 +1950,13 @@ var pokemonData = {
     quickMoves: ["tackle"],
     chargeMoves: ["dark-pulse", "shadow-ball", "sludge-bomb"],
     legacyMoves: ["acid"],
-    evolveFrom: "koffing"
+    evolveFrom: "koffing",
+    fleeRate: 0.06
   },
   "rhyhorn": {
     id: 111,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Rhyhorn",
     cpm: [1.9, 1.91],
@@ -1747,11 +1968,13 @@ var pokemonData = {
     type: ["ground", "rock"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["bulldoze", "horn-attack", "stomp"],
-    evolveTo: "rhydon"
+    evolveTo: "rhydon",
+    fleeRate: 0.1
   },
   "rhydon": {
     id: 112,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Rhydon",
     stats: {
@@ -1762,11 +1985,13 @@ var pokemonData = {
     type: ["ground", "rock"],
     quickMoves: ["mud-slap", "rock-smash"],
     chargeMoves: ["earthquake", "megahorn", "stone-edge"],
-    evolveFrom: "rhyhorn"
+    evolveFrom: "rhyhorn",
+    fleeRate: 0.06
   },
   "chansey": {
     id: 113,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Chansey",
     stats: {
@@ -1777,11 +2002,13 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["dazzling-gleam", "hyper-beam", "psychic"],
-    legacyMoves: ["psybeam"]
+    legacyMoves: ["psybeam"],
+    fleeRate: 0.09
   },
   "tangela": {
     id: 114,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Tangela",
     stats: {
@@ -1791,11 +2018,13 @@ var pokemonData = {
     },
     type: ["grass"],
     quickMoves: ["vine-whip"],
-    chargeMoves: ["power-whip", "sludge-bomb", "solar-beam"]
+    chargeMoves: ["power-whip", "sludge-bomb", "solar-beam"],
+    fleeRate: 0.09
   },
   "kangaskhan": {
     id: 115,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Kangaskhan",
     stats: {
@@ -1805,11 +2034,13 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["low-kick", "mud-slap"],
-    chargeMoves: ["brick-break", "earthquake", "stomp"]
+    chargeMoves: ["brick-break", "earthquake", "stomp"],
+    fleeRate: 0.09
   },
   "horsea": {
     id: 116,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Horsea",
     cpm: [2.19, 2.23],
@@ -1821,11 +2052,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["bubble", "water-gun"],
     chargeMoves: ["bubble-beam", "dragon-pulse", "flash-cannon"],
-    evolveTo: "seadra"
+    evolveTo: "seadra",
+    fleeRate: 0.1
   },
   "seadra": {
     id: 117,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Seadra",
     stats: {
@@ -1836,11 +2069,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["dragon-breath", "water-gun"],
     chargeMoves: ["blizzard", "dragon-pulse", "hydro-pump"],
-    evolveFrom: "horsea"
+    evolveFrom: "horsea",
+    fleeRate: 0.06
   },
   "goldeen": {
     id: 118,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Goldeen",
     cpm: [2.14, 2.24],
@@ -1852,11 +2087,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["mud-shot", "peck"],
     chargeMoves: ["aqua-tail", "horn-attack", "water-pulse"],
-    evolveTo: "seaking"
+    evolveTo: "seaking",
+    fleeRate: 0.15
   },
   "seaking": {
     id: 119,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Seaking",
     stats: {
@@ -1867,11 +2104,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["peck", "poison-jab"],
     chargeMoves: ["drill-run", "icy-wind", "megahorn"],
-    evolveFrom: 'goldeen'
+    evolveFrom: 'goldeen',
+    fleeRate: 0.07
   },
   "staryu": {
     id: 120,
     egg: 5,
+    buddy: 3,
     candy: 50,
     name: "Staryu",
     cpm: [2.34, 2.41],
@@ -1884,11 +2123,13 @@ var pokemonData = {
     quickMoves: ["tackle", "water-gun"],
     chargeMoves: ["bubble-beam", "power-gem", "swift"],
     legacyMoves: ["quick-attack"],
-    evolveTo: "starmie"
+    evolveTo: "starmie",
+    fleeRate: 0.15
   },
   "starmie": {
     id: 121,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Starmie",
     quickMoves: ["tackle", "water-gun"],
@@ -1900,11 +2141,13 @@ var pokemonData = {
       defense: 192
     },
     type: ["water", "psychic"],
-    evolveFrom: "staryu"
+    evolveFrom: "staryu",
+    fleeRate: 0.06
   },
   "mr-mime": {
     id: 122,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Mr. Mime",
     stats: {
@@ -1914,11 +2157,13 @@ var pokemonData = {
     },
     type: ["psychic", "fairy"],
     quickMoves: ["confusion", "zen-headbutt"],
-    chargeMoves: ["psybeam", "psychic", "shadow-ball"]
+    chargeMoves: ["psybeam", "psychic", "shadow-ball"],
+    fleeRate: 0.09
   },
   "scyther": {
     id: 123,
     egg: 01,
+    buddy: 5,
     candy: 0,
     name: "Scyther",
     stats: {
@@ -1928,11 +2173,13 @@ var pokemonData = {
     },
     type: ["bug", "flying"],
     quickMoves: ["fury-cutter", "steel-wing"],
-    chargeMoves: ["bug-buzz", "night-slash", "x-scissor"]
+    chargeMoves: ["bug-buzz", "night-slash", "x-scissor"],
+    fleeRate: 0.09
   },
   "jynx": {
     id: 124,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Jynx",
     stats: {
@@ -1942,11 +2189,13 @@ var pokemonData = {
     },
     type: ["ice", "psychic"],
     quickMoves: ["frost-breath", "pound"],
-    chargeMoves: ["draining-kiss", "psybeam", "psyshock"]
+    chargeMoves: ["draining-kiss", "psybeam", "psyshock"],
+    fleeRate: 0.09
   },
   "electabuzz": {
     id: 125,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Electabuzz",
     stats: {
@@ -1956,11 +2205,13 @@ var pokemonData = {
     },
     type: ["electric"],
     quickMoves: ["low-kick", "thunder-shock"],
-    chargeMoves: ["thunder", "thunder-punch", "thunderbolt"]
+    chargeMoves: ["thunder", "thunder-punch", "thunderbolt"],
+    fleeRate: 0.09
   },
   "magmar": {
     id: 126,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Magmar",
     stats: {
@@ -1970,11 +2221,13 @@ var pokemonData = {
     },
     type: ["fire"],
     quickMoves: ["ember", "karate-chop"],
-    chargeMoves: ["fire-blast", "fire-punch", "flamethrower"]
+    chargeMoves: ["fire-blast", "fire-punch", "flamethrower"],
+    fleeRate: 0.09
   },
   "pinsir": {
     id: 127,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Pinsir",
     stats: {
@@ -1984,11 +2237,13 @@ var pokemonData = {
     },
     type: ["bug"],
     quickMoves: ["fury-cutter", "rock-smash"],
-    chargeMoves: ["submission", "vice-grip", "x-scissor"]
+    chargeMoves: ["submission", "vice-grip", "x-scissor"],
+    fleeRate: 0.09
   },
   "tauros": {
     id: 128,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Tauros",
     stats: {
@@ -1998,11 +2253,13 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["tackle", "zen-headbutt"],
-    chargeMoves: ["earthquake", "horn-attack", "iron-head"]
+    chargeMoves: ["earthquake", "horn-attack", "iron-head"],
+    fleeRate: 0.09
   },
   "magikarp": {
     id: 129,
     egg: 2,
+    buddy: 1,
     candy: 400,
     name: "Magikarp",
     cpm: [10.1, 11.8],
@@ -2014,11 +2271,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["splash"],
     chargeMoves: ["struggle"],
-    evolveTo: "gyarados"
+    evolveTo: "gyarados",
+    fleeRate: 0.15
   },
   "gyarados": {
     id: 130,
     egg: 0,
+    buddy: 1,
     candy: 0,
     name: "Gyarados",
     stats: {
@@ -2030,11 +2289,13 @@ var pokemonData = {
     quickMoves: ["bite"],
     chargeMoves: ["dragon-pulse", "hydro-pump", "twister"],
     legacyMoves: ["dragon-breath"],
-    evolveFrom: "magikarp"
+    evolveFrom: "magikarp",
+    fleeRate: 0.07
   },
   "lapras": {
     id: 131,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Lapras",
     stats: {
@@ -2044,11 +2305,13 @@ var pokemonData = {
     },
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
-    chargeMoves: ["blizzard", "dragon-pulse", "ice-beam"]
+    chargeMoves: ["blizzard", "dragon-pulse", "ice-beam"],
+    fleeRate: 0.09
   },
   "ditto": {
     id: 132,
     egg: 0,
+    buddy: 3,
     candy: 0,
     name: "Ditto",
     stats: {
@@ -2058,11 +2321,13 @@ var pokemonData = {
     },
     type: ["normal"],
     quickMoves: ["pound"],
-    chargeMoves: ["struggle"]
+    chargeMoves: ["struggle"],
+    fleeRate: 0.1
   },
   "eevee": {
     id: 133,
     egg: 10,
+    buddy: 5,
     candy: 25,
     name: "Eevee",
     cpm: [2.02, 2.64],
@@ -2074,11 +2339,13 @@ var pokemonData = {
     type: ["normal"],
     quickMoves: ["quick-attack", "tackle"],
     chargeMoves: ["body-slam", "dig", "swift"],
-    evolveTo: ["vaporeon", "jolteon", "flareon"]
+    evolveTo: ["vaporeon", "jolteon", "flareon"],
+    fleeRate: 0.1
   },
   "vaporeon": {
     id: 134,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Vaporeon",
     cpm: [2.63, 2.73],
@@ -2090,11 +2357,13 @@ var pokemonData = {
     type: ["water"],
     quickMoves: ["water-gun"],
     chargeMoves: ["aqua-tail", "hydro-pump", "water-pulse"],
-    evolveFrom: "eevee"
+    evolveFrom: "eevee",
+    fleeRate: 0.06
   },
   "jolteon": {
     id: 135,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Jolteon",
     cpm: [2, 2.1],
@@ -2106,11 +2375,13 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["thunder-shock"],
     chargeMoves: ["discharge", "thunder", "thunderbolt"],
-    evolveFrom: "eevee"
+    evolveFrom: "eevee",
+    fleeRate: 0.06
   },
   "flareon": {
     id: 136,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Flareon",
     cpm: [2.48, 2.48],
@@ -2122,11 +2393,13 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember"],
     chargeMoves: ["fire-blast", "flamethrower", "heat-wave"],
-    evolveFrom: "eevee"
+    evolveFrom: "eevee",
+    fleeRate: 0.06
   },
   "porygon": {
     id: 137,
     egg: 5,
+    buddy: 3,
     candy: 0,
     name: "Porygon",
     quickMoves: ["zen-headbutt", "tackle"],
@@ -2137,11 +2410,13 @@ var pokemonData = {
       attack: 156,
       defense: 158
     },
-    type: ["normal"]
+    type: ["normal"],
+    fleeRate: 0.09
   },
   "omanyte": {
     id: 138,
     egg: 10,
+    buddy: 5,
     candy: 50,
     name: "Omanyte",
     cpm: [1.99, 2.12],
@@ -2153,11 +2428,13 @@ var pokemonData = {
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "water-gun"],
     chargeMoves: ["ancient-power", "brine", "rock-tomb"],
-    evolveTo: "omastar"
+    evolveTo: "omastar",
+    fleeRate: 0.09
   },
   "omastar": {
     id: 139,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Omastar",
     stats: {
@@ -2169,11 +2446,13 @@ var pokemonData = {
     quickMoves: ["mud-shot", "water-gun"],
     chargeMoves: ["ancient-power", "hydro-pump", "rock-slide"],
     legacyMoves: ["rock-throw"],
-    evolveFrom: "omanyte"
+    evolveFrom: "omanyte",
+    fleeRate: 0.05
   },
   "kabuto": {
     id: 140,
     egg: 10,
+    buddy: 5,
     candy: 50,
     name: "Kabuto",
     cpm: [1.97, 2.37],
@@ -2185,11 +2464,13 @@ var pokemonData = {
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "scratch"],
     chargeMoves: ["ancient-power", "aqua-jet", "rock-tomb"],
-    evolveTo: "kabutops"
+    evolveTo: "kabutops",
+    fleeRate: 0.09
   },
   "kabutops": {
     id: 141,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Kabutops",
     stats: {
@@ -2200,11 +2481,13 @@ var pokemonData = {
     type: ["rock", "water"],
     quickMoves: ["fury-cutter", "mud-shot"],
     chargeMoves: ["ancient-power", "stone-edge", "water-pulse"],
-    evolveFrom: "kabuto"
+    evolveFrom: "kabuto",
+    fleeRate: 0.05
   },
   "aerodactyl": {
     id: 142,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Aerodactyl",
     stats: {
@@ -2214,11 +2497,13 @@ var pokemonData = {
     },
     type: ["rock", "flying"],
     quickMoves: ["bite", "steel-wing"],
-    chargeMoves: ["ancient-power", "hyper-beam", "iron-head"]
+    chargeMoves: ["ancient-power", "hyper-beam", "iron-head"],
+    fleeRate: 0.09
   },
   "snorlax": {
     id: 143,
     egg: 10,
+    buddy: 5,
     candy: 0,
     name: "Snorlax",
     quickMoves: ["lick", "zen-headbutt"],
@@ -2228,11 +2513,13 @@ var pokemonData = {
       attack: 180,
       defense: 180
     },
-    type: ["normal"]
+    type: ["normal"],
+    fleeRate: 0.09
   },
   "articuno": {
     id: 144,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Articuno",
     stats: {
@@ -2242,11 +2529,13 @@ var pokemonData = {
     },
     type: ["ice", "flying"],
     quickMoves: ["frost-breath"],
-    chargeMoves: ["blizzard", "ice-beam", "icy-wind"]
+    chargeMoves: ["blizzard", "ice-beam", "icy-wind"],
+    fleeRate: 0.1
   },
   "zapdos": {
     id: 145,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Zapdos",
     stats: {
@@ -2256,11 +2545,13 @@ var pokemonData = {
     },
     type: ["electric", "flying"],
     quickMoves: ["thunder-shock"],
-    chargeMoves: ["discharge", "thunder", "thunderbolt"]
+    chargeMoves: ["discharge", "thunder", "thunderbolt"],
+    fleeRate: 0.1
   },
   "moltres": {
     id: 146,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Moltres",
     stats: {
@@ -2270,11 +2561,13 @@ var pokemonData = {
     },
     type: ["fire", "flying"],
     quickMoves: ["ember"],
-    chargeMoves: ["fire-blast", "flamethrower", "heat-wave"]
+    chargeMoves: ["fire-blast", "flamethrower", "heat-wave"],
+    fleeRate: 0.1
   },
   "dratini": {
     id: 147,
     egg: 10,
+    buddy: 5,
     candy: 25,
     name: "Dratini",
     cpm: [1.79, 1.85],
@@ -2286,11 +2579,13 @@ var pokemonData = {
     type: ["dragon"],
     quickMoves: ["dragon-breath"],
     chargeMoves: ["aqua-tail", "twister", "wrap"],
-    evolveTo: "dragonair"
+    evolveTo: "dragonair",
+    fleeRate: 0.09
   },
   "dragonair": {
     id: 148,
     egg: 0,
+    buddy: 5,
     candy: 100,
     name: "Dragonair",
     cpm: [2.03, 2.08],
@@ -2303,11 +2598,13 @@ var pokemonData = {
     quickMoves: ["dragon-breath"],
     chargeMoves: ["aqua-tail", "dragon-pulse", "wrap"],
     evolveFrom: "dratini",
-    evolveTo: "dragonite"
+    evolveTo: "dragonite",
+    fleeRate: 0.06
   },
   "dragonite": {
     id: 149,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Dragonite",
     stats: {
@@ -2318,11 +2615,13 @@ var pokemonData = {
     type: ["dragon", "flying"],
     quickMoves: ["dragon-breath", "steel-wing"],
     chargeMoves: ["dragon-claw", "dragon-pulse", "hyper-beam"],
-    evolveFrom: "dragonair"
+    evolveFrom: "dragonair",
+    fleeRate: 0.05
   },
   "mewtwo": {
     id: 150,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Mewtwo",
     stats: {
@@ -2332,11 +2631,13 @@ var pokemonData = {
     },
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
-    chargeMoves: ["hyper-beam", "psychic", "shadow-ball"]
+    chargeMoves: ["hyper-beam", "psychic", "shadow-ball"],
+    fleeRate: 0.1
   },
   "mew": {
     id: 151,
     egg: 0,
+    buddy: 5,
     candy: 0,
     name: "Mew",
     stats: {
@@ -2348,6 +2649,7 @@ var pokemonData = {
     quickMoves: ["pound"],
     chargeMoves: ["dragon-pulse", "earthquake", "fire-blast", "blizzard",
       "hyper-beam", "psychic", "solar-beam"],
-    legacyMoves: ["moonblast","hurricane"]
+    legacyMoves: ["moonblast","hurricane"],
+    fleeRate: 0.1
   }
 };
