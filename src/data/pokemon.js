@@ -10,8 +10,8 @@ var pokemonData = {
     cpm: [1.53, 1.58],
     stats: {
       stamina: 90,
-      attack: 126,
-      defense: 126
+      attack: 118,
+      defense: 118
     },
     type: ["grass", "poison"],
     quickMoves: ["tackle", "vine-whip"],
@@ -28,8 +28,8 @@ var pokemonData = {
     cpm: [1.2, 1.6],
     stats: {
       stamina: 120,
-      attack: 156,
-      defense: 158
+      attack: 151,
+      defense: 151
     },
     type: ["grass", "poison"],
     quickMoves: ["vine-whip", "razor-leaf"],
@@ -47,7 +47,7 @@ var pokemonData = {
     stats: {
       stamina: 160,
       attack: 198,
-      defense: 200
+      defense: 198
     },
     type: ["grass", "poison"],
     quickMoves: ["vine-whip", "razor-leaf"],
@@ -64,8 +64,8 @@ var pokemonData = {
     cpm: [1.64, 1.7],
     stats: {
       stamina: 78,
-      attack: 128,
-      defense: 108
+      attack: 116,
+      defense: 96
     },
     type: ["fire"],
     quickMoves: ["ember", "scratch"],
@@ -82,8 +82,8 @@ var pokemonData = {
     cpm: [1.71, 1.79],
     stats: {
       stamina: 116,
-      attack: 160,
-      defense: 140
+      attack: 158,
+      defense: 129
     },
     type: ["fire"],
     quickMoves: ["ember", "scratch"],
@@ -100,8 +100,8 @@ var pokemonData = {
     name: "Charizard",
     stats: {
       stamina: 156,
-      attack: 212,
-      defense: 182
+      attack: 223,
+      defense: 176
     },
     type: ["fire", "flying"],
     quickMoves: ["ember", "wing-attack"],
@@ -118,8 +118,8 @@ var pokemonData = {
     cpm: [1.58, 2.1],
     stats: {
       stamina: 88,
-      attack: 112,
-      defense: 142
+      attack: 94,
+      defense: 122
     },
     type: ["water"],
     quickMoves: ["bubble", "tackle"],
@@ -136,8 +136,8 @@ var pokemonData = {
     cpm: [1.4, 1.68],
     stats: {
       stamina: 118,
-      attack: 144,
-      defense: 176
+      attack: 126,
+      defense: 155
     },
     type: ["water"],
     quickMoves: ["bite", "water-gun"],
@@ -154,8 +154,8 @@ var pokemonData = {
     name: "Blastoise",
     stats: {
       stamina: 158,
-      attack: 186,
-      defense: 222
+      attack: 171,
+      defense: 210
     },
     type: ["water"],
     quickMoves: ["bite", "water-gun"],
@@ -172,8 +172,8 @@ var pokemonData = {
     cpm: [1.04, 1.08],
     stats: {
       stamina: 90,
-      attack: 62,
-      defense: 66
+      attack: 55,
+      defense: 62
     },
     type: ["bug"],
     quickMoves: ["bug-bite", "tackle"],
@@ -190,8 +190,8 @@ var pokemonData = {
     cpm: [3.05, 3.79],
     stats: {
       stamina: 100,
-      attack: 56,
-      defense: 86
+      attack: 45,
+      defense: 64
     },
     type: ["bug"],
     quickMoves: ["bug-bite", "tackle"],
@@ -208,8 +208,8 @@ var pokemonData = {
     name: "Butterfree",
     stats: {
       stamina: 120,
-      attack: 144,
-      defense: 144
+      attack: 167,
+      defense: 151
     },
     type: ["bug", "flying"],
     quickMoves: ["bug-bite", "confusion"],
@@ -226,8 +226,8 @@ var pokemonData = {
     cpm: [1.06, 1.13],
     stats: {
       stamina: 80,
-      attack: 68,
-      defense: 64
+      attack: 63,
+      defense: 55
     },
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-sting"],
@@ -244,8 +244,8 @@ var pokemonData = {
     cpm: [3.01, 3.42],
     stats: {
       stamina: 90,
-      attack: 62,
-      defense: 82
+      attack: 46,
+      defense: 86
     },
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-sting"],
@@ -262,8 +262,8 @@ var pokemonData = {
     name: "Beedrill",
     stats: {
       stamina: 130,
-      attack: 144,
-      defense: 130
+      attack: 169,
+      defense: 150
     },
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "poison-jab"],
@@ -280,8 +280,8 @@ var pokemonData = {
     cpm: [1.71, 1.95],
     stats: {
       stamina: 80,
-      attack: 94,
-      defense: 90
+      attack: 85,
+      defense: 76
     },
     type: ["normal", "flying"],
     quickMoves: ["tackle", "quick-attack"],
@@ -298,8 +298,8 @@ var pokemonData = {
     cpm: [1.73, 1.8],
     stats: {
       stamina: 126,
-      attack: 126,
-      defense: 122
+      attack: 117,
+      defense: 108
     },
     type: ["normal", "flying"],
     quickMoves: ["steel-wing", "wing-attack"],
@@ -316,8 +316,8 @@ var pokemonData = {
     name: "Pidgeot",
     stats: {
       stamina: 166,
-      attack: 170,
-      defense: 166
+      attack: 166,
+      defense: 157
     },
     type: ["normal", "flying"],
     quickMoves: ["steel-wing", "wing-attack"],
@@ -334,8 +334,8 @@ var pokemonData = {
     cpm: [2.55, 2.73],
     stats: {
       stamina: 60,
-      attack: 92,
-      defense: 86
+      attack: 103,
+      defense: 70
     },
     type: ["normal"],
     quickMoves: ["tackle", "quick-attack"],
@@ -351,8 +351,8 @@ var pokemonData = {
     name: "Raticate",
     stats: {
       stamina: 110,
-      attack: 146,
-      defense: 150
+      attack: 161,
+      defense: 144
     },
     type: ["normal"],
     quickMoves: ["bite", "quick-attack"],
@@ -369,8 +369,8 @@ var pokemonData = {
     cpm: [2.58, 2.81],
     stats: {
       stamina: 80,
-      attack: 102,
-      defense: 78
+      attack: 112,
+      defense: 61
     },
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
@@ -386,8 +386,8 @@ var pokemonData = {
     name: "Fearow",
     stats: {
       stamina: 130,
-      attack: 168,
-      defense: 146
+      attack: 182,
+      defense: 135
     },
     type: ["normal", "flying"],
     quickMoves: ["peck", "steel-wing"],
@@ -404,8 +404,8 @@ var pokemonData = {
     cpm: [2.21, 2.27],
     stats: {
       stamina: 70,
-      attack: 112,
-      defense: 112
+      attack: 110,
+      defense: 102
     },
     type: ["poison"],
     quickMoves: ["acid", "poison-sting"],
@@ -421,8 +421,8 @@ var pokemonData = {
     name: "Arbok",
     stats: {
       stamina: 120,
-      attack: 166,
-      defense: 166
+      attack: 167,
+      defense: 158
     },
     type: ["poison"],
     quickMoves: ["acid", "bite"],
@@ -439,8 +439,8 @@ var pokemonData = {
     cpm: [2.33, 2.38],
     stats: {
       stamina: 70,
-      attack: 124,
-      defense: 108
+      attack: 112,
+      defense: 101
     },
     type: ["electric"],
     quickMoves: ["thunder-shock", "quick-attack"],
@@ -456,8 +456,8 @@ var pokemonData = {
     name: "Raichu",
     stats: {
       stamina: 120,
-      attack: 200,
-      defense: 154
+      attack: 193,
+      defense: 165
     },
     type: ["electric"],
     quickMoves: ["spark", "thunder-shock"],
@@ -474,8 +474,8 @@ var pokemonData = {
     cpm: [2.3, 2.76],
     stats: {
       stamina: 100,
-      attack: 90,
-      defense: 114
+      attack: 126,
+      defense: 145
     },
     type: ["ground"],
     quickMoves: ["mud-shot", "scratch"],
@@ -491,8 +491,8 @@ var pokemonData = {
     name: "Sandslash",
     stats: {
       stamina: 150,
-      attack: 150,
-      defense: 172
+      attack: 182,
+      defense: 202
     },
     type: ["ground"],
     quickMoves: ["metal-claw", "mud-shot"],
@@ -509,8 +509,8 @@ var pokemonData = {
     cpm: [1.62, 1.66],
     stats: {
       stamina: 110,
-      attack: 100,
-      defense: 104
+      attack: 86,
+      defense: 94
     },
     type: ["poison"],
     quickMoves: ["bite", "poison-sting"],
@@ -527,8 +527,8 @@ var pokemonData = {
     cpm: [1.83, 2.48],
     stats: {
       stamina: 140,
-      attack: 132,
-      defense: 136
+      attack: 117,
+      defense: 126
     },
     type: ["poison"],
     quickMoves: ["bite", "poison-sting"],
@@ -545,8 +545,8 @@ var pokemonData = {
     name: "Nidoqueen",
     stats: {
       stamina: 180,
-      attack: 184,
-      defense: 190
+      attack: 180,
+      defense: 174
     },
     type: ["poison", "ground"],
     quickMoves: ["bite", "poison-jab"],
@@ -563,8 +563,8 @@ var pokemonData = {
     cpm: [1.64, 1.7],
     stats: {
       stamina: 92,
-      attack: 110,
-      defense: 94
+      attack: 105,
+      defense: 76
     },
     type: ["poison"],
     quickMoves: ["peck", "poison-sting"],
@@ -581,8 +581,8 @@ var pokemonData = {
     cpm: [1.64, 1.86],
     stats: {
       stamina: 122,
-      attack: 142,
-      defense: 128
+      attack: 137,
+      defense: 112
     },
     type: ["poison"],
     quickMoves: ["bite", "poison-jab"],
@@ -600,7 +600,7 @@ var pokemonData = {
     stats: {
       stamina: 162,
       attack: 204,
-      defense: 170
+      defense: 157
     },
     type: ["poison", "ground"],
     quickMoves: ["fury-cutter", "poison-jab"],
@@ -617,8 +617,8 @@ var pokemonData = {
     cpm: [2.03, 2.14],
     stats: {
       stamina: 140,
-      attack: 116,
-      defense: 124
+      attack: 107,
+      defense: 116
     },
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
@@ -635,7 +635,7 @@ var pokemonData = {
     stats: {
       stamina: 190,
       attack: 178,
-      defense: 178
+      defense: 171
     },
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
@@ -652,8 +652,8 @@ var pokemonData = {
     cpm: [2.74, 2.81],
     stats: {
       stamina: 76,
-      attack: 106,
-      defense: 118
+      attack: 96,
+      defense: 122
     },
     type: ["fire"],
     quickMoves: ["ember", "quick-attack"],
@@ -669,8 +669,8 @@ var pokemonData = {
     name: "Ninetales",
     stats: {
       stamina: 146,
-      attack: 176,
-      defense: 194
+      attack: 169,
+      defense: 204
     },
     type: ["fire"],
     quickMoves: ["ember", "feint-attack"],
@@ -687,8 +687,8 @@ var pokemonData = {
     cpm: [2.41, 2.47],
     stats: {
       stamina: 230,
-      attack: 98,
-      defense: 54
+      attack: 80,
+      defense: 44
     },
     type: ["normal", "fairy"],
     quickMoves: ["feint-attack", "pound"],
@@ -705,8 +705,8 @@ var pokemonData = {
     name: "Wigglytuff",
     stats: {
       stamina: 280,
-      attack: 168,
-      defense: 108
+      attack: 156,
+      defense: 93
     },
     type: ["normal", "fairy"],
     quickMoves: ["feint-attack", "pound"],
@@ -723,8 +723,8 @@ var pokemonData = {
     cpm: [2.6, 3.67],
     stats: {
       stamina: 80,
-      attack: 88,
-      defense: 90
+      attack: 83,
+      defense: 76
     },
     type: ["poison", "flying"],
     quickMoves: ["bite", "quick-attack"],
@@ -740,8 +740,8 @@ var pokemonData = {
     name: "Golbat",
     stats: {
       stamina: 150,
-      attack: 164,
-      defense: 164
+      attack: 161,
+      defense: 153
     },
     type: ["poison", "flying"],
     quickMoves: ["bite", "wing-attack"],
@@ -758,8 +758,8 @@ var pokemonData = {
     cpm: [1.48, 1.51],
     stats: {
       stamina: 90,
-      attack: 134,
-      defense: 130
+      attack: 131,
+      defense: 116
     },
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
@@ -776,8 +776,8 @@ var pokemonData = {
     cpm: [1.48, 1.53],
     stats: {
       stamina: 120,
-      attack: 162,
-      defense: 158
+      attack: 153,
+      defense: 139
     },
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
@@ -795,7 +795,7 @@ var pokemonData = {
     stats: {
       stamina: 150,
       attack: 202,
-      defense: 190
+      defense: 170
     },
     type: ["poison", "grass"],
     quickMoves: ["acid", "razor-leaf"],
@@ -812,8 +812,8 @@ var pokemonData = {
     cpm: [1.92, 2.02],
     stats: {
       stamina: 70,
-      attack: 122,
-      defense: 120
+      attack: 121,
+      defense: 99
     },
     type: ["bug", "grass"],
     quickMoves: ["bug-bite", "scratch"],
@@ -829,8 +829,8 @@ var pokemonData = {
     name: "Parasect",
     stats: {
       stamina: 120,
-      attack: 162,
-      defense: 170
+      attack: 165,
+      defense: 146
     },
     type: ["bug", "grass"],
     quickMoves: ["bug-bite", "fury-cutter"],
@@ -847,8 +847,8 @@ var pokemonData = {
     cpm: [1.86, 1.9],
     stats: {
       stamina: 120,
-      attack: 108,
-      defense: 118
+      attack: 100,
+      defense: 102
     },
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "confusion"],
@@ -864,8 +864,8 @@ var pokemonData = {
     name: "Venomoth",
     stats: {
       stamina: 140,
-      attack: 172,
-      defense: 154
+      attack: 179,
+      defense: 150
     },
     type: ["bug", "poison"],
     quickMoves: ["bug-bite", "confusion"],
@@ -882,8 +882,8 @@ var pokemonData = {
     cpm: [2.68, 2.77],
     stats: {
       stamina: 20,
-      attack: 108,
-      defense: 86
+      attack: 109,
+      defense: 88
     },
     type: ["ground"],
     quickMoves: ["mud-slap", "scratch"],
@@ -900,8 +900,8 @@ var pokemonData = {
     name: "Dugtrio",
     stats: {
       stamina: 70,
-      attack: 148,
-      defense: 140
+      attack: 167,
+      defense: 147
     },
     type: ["ground"],
     quickMoves: ["mud-slap", "sucker-punch"],
@@ -919,8 +919,8 @@ var pokemonData = {
     cpm: [1.98, 2.24],
     stats: {
       stamina: 80,
-      attack: 104,
-      defense: 94
+      attack: 92,
+      defense: 81
     },
     type: ["normal"],
     quickMoves: ["bite", "scratch"],
@@ -936,8 +936,8 @@ var pokemonData = {
     name: "Persian",
     stats: {
       stamina: 130,
-      attack: 156,
-      defense: 146
+      attack: 150,
+      defense: 139
     },
     type: ["normal"],
     quickMoves: ["feint-attack", "scratch"],
@@ -954,8 +954,8 @@ var pokemonData = {
     cpm: [2.22, 2.29],
     stats: {
       stamina: 100,
-      attack: 132,
-      defense: 112
+      attack: 122,
+      defense: 96
     },
     type: ["water"],
     quickMoves: ["water-gun", "zen-headbutt"],
@@ -971,8 +971,8 @@ var pokemonData = {
     name: "Golduck",
     stats: {
       stamina: 160,
-      attack: 194,
-      defense: 176
+      attack: 191,
+      defense: 163
     },
     type: ["water"],
     quickMoves: ["confusion", "water-gun"],
@@ -989,8 +989,8 @@ var pokemonData = {
     cpm: [2.18, 2.28],
     stats: {
       stamina: 80,
-      attack: 122,
-      defense: 96
+      attack: 148,
+      defense: 87
     },
     type: ["fighting"],
     quickMoves: ["karate-chop", "scratch"],
@@ -1006,8 +1006,8 @@ var pokemonData = {
     name: "Primeape",
     stats: {
       stamina: 130,
-      attack: 178,
-      defense: 150
+      attack: 207,
+      defense: 144
     },
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
@@ -1024,8 +1024,8 @@ var pokemonData = {
     cpm: [2.31, 2.36],
     stats: {
       stamina: 110,
-      attack: 156,
-      defense: 110
+      attack: 136,
+      defense: 96
     },
     type: ["fire"],
     quickMoves: ["bite", "ember"],
@@ -1041,8 +1041,8 @@ var pokemonData = {
     name: "Arcanine",
     stats: {
       stamina: 180,
-      attack: 230,
-      defense: 180
+      attack: 227,
+      defense: 166
     },
     type: ["fire"],
     quickMoves: ["bite", "fire-fang"],
@@ -1059,8 +1059,8 @@ var pokemonData = {
     cpm: [1.72, 1.77],
     stats: {
       stamina: 80,
-      attack: 108,
-      defense: 98
+      attack: 101,
+      defense: 82
     },
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
@@ -1077,8 +1077,8 @@ var pokemonData = {
     cpm: [1.9, 1.96],
     stats: {
       stamina: 130,
-      attack: 132,
-      defense: 132
+      attack: 130,
+      defense: 130
     },
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
@@ -1095,8 +1095,8 @@ var pokemonData = {
     name: "Poliwrath",
     stats: {
       stamina: 180,
-      attack: 180,
-      defense: 202
+      attack: 182,
+      defense: 187
     },
     type: ["water", "fighting"],
     quickMoves: ["bubble", "mud-shot"],
@@ -1112,8 +1112,8 @@ var pokemonData = {
     name: "Abra",
     stats: {
       stamina: 50,
-      attack: 110,
-      defense: 76
+      attack: 195,
+      defense: 103
     },
     type: ["psychic"],
     cpm: [1.36, 1.95],
@@ -1131,8 +1131,8 @@ var pokemonData = {
     cpm: [1.4, 1.65],
     stats: {
       stamina: 80,
-      attack: 150,
-      defense: 112
+      attack: 232,
+      defense: 138
     },
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
@@ -1149,8 +1149,8 @@ var pokemonData = {
     name: "Alakazam",
     stats: {
       stamina: 110,
-      attack: 186,
-      defense: 152
+      attack: 271,
+      defense: 194
     },
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
@@ -1167,8 +1167,8 @@ var pokemonData = {
     cpm: [1.62, 1.67],
     stats: {
       stamina: 140,
-      attack: 118,
-      defense: 96
+      attack: 137,
+      defense: 88
     },
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
@@ -1185,8 +1185,8 @@ var pokemonData = {
     cpm: [1.48, 1.7],
     stats: {
       stamina: 160,
-      attack: 154,
-      defense: 144
+      attack: 177,
+      defense: 130
     },
     type: ["fighting"],
     quickMoves: ["karate-chop", "low-kick"],
@@ -1203,8 +1203,8 @@ var pokemonData = {
     name: "Machamp",
     stats: {
       stamina: 180,
-      attack: 198,
-      defense: 180
+      attack: 234,
+      defense: 162
     },
     type: ["fighting"],
     quickMoves: ["bullet-punch", "karate-chop"],
@@ -1221,8 +1221,8 @@ var pokemonData = {
     cpm: [1.54, 1.6],
     stats: {
       stamina: 100,
-      attack: 158,
-      defense: 78
+      attack: 139,
+      defense: 64
     },
     type: ["grass", "poison"],
     quickMoves: ["acid", "vine-whip"],
@@ -1239,8 +1239,8 @@ var pokemonData = {
     cpm: [1.47, 1.59],
     stats: {
       stamina: 130,
-      attack: 190,
-      defense: 110
+      attack: 172,
+      defense: 95
     },
     type: ["grass", "poison"],
     quickMoves: ["acid", "razor-leaf"],
@@ -1257,8 +1257,8 @@ var pokemonData = {
     name: "Victreebel",
     stats: {
       stamina: 160,
-      attack: 222,
-      defense: 152
+      attack: 207,
+      defense: 138
     },
     type: ["grass", "poison"],
     quickMoves: ["acid", "razor-leaf"],
@@ -1275,8 +1275,8 @@ var pokemonData = {
     cpm: [2.47, 2.6],
     stats: {
       stamina: 80,
-      attack: 106,
-      defense: 136
+      attack: 97,
+      defense: 182
     },
     type: ["water", "poison"],
     quickMoves: ["bubble", "poison-sting"],
@@ -1292,8 +1292,8 @@ var pokemonData = {
     name: "Tentacruel",
     stats: {
       stamina: 160,
-      attack: 170,
-      defense: 196
+      attack: 166,
+      defense: 237
     },
     type: ["water", "poison"],
     quickMoves: ["acid", "poison-jab"],
@@ -1310,8 +1310,8 @@ var pokemonData = {
     cpm: [1.7, 1.76],
     stats: {
       stamina: 80,
-      attack: 106,
-      defense: 118
+      attack: 132,
+      defense: 163
     },
     type: ["rock", "ground"],
     quickMoves: ["rock-throw", "tackle"],
@@ -1328,8 +1328,8 @@ var pokemonData = {
     cpm: [1.62, 1.72],
     stats: {
       stamina: 110,
-      attack: 142,
-      defense: 156
+      attack: 164,
+      defense: 196
     },
     type: ["rock", "ground"],
     quickMoves: ["mud-slap", "rock-throw"],
@@ -1347,8 +1347,8 @@ var pokemonData = {
     name: "Golem",
     stats: {
       stamina: 160,
-      attack: 176,
-      defense: 198
+      attack: 211,
+      defense: 229
     },
     type: ["rock", "ground"],
     quickMoves: ["mud-slap", "rock-throw"],
@@ -1366,8 +1366,8 @@ var pokemonData = {
     cpm: [1.46, 1.5],
     stats: {
       stamina: 100,
-      attack: 168,
-      defense: 138
+      attack: 170,
+      defense: 132
     },
     type: ["fire"],
     quickMoves: ["ember", "tackle"],
@@ -1383,8 +1383,8 @@ var pokemonData = {
     name: "Rapidash",
     stats: {
       stamina: 130,
-      attack: 200,
-      defense: 170
+      attack: 207,
+      defense: 167
     },
     type: ["fire"],
     quickMoves: ["ember", "low-kick"],
@@ -1401,8 +1401,8 @@ var pokemonData = {
     cpm: [2.19, 2.21],
     stats: {
       stamina: 180,
-      attack: 110,
-      defense: 110
+      attack: 109,
+      defense: 109
     },
     type: ["water", "psychic"],
     quickMoves: ["confusion", "water-gun"],
@@ -1418,8 +1418,8 @@ var pokemonData = {
     name: "Slowbro",
     stats: {
       stamina: 190,
-      attack: 184,
-      defense: 198
+      attack: 177,
+      defense: 194
     },
     type: ["water", "psychic"],
     quickMoves: ["confusion", "water-gun"],
@@ -1436,8 +1436,8 @@ var pokemonData = {
     cpm: [2.16, 2.18],
     stats: {
       stamina: 50,
-      attack: 128,
-      defense: 138
+      attack: 165,
+      defense: 128
     },
     type: ["electric", "steel"],
     quickMoves: ["spark", "thunder-shock"],
@@ -1453,8 +1453,8 @@ var pokemonData = {
     name: "Magneton",
     stats: {
       stamina: 100,
-      attack: 186,
-      defense: 180
+      attack: 223,
+      defense: 182
     },
     type: ["electric", "steel"],
     quickMoves: ["spark", "thunder-shock"],
@@ -1470,8 +1470,8 @@ var pokemonData = {
     name: "Farfetch'd",
     stats: {
       stamina: 104,
-      attack: 138,
-      defense: 132
+      attack: 124,
+      defense: 118
     },
     type: ["normal", "flying"],
     quickMoves: ["cut", "fury-cutter"],
@@ -1487,8 +1487,8 @@ var pokemonData = {
     cpm: [2.19, 2.3],
     stats: {
       stamina: 70,
-      attack: 126,
-      defense: 96
+      attack: 158,
+      defense: 88
     },
     type: ["normal", "flying"],
     quickMoves: ["peck", "quick-attack"],
@@ -1504,8 +1504,8 @@ var pokemonData = {
     name: "Dodrio",
     stats: {
       stamina: 120,
-      attack: 182,
-      defense: 150
+      attack: 218,
+      defense: 145
     },
     type: ["normal", "flying"],
     quickMoves: ["feint-attack", "steel-wing"],
@@ -1522,8 +1522,8 @@ var pokemonData = {
     cpm: [1.04, 1.96],
     stats: {
       stamina: 130,
-      attack: 104,
-      defense: 138
+      attack: 85,
+      defense: 128
     },
     type: ["water"],
     quickMoves: ["ice-shard", "lick"],
@@ -1540,8 +1540,8 @@ var pokemonData = {
     name: "Dewgong",
     stats: {
       stamina: 180,
-      attack: 156,
-      defense: 192
+      attack: 139,
+      defense: 184
     },
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
@@ -1558,8 +1558,8 @@ var pokemonData = {
     cpm: [2.01, 2.44],
     stats: {
       stamina: 160,
-      attack: 124,
-      defense: 110
+      attack: 135,
+      defense: 90
     },
     type: ["poison"],
     quickMoves: ["poison-jab", "mud-slap"],
@@ -1576,8 +1576,8 @@ var pokemonData = {
     name: "Muk",
     stats: {
       stamina: 210,
-      attack: 180,
-      defense: 188
+      attack: 190,
+      defense: 184
     },
     type: ["poison"],
     quickMoves: ["poison-jab", "lick"],
@@ -1595,8 +1595,8 @@ var pokemonData = {
     cpm: [2.62, 2.65],
     stats: {
       stamina: 60,
-      attack: 120,
-      defense: 112
+      attack: 116,
+      defense: 168
     },
     type: ["water"],
     quickMoves: ["ice-shard", "tackle"],
@@ -1612,8 +1612,8 @@ var pokemonData = {
     name: "Cloyster",
     stats: {
       stamina: 100,
-      attack: 196,
-      defense: 196
+      attack: 186,
+      defense: 323
     },
     type: ["water", "ice"],
     quickMoves: ["frost-breath", "ice-shard"],
@@ -1630,8 +1630,8 @@ var pokemonData = {
     cpm: [1.75, 1.83],
     stats: {
       stamina: 60,
-      attack: 136,
-      defense: 82
+      attack: 186,
+      defense: 70
     },
     type: ["ghost", "poison"],
     quickMoves: ["lick", "sucker-punch"],
@@ -1648,8 +1648,8 @@ var pokemonData = {
     cpm: [1.56, 1.58],
     stats: {
       stamina: 90,
-      attack: 172,
-      defense: 118
+      attack: 223,
+      defense: 112
     },
     type: ["ghost", "poison"],
     quickMoves: ["lick", "shadow-claw"],
@@ -1666,7 +1666,7 @@ var pokemonData = {
     name: "Gengar",
     stats: {
       stamina: 120,
-      attack: 204,
+      attack: 261,
       defense: 156
     },
     type: ["ghost", "poison"],
@@ -1684,8 +1684,8 @@ var pokemonData = {
     name: "Onix",
     stats: {
       stamina: 70,
-      attack: 90,
-      defense: 186
+      attack: 85,
+      defense: 288
     },
     type: ["rock", "ground"],
     quickMoves: ["rock-throw", "tackle"],
@@ -1701,8 +1701,8 @@ var pokemonData = {
     cpm: [2.06, 2.09],
     stats: {
       stamina: 120,
-      attack: 104,
-      defense: 140
+      attack: 89,
+      defense: 158
     },
     type: ["psychic"],
     quickMoves: ["confusion", "pound"],
@@ -1718,8 +1718,8 @@ var pokemonData = {
     name: "Hypno",
     stats: {
       stamina: 170,
-      attack: 162,
-      defense: 196
+      attack: 144,
+      defense: 215
     },
     type: ["psychic"],
     quickMoves: ["confusion", "zen-headbutt"],
@@ -1736,8 +1736,8 @@ var pokemonData = {
     cpm: [2.32, 2.4],
     stats: {
       stamina: 60,
-      attack: 116,
-      defense: 110
+      attack: 181,
+      defense: 156
     },
     type: ["water"],
     quickMoves: ["bubble", "mud-shot"],
@@ -1753,8 +1753,8 @@ var pokemonData = {
     name: "Kingler",
     stats: {
       stamina: 110,
-      attack: 178,
-      defense: 168
+      attack: 240,
+      defense: 214
     },
     type: ["water"],
     quickMoves: ["metal-claw", "mud-shot"],
@@ -1771,8 +1771,8 @@ var pokemonData = {
     cpm: [2.01, 2.01],
     stats: {
       stamina: 80,
-      attack: 102,
-      defense: 124
+      attack: 109,
+      defense: 114
     },
     type: ["electric"],
     quickMoves: ["spark", "tackle"],
@@ -1788,8 +1788,8 @@ var pokemonData = {
     name: "Electrode",
     stats: {
       stamina: 120,
-      attack: 150,
-      defense: 174
+      attack: 173,
+      defense: 179
     },
     type: ["electric"],
     quickMoves: ["spark", "tackle"],
@@ -1806,8 +1806,8 @@ var pokemonData = {
     cpm: [2.7, 3.18],
     stats: {
       stamina: 120,
-      attack: 110,
-      defense: 132
+      attack: 107,
+      defense: 140
     },
     type: ["grass", "psychic"],
     quickMoves: ["confusion"],
@@ -1823,8 +1823,8 @@ var pokemonData = {
     name: "Exeggutor",
     stats: {
       stamina: 190,
-      attack: 232,
-      defense: 164
+      attack: 233,
+      defense: 158
     },
     type: ["grass", "psychic"],
     quickMoves: ["confusion", "zen-headbutt"],
@@ -1841,8 +1841,8 @@ var pokemonData = {
     cpm: [1.65, 1.67],
     stats: {
       stamina: 100,
-      attack: 102,
-      defense: 150
+      attack: 90,
+      defense: 165
     },
     type: ["ground"],
     quickMoves: ["mud-slap", "rock-smash"],
@@ -1858,8 +1858,8 @@ var pokemonData = {
     name: "Marowak",
     stats: {
       stamina: 120,
-      attack: 140,
-      defense: 202
+      attack: 144,
+      defense: 200
     },
     type: ["ground"],
     quickMoves: ["mud-slap", "rock-smash"],
@@ -1875,8 +1875,8 @@ var pokemonData = {
     name: "Hitmonlee",
     stats: {
       stamina: 100,
-      attack: 148,
-      defense: 172
+      attack: 224,
+      defense: 211
     },
     type: ["fighting"],
     quickMoves: ["low-kick", "rock-smash"],
@@ -1892,8 +1892,8 @@ var pokemonData = {
     name: "Hitmonchan",
     stats: {
       stamina: 100,
-      attack: 138,
-      defense: 204
+      attack: 193,
+      defense: 212
     },
     type: ["fighting"],
     quickMoves: ["bullet-punch", "rock-smash"],
@@ -1908,8 +1908,8 @@ var pokemonData = {
     name: "Lickitung",
     stats: {
       stamina: 180,
-      attack: 126,
-      defense: 160
+      attack: 108,
+      defense: 137
     },
     type: ["normal"],
     quickMoves: ["lick", "zen-headbutt"],
@@ -1925,8 +1925,8 @@ var pokemonData = {
     cpm: [1.95, 2.03],
     stats: {
       stamina: 80,
-      attack: 136,
-      defense: 142
+      attack: 119,
+      defense: 164
     },
     type: ["poison"],
     quickMoves: ["tackle"],
@@ -1943,8 +1943,8 @@ var pokemonData = {
     name: "Weezing",
     stats: {
       stamina: 130,
-      attack: 190,
-      defense: 198
+      attack: 174,
+      defense: 221
     },
     type: ["poison"],
     quickMoves: ["tackle"],
@@ -1962,8 +1962,8 @@ var pokemonData = {
     cpm: [1.9, 1.91],
     stats: {
       stamina: 160,
-      attack: 110,
-      defense: 116
+      attack: 140,
+      defense: 157
     },
     type: ["ground", "rock"],
     quickMoves: ["mud-slap", "rock-smash"],
@@ -1979,8 +1979,8 @@ var pokemonData = {
     name: "Rhydon",
     stats: {
       stamina: 210,
-      attack: 166,
-      defense: 160
+      attack: 222,
+      defense: 206
     },
     type: ["ground", "rock"],
     quickMoves: ["mud-slap", "rock-smash"],
@@ -1996,8 +1996,8 @@ var pokemonData = {
     name: "Chansey",
     stats: {
       stamina: 500,
-      attack: 40,
-      defense: 60
+      attack: 60,
+      defense: 176
     },
     type: ["normal"],
     quickMoves: ["pound", "zen-headbutt"],
@@ -2013,8 +2013,8 @@ var pokemonData = {
     name: "Tangela",
     stats: {
       stamina: 130,
-      attack: 164,
-      defense: 152
+      attack: 183,
+      defense: 205
     },
     type: ["grass"],
     quickMoves: ["vine-whip"],
@@ -2029,8 +2029,8 @@ var pokemonData = {
     name: "Kangaskhan",
     stats: {
       stamina: 210,
-      attack: 142,
-      defense: 178
+      attack: 181,
+      defense: 165
     },
     type: ["normal"],
     quickMoves: ["low-kick", "mud-slap"],
@@ -2046,8 +2046,8 @@ var pokemonData = {
     cpm: [2.19, 2.23],
     stats: {
       stamina: 60,
-      attack: 122,
-      defense: 100
+      attack: 129,
+      defense: 125
     },
     type: ["water"],
     quickMoves: ["bubble", "water-gun"],
@@ -2063,8 +2063,8 @@ var pokemonData = {
     name: "Seadra",
     stats: {
       stamina: 110,
-      attack: 176,
-      defense: 150
+      attack: 187,
+      defense: 182
     },
     type: ["water"],
     quickMoves: ["dragon-breath", "water-gun"],
@@ -2081,8 +2081,8 @@ var pokemonData = {
     cpm: [2.14, 2.24],
     stats: {
       stamina: 90,
-      attack: 112,
-      defense: 126
+      attack: 123,
+      defense: 115
     },
     type: ["water"],
     quickMoves: ["mud-shot", "peck"],
@@ -2098,8 +2098,8 @@ var pokemonData = {
     name: "Seaking",
     stats: {
       stamina: 160,
-      attack: 172,
-      defense: 160
+      attack: 175,
+      defense: 154
     },
     type: ["water"],
     quickMoves: ["peck", "poison-jab"],
@@ -2116,8 +2116,8 @@ var pokemonData = {
     cpm: [2.34, 2.41],
     stats: {
       stamina: 60,
-      attack: 130,
-      defense: 128
+      attack: 137,
+      defense: 112
     },
     type: ["water"],
     quickMoves: ["tackle", "water-gun"],
@@ -2137,8 +2137,8 @@ var pokemonData = {
     legacyMoves: ["quick-attack","psybeam"],
     stats: {
       stamina: 120,
-      attack: 194,
-      defense: 192
+      attack: 210,
+      defense: 184
     },
     type: ["water", "psychic"],
     evolveFrom: "staryu",
@@ -2152,8 +2152,8 @@ var pokemonData = {
     name: "Mr. Mime",
     stats: {
       stamina: 80,
-      attack: 154,
-      defense: 196
+      attack: 192,
+      defense: 233
     },
     type: ["psychic", "fairy"],
     quickMoves: ["confusion", "zen-headbutt"],
@@ -2168,8 +2168,8 @@ var pokemonData = {
     name: "Scyther",
     stats: {
       stamina: 140,
-      attack: 176,
-      defense: 180
+      attack: 218,
+      defense: 170
     },
     type: ["bug", "flying"],
     quickMoves: ["fury-cutter", "steel-wing"],
@@ -2184,8 +2184,8 @@ var pokemonData = {
     name: "Jynx",
     stats: {
       stamina: 130,
-      attack: 172,
-      defense: 134
+      attack: 223,
+      defense: 182
     },
     type: ["ice", "psychic"],
     quickMoves: ["frost-breath", "pound"],
@@ -2201,7 +2201,7 @@ var pokemonData = {
     stats: {
       stamina: 130,
       attack: 198,
-      defense: 160
+      defense: 173
     },
     type: ["electric"],
     quickMoves: ["low-kick", "thunder-shock"],
@@ -2216,8 +2216,8 @@ var pokemonData = {
     name: "Magmar",
     stats: {
       stamina: 130,
-      attack: 214,
-      defense: 158
+      attack: 206,
+      defense: 169
     },
     type: ["fire"],
     quickMoves: ["ember", "karate-chop"],
@@ -2232,8 +2232,8 @@ var pokemonData = {
     name: "Pinsir",
     stats: {
       stamina: 130,
-      attack: 184,
-      defense: 186
+      attack: 238,
+      defense: 197
     },
     type: ["bug"],
     quickMoves: ["fury-cutter", "rock-smash"],
@@ -2248,8 +2248,8 @@ var pokemonData = {
     name: "Tauros",
     stats: {
       stamina: 150,
-      attack: 148,
-      defense: 184
+      attack: 198,
+      defense: 197
     },
     type: ["normal"],
     quickMoves: ["tackle", "zen-headbutt"],
@@ -2265,8 +2265,8 @@ var pokemonData = {
     cpm: [10.1, 11.8],
     stats: {
       stamina: 40,
-      attack: 42,
-      defense: 84
+      attack: 29,
+      defense: 102
     },
     type: ["water"],
     quickMoves: ["splash"],
@@ -2282,8 +2282,8 @@ var pokemonData = {
     name: "Gyarados",
     stats: {
       stamina: 190,
-      attack: 192,
-      defense: 196
+      attack: 237,
+      defense: 197
     },
     type: ["water", "flying"],
     quickMoves: ["bite"],
@@ -2316,8 +2316,8 @@ var pokemonData = {
     name: "Ditto",
     stats: {
       stamina: 96,
-      attack: 110,
-      defense: 110
+      attack: 91,
+      defense: 91
     },
     type: ["normal"],
     quickMoves: ["pound"],
@@ -2333,8 +2333,8 @@ var pokemonData = {
     cpm: [2.02, 2.64],
     stats: {
       stamina: 110,
-      attack: 114,
-      defense: 128
+      attack: 104,
+      defense: 121
     },
     type: ["normal"],
     quickMoves: ["quick-attack", "tackle"],
@@ -2351,8 +2351,8 @@ var pokemonData = {
     cpm: [2.63, 2.73],
     stats: {
       stamina: 260,
-      attack: 186,
-      defense: 168
+      attack: 205,
+      defense: 177
     },
     type: ["water"],
     quickMoves: ["water-gun"],
@@ -2369,8 +2369,8 @@ var pokemonData = {
     cpm: [2, 2.1],
     stats: {
       stamina: 130,
-      attack: 192,
-      defense: 174
+      attack: 232,
+      defense: 201
     },
     type: ["electric"],
     quickMoves: ["thunder-shock"],
@@ -2387,8 +2387,8 @@ var pokemonData = {
     cpm: [2.48, 2.48],
     stats: {
       stamina: 130,
-      attack: 238,
-      defense: 178
+      attack: 246,
+      defense: 204
     },
     type: ["fire"],
     quickMoves: ["ember"],
@@ -2407,8 +2407,8 @@ var pokemonData = {
     legacyMoves: ["quick-attack"],
     stats: {
       stamina: 130,
-      attack: 156,
-      defense: 158
+      attack: 153,
+      defense: 139
     },
     type: ["normal"],
     fleeRate: 0.09
@@ -2422,8 +2422,8 @@ var pokemonData = {
     cpm: [1.99, 2.12],
     stats: {
       stamina: 70,
-      attack: 132,
-      defense: 160
+      attack: 155,
+      defense: 174
     },
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "water-gun"],
@@ -2439,8 +2439,8 @@ var pokemonData = {
     name: "Omastar",
     stats: {
       stamina: 140,
-      attack: 180,
-      defense: 202
+      attack: 207,
+      defense: 227
     },
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "water-gun"],
@@ -2459,7 +2459,7 @@ var pokemonData = {
     stats: {
       stamina: 60,
       attack: 148,
-      defense: 142
+      defense: 162
     },
     type: ["rock", "water"],
     quickMoves: ["mud-shot", "scratch"],
@@ -2475,8 +2475,8 @@ var pokemonData = {
     name: "Kabutops",
     stats: {
       stamina: 120,
-      attack: 190,
-      defense: 190
+      attack: 220,
+      defense: 203
     },
     type: ["rock", "water"],
     quickMoves: ["fury-cutter", "mud-shot"],
@@ -2492,8 +2492,8 @@ var pokemonData = {
     name: "Aerodactyl",
     stats: {
       stamina: 160,
-      attack: 182,
-      defense: 162
+      attack: 221,
+      defense: 164
     },
     type: ["rock", "flying"],
     quickMoves: ["bite", "steel-wing"],
@@ -2510,8 +2510,8 @@ var pokemonData = {
     chargeMoves: ["body-slam", "earthquake", "hyper-beam"],
     stats: {
       stamina: 320,
-      attack: 180,
-      defense: 180
+      attack: 190,
+      defense: 190
     },
     type: ["normal"],
     fleeRate: 0.09
@@ -2524,8 +2524,8 @@ var pokemonData = {
     name: "Articuno",
     stats: {
       stamina: 180,
-      attack: 198,
-      defense: 242
+      attack: 192,
+      defense: 249
     },
     type: ["ice", "flying"],
     quickMoves: ["frost-breath"],
@@ -2540,8 +2540,8 @@ var pokemonData = {
     name: "Zapdos",
     stats: {
       stamina: 180,
-      attack: 232,
-      defense: 194
+      attack: 253,
+      defense: 188
     },
     type: ["electric", "flying"],
     quickMoves: ["thunder-shock"],
@@ -2556,8 +2556,8 @@ var pokemonData = {
     name: "Moltres",
     stats: {
       stamina: 180,
-      attack: 242,
-      defense: 194
+      attack: 251,
+      defense: 184
     },
     type: ["fire", "flying"],
     quickMoves: ["ember"],
@@ -2573,8 +2573,8 @@ var pokemonData = {
     cpm: [1.79, 1.85],
     stats: {
       stamina: 82,
-      attack: 128,
-      defense: 110
+      attack: 119,
+      defense: 94
     },
     type: ["dragon"],
     quickMoves: ["dragon-breath"],
@@ -2591,8 +2591,8 @@ var pokemonData = {
     cpm: [2.03, 2.08],
     stats: {
       stamina: 122,
-      attack: 170,
-      defense: 152
+      attack: 163,
+      defense: 138
     },
     type: ["dragon"],
     quickMoves: ["dragon-breath"],
@@ -2609,8 +2609,8 @@ var pokemonData = {
     name: "Dragonite",
     stats: {
       stamina: 182,
-      attack: 250,
-      defense: 212
+      attack: 263,
+      defense: 201
     },
     type: ["dragon", "flying"],
     quickMoves: ["dragon-breath", "steel-wing"],
@@ -2626,8 +2626,8 @@ var pokemonData = {
     name: "Mewtwo",
     stats: {
       stamina: 212,
-      attack: 284,
-      defense: 202
+      attack: 330,
+      defense: 200
     },
     type: ["psychic"],
     quickMoves: ["confusion", "psycho-cut"],
@@ -2642,8 +2642,8 @@ var pokemonData = {
     name: "Mew",
     stats: {
       stamina: 200,
-      attack: 220,
-      defense: 220
+      attack: 210,
+      defense: 210
     },
     type: ["psychic"],
     quickMoves: ["pound"],
