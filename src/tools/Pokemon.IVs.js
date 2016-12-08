@@ -24,18 +24,22 @@ Pokemon.prototype.IVs = function() {
     else if (sBest == 1 && sA) return (atk <= 7);
     else if (sBest == 1 && sD) return (def <= 7);
     else if (sBest == 1 && sH) return (sta <= 7);
+    else if (sBest == 1) return (atk <= 7 || def <= 7 || sta <= 7);
 
     else if (sBest == 2 && sA) return (atk >= 8 && atk <= 12);
     else if (sBest == 2 && sD) return (def >= 8 && def <= 12);
     else if (sBest == 2 && sH) return (sta >= 8 && sta <= 12);
+    else if (sBest == 2) return (atk >= 8 && atk <= 12 || def >= 8 && def <= 12 || sta >= 8 && sta <= 12);
 
     else if (sBest == 3 && sA) return (atk >= 13 && atk <= 14);
     else if (sBest == 3 && sD) return (def >= 13 && def <= 14);
     else if (sBest == 3 && sH) return (sta >= 13 && sta <= 14);
+    else if (sBest == 3) return (atk >= 13 && atk <= 14 || def >= 13 && def <= 14 || sta >= 13 && sta <= 14);
 
     else if (sBest == 4 && sA) return (atk == 15);
     else if (sBest == 4 && sD) return (def == 15);
     else if (sBest == 4 && sH) return (sta == 15);
+    else if (sBest == 4) return (atk == 15 || def == 15 || sta == 15);
   };
   
   // Get levels by dust value
