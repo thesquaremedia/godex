@@ -7,6 +7,7 @@ var Pokemon = function(data) {
     quickMove: null,
     chargeMove: null,
     powered: false, // powered up?
+    bestStat: 0,
     strongHP: false,
     strongAtk: false,
     strongDef: false // from team leader
