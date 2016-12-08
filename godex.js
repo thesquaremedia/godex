@@ -4322,6 +4322,7 @@ var Pokemon = function(data) {
     quickMove: null,
     chargeMove: null,
     powered: false, // powered up?
+    bestStat: 0,
     strongHP: false,
     strongAtk: false,
     strongDef: false // from team leader
@@ -4331,6 +4332,8 @@ var Pokemon = function(data) {
   this.key = data.key;
   this.egg = data.egg;
   this.candy = data.candy;
+  this.buddy = data.buddy;
+  this.fleeRate = data.fleeRate;
   this.name = data.name;
   if (data.cpm) this.cpm = data.cpm;
   this.stats = data.stats;
@@ -4728,6 +4731,31 @@ Pokemon.prototype.IVs = function() {
     else if (sA && sD && sH) return (atk == def && atk == sta);
   };
 
+  // Filter out all but best appraised stat
+  var byBest = function(s, atk, def, sta) {
+    var sBest = s.bestStat, sA = s.strongAtk, sD = s.strongDef, sH = s.strongHP;
+    if (sBest == 0) return true;
+    else if (sBest == 1 && sA) return (atk <= 7);
+    else if (sBest == 1 && sD) return (def <= 7);
+    else if (sBest == 1 && sH) return (sta <= 7);
+    else if (sBest == 1) return (atk <= 7 || def <= 7 || sta <= 7);
+
+    else if (sBest == 2 && sA) return (atk >= 8 && atk <= 12);
+    else if (sBest == 2 && sD) return (def >= 8 && def <= 12);
+    else if (sBest == 2 && sH) return (sta >= 8 && sta <= 12);
+    else if (sBest == 2) return (atk >= 8 && atk <= 12 || def >= 8 && def <= 12 || sta >= 8 && sta <= 12);
+
+    else if (sBest == 3 && sA) return (atk >= 13 && atk <= 14);
+    else if (sBest == 3 && sD) return (def >= 13 && def <= 14);
+    else if (sBest == 3 && sH) return (sta >= 13 && sta <= 14);
+    else if (sBest == 3) return (atk >= 13 && atk <= 14 || def >= 13 && def <= 14 || sta >= 13 && sta <= 14);
+
+    else if (sBest == 4 && sA) return (atk == 15);
+    else if (sBest == 4 && sD) return (def == 15);
+    else if (sBest == 4 && sH) return (sta == 15);
+    else if (sBest == 4) return (atk == 15 || def == 15 || sta == 15);
+  };
+  
   // Get levels by dust value
   var levels = [];
   for (var dustLevel in levelsData) {
@@ -4767,14 +4795,16 @@ Pokemon.prototype.IVs = function() {
           // Woo, this set of IVs works!
           // Check it against highest stats...
           if (byHighest(this._, attack, defense, stamina)) {
-            // Passed the second check, let's push it!
-            ivs.push({
-              atk: attack,
-              def: defense,
-              sta: stamina,
-              lvl: level,
-              perf: Math.floor(((attack + defense + stamina) / 45) * 100)
-            });
+            if (byBest(this._, attack, defense, stamina)) {
+              // Passed the second check, let's push it!
+              ivs.push({
+                atk: attack,
+                def: defense,
+                sta: stamina,
+                lvl: level,
+                perf: Math.floor(((attack + defense + stamina) / 45) * 100)
+              });
+            }
           }
         }
       }
