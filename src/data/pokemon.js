@@ -624,6 +624,7 @@ var pokemonData = {
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["body-slam", "disarming-voice", "moonblast"],
+    evolveFrom: "cleffa",
     evolveTo: "clefable",
     fleeRate: 0.1
   },
@@ -695,6 +696,7 @@ var pokemonData = {
     quickMoves: ["feint-attack", "pound"],
     chargeMoves: ["body-slam", "disarming-voice", "dazzling-gleam"],
     legacyMoves: ["play-rough"],
+    evovleFrom: "igglybuff",
     evolveTo: "wigglytuff",
     fleeRate: 0.1
   },
@@ -2191,6 +2193,7 @@ var pokemonData = {
     type: ["ice", "psychic"],
     quickMoves: ["frost-breath", "pound"],
     chargeMoves: ["draining-kiss", "psybeam", "psyshock"],
+    evolveFrom: "smoochum",
     fleeRate: 0.09
   },
   "electabuzz": {
@@ -2207,6 +2210,7 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["low-kick", "thunder-shock"],
     chargeMoves: ["thunder", "thunder-punch", "thunderbolt"],
+    evolveFrom: "elekid",
     fleeRate: 0.09
   },
   "magmar": {
@@ -2223,6 +2227,7 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "karate-chop"],
     chargeMoves: ["fire-blast", "fire-punch", "flamethrower"],
+    evolveFrom: "magby",
     fleeRate: 0.09
   },
   "pinsir": {
