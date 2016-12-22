@@ -191,7 +191,7 @@ var pokemonData = {
     stats: {
       stamina: 100,
       attack: 45,
-      defense: 64
+      defense: 94
     },
     type: ["bug"],
     quickMoves: ["bug-bite", "tackle"],
