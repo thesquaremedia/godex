@@ -191,7 +191,7 @@ var pokemonData = {
     stats: {
       stamina: 100,
       attack: 45,
-      defense: 64
+      defense: 94
     },
     type: ["bug"],
     quickMoves: ["bug-bite", "tackle"],
@@ -445,6 +445,7 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["thunder-shock", "quick-attack"],
     chargeMoves: ["discharge", "thunder", "thunderbolt"],
+    evolveFrom: "pichu",
     evolveTo: "raichu",
     fleeRate: 0.1
   },
@@ -623,6 +624,7 @@ var pokemonData = {
     type: ["fairy"],
     quickMoves: ["pound", "zen-headbutt"],
     chargeMoves: ["body-slam", "disarming-voice", "moonblast"],
+    evolveFrom: "cleffa",
     evolveTo: "clefable",
     fleeRate: 0.1
   },
@@ -694,6 +696,7 @@ var pokemonData = {
     quickMoves: ["feint-attack", "pound"],
     chargeMoves: ["body-slam", "disarming-voice", "dazzling-gleam"],
     legacyMoves: ["play-rough"],
+    evovleFrom: "igglybuff",
     evolveTo: "wigglytuff",
     fleeRate: 0.1
   },
@@ -2190,6 +2193,7 @@ var pokemonData = {
     type: ["ice", "psychic"],
     quickMoves: ["frost-breath", "pound"],
     chargeMoves: ["draining-kiss", "psybeam", "psyshock"],
+    evolveFrom: "smoochum",
     fleeRate: 0.09
   },
   "electabuzz": {
@@ -2206,6 +2210,7 @@ var pokemonData = {
     type: ["electric"],
     quickMoves: ["low-kick", "thunder-shock"],
     chargeMoves: ["thunder", "thunder-punch", "thunderbolt"],
+    evolveFrom: "elekid",
     fleeRate: 0.09
   },
   "magmar": {
@@ -2222,6 +2227,7 @@ var pokemonData = {
     type: ["fire"],
     quickMoves: ["ember", "karate-chop"],
     chargeMoves: ["fire-blast", "fire-punch", "flamethrower"],
+    evolveFrom: "magby",
     fleeRate: 0.09
   },
   "pinsir": {
@@ -2651,5 +2657,141 @@ var pokemonData = {
       "hyper-beam", "psychic", "solar-beam"],
     legacyMoves: ["moonblast","hurricane"],
     fleeRate: 0.1
-  }
+  },
+  "pichu": {
+    id: 172,
+    egg: 5,
+    buddy: 1,
+    candy: 25,
+    name: "Pichu",
+    stats: {
+      stamina: 40,
+      attack: 77,
+      defense: 63
+    },
+    type: ["electric"],
+    quickMoves: ["thunder-shock","quick-attack"],
+    chargeMoves: ["thunderbolt", "disarming-voice", "thunder-punch"],
+    evolveTo: "pikachu",
+    fleeRate: 0.05
+  },
+  "cleffa": {
+    id: 173,
+    egg: 2,
+    buddy: 1,
+    candy: 25,
+    name: "Cleffa",
+    stats: {
+      stamina: 100,
+      attack: 75,
+      defense: 91
+    },
+    type: ["fairy"],
+    quickMoves: ["pound","zen-headbutt"],
+    chargeMoves: ["body-slam", "psychic", "signal-beam"],
+    evolveTo: "clefairy",
+    fleeRate: 0.05
+  },
+  "igglybuff": {
+    id: 174,
+    egg: 2,
+    buddy: 1,
+    candy: 25,
+    name: "Igglybuff",
+    stats: {
+      stamina: 180,
+      attack: 69,
+      defense: 34
+    },
+    type: ["fairy"],
+    quickMoves: ["pound","feint-attack"],
+    chargeMoves: ["body-slam", "shadow-ball", "psychic"],
+    evolveTo: "jigglypuff",
+    fleeRate: 0.05
+  },
+  "togepi": {
+    id: 175,
+    egg: 5,
+    buddy: 5,
+    candy: 50,
+    name: "Togepi",
+    stats: {
+      stamina: 70,
+      attack: 67,
+      defense: 116
+    },
+    type: ["fairy"],
+    quickMoves: ["zen-headbutt","peck"],
+    chargeMoves: ["ancient-power", "psyshock", "dazzling-gleam"],
+    evolveTo: "togetic",
+    fleeRate: 0.05
+  },
+  "togetic": {
+    id: 176,
+    egg: 0,
+    buddy: 5,
+    candy: 0,
+    name: "Togepi",
+    stats: {
+      stamina: 110,
+      attack: 139,
+      defense: 191
+    },
+    type: ["fairy","flying"],
+    quickMoves: ["zen-headbutt","steel-wing"],
+    chargeMoves: ["ancient-power", "dazzling-gleam", "aerial-ace"],
+    evolveFrom: "togepi",
+    fleeRate: 0.05
+  },
+  "smoochum": {
+    id: 238,
+    egg: 10,
+    buddy: 5,
+    candy: 25,
+    name: "Smoochum",
+    stats: {
+      stamina: 90,
+      attack: 153,
+      defense: 116
+    },
+    type: ["ice","psychic"],
+    quickMoves: ["frost-breath","pound"],
+    chargeMoves: ["ice-beam", "ice-punch", "psyshock"],
+    evolveTo: "jynx",
+    fleeRate: 0.05
+  },
+  "elekid": {
+    id: 239,
+    egg: 10,
+    buddy: 5,
+    candy: 25,
+    name: "Elekid",
+    stats: {
+      stamina: 90,
+      attack: 135,
+      defense: 110
+    },
+    type: ["electric"],
+    quickMoves: ["thunder-shock","low-kick"],
+    chargeMoves: ["thunder-punch", "thunderbolt", "discharge"],
+    evolveTo: "electabuzz",
+    fleeRate: 0.05
+  },
+  "magby": {
+    id: 240,
+    egg: 10,
+    buddy: 5,
+    candy: 25,
+    name: "Magby",
+    stats: {
+      stamina: 90,
+      attack: 151,
+      defense: 108
+    },
+    type: ["fire"],
+    quickMoves: ["ember","karate-chop"],
+    chargeMoves: ["brick-break", "fire-punch", "flamethrower"],
+    evolveTo: "magmar",
+    fleeRate: 0.05
+  },
 };
