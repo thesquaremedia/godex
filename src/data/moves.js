@@ -59,6 +59,14 @@ var movesData = {
     cooldown: 1.13,
     energy: 10
   },
+  "charge-beam": {
+    name: "Charge Beam",
+    moveType: "quick",
+    type: "electric",
+    attack: 8,
+    cooldown: 1.1,
+    energy: 15
+  },
   "dragon-breath": {
     name: "Dragon Breath",
     moveType: "quick",
@@ -74,6 +82,14 @@ var movesData = {
     attack: 10,
     cooldown: 1.05,
     energy: 10
+  },
+  "extrasensory": {
+    name: "Extrasensory",
+    moveType: "quick",
+    type: "psychic",
+    attack: 12,
+    cooldown: 1.1,
+    energy: 12
   },
   "feint-attack": {
     name: "Feint Attack",
@@ -114,6 +130,14 @@ var movesData = {
     attack: 15,
     cooldown: 1.4,
     energy: 12
+  },
+  "iron-tail": {
+    name: "Iron Tail",
+    moveType: "quick",
+    type: "steel",
+    attack: 15,
+    cooldown: 1.1,
+    energy: 7
   },
   "karate-chop": {
     name: "Karate Chop",
@@ -251,6 +275,14 @@ var movesData = {
     cooldown: 0.95,
     energy: 8
   },
+  "snarl": {
+    name: "Snarl",
+    moveType: "quick",
+    type: "dark",
+    attack: 12,
+    cooldown: 1.1,
+    energy: 12
+  },
   "spark": {
     name: "Spark",
     moveType: "quick",
@@ -306,6 +338,14 @@ var movesData = {
     attack: 7,
     cooldown: 0.65,
     energy: 7
+  },
+  "volt-switch": {
+    name: "Volt Switch",
+    moveType: "quick",
+    type: "electric",
+    attack: 20,
+    cooldown: 2.3,
+    energy: 25
   },
   "water-gun": {
     name: "Water Gun",
@@ -412,6 +452,16 @@ var movesData = {
     critical: 0.25,
     attack: 30
   },
+  "brave-bird": {
+    name: "Brave bird",
+    moveType: "charge",
+    type: "flying",
+    charges: 1,
+    cooldown: 2,
+    dodge: 0.6,
+    critical: 0.05,
+    attack: 90
+  },
   "brick-break": {
     name: "Brick Break",
     moveType: "charge",
@@ -481,6 +531,16 @@ var movesData = {
     dodge: 0.3,
     critical: 0.25,
     attack: 25
+  },
+  "crunch": {
+    name: "Crunch",
+    moveType: "charge",
+    type: "dark",
+    charges: 3,
+    cooldown: 3.2,
+    dodge: 1.7,
+    critical: 0.05,
+    attack: 70
   },
   "dark-pulse": {
     name: "Dark Pulse",
@@ -661,6 +721,16 @@ var movesData = {
     dodge: 1.1,
     critical: 0.05,
     attack: 60
+  },
+  "future-sight": {
+    name: "Future Sight",
+    moveType: "charge",
+    type: "psychic",
+    charges: 1,
+    cooldown: 2.7,
+    dodge: 1.3,
+    critical: 0.05,
+    attack: 120
   },
   "gunk-shot": {
     name: "Gunk Shot",
@@ -852,6 +922,16 @@ var movesData = {
     critical: 0.05,
     attack: 30
   },
+  "overheat": {
+    name: "Overheat",
+    moveType: "charge",
+    type: "fire",
+    charges: 1,
+    cooldown: 4.0,
+    dodge: 1.2,
+    critical: 0.05,
+    attack: 160
+  },
   "petal-blizzard": {
     name: "Petal Blizzard",
     moveType: "charge",
@@ -991,6 +1071,16 @@ var movesData = {
     dodge: 1,
     critical: 0.05,
     attack: 45
+  },
+  "sky-attack": {
+    name: "Sky Attack",
+    moveType: "charge",
+    type: "flying",
+    charges: 2,
+    cooldown: 2,
+    dodge: 0.2,
+    critical: 0.05,
+    attack: 70
   },
   "sludge": {
     name: "Sludge",
@@ -1141,6 +1231,16 @@ var movesData = {
     dodge: 1,
     critical: 0.05,
     attack: 35
+  },
+  "wild-charge": {
+    name: "Wild Charge",
+    moveType: "charge",
+    type: "electric",
+    charges: 2,
+    cooldown: 2.6,
+    dodge: 0.4,
+    critical: 0.05,
+    attack: 90
   },
   "wrap": {
     name: "Wrap",
